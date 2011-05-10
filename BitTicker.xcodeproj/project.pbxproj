@@ -1,0 +1,288 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA4BBA2D1379E31B005CE351 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4BBA2C1379E31B005CE351 /* Cocoa.framework */; };
+		AA4BBA371379E31C005CE351 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA4BBA351379E31C005CE351 /* InfoPlist.strings */; };
+		AA4BBA3A1379E31C005CE351 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4BBA391379E31C005CE351 /* main.m */; };
+		AA4BBA3D1379E31C005CE351 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AA4BBA3B1379E31C005CE351 /* Credits.rtf */; };
+		AA4BBA401379E31C005CE351 /* BitTickerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4BBA3F1379E31C005CE351 /* BitTickerAppDelegate.m */; };
+		AA4BBA431379E31C005CE351 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA4BBA411379E31C005CE351 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AA4BBA281379E31B005CE351 /* BitTicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitTicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA4BBA2C1379E31B005CE351 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		AA4BBA2F1379E31B005CE351 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		AA4BBA301379E31B005CE351 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AA4BBA311379E31B005CE351 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AA4BBA341379E31C005CE351 /* BitTicker-Info.plist */ = {isa = PBXFileReference; path = "BitTicker-Info.plist"; sourceTree = "<group>"; };
+		AA4BBA361379E31C005CE351 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AA4BBA381379E31C005CE351 /* BitTicker-Prefix.pch */ = {isa = PBXFileReference; path = "BitTicker-Prefix.pch"; sourceTree = "<group>"; };
+		AA4BBA391379E31C005CE351 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AA4BBA3C1379E31C005CE351 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		AA4BBA3E1379E31C005CE351 /* BitTickerAppDelegate.h */ = {isa = PBXFileReference; path = BitTickerAppDelegate.h; sourceTree = "<group>"; };
+		AA4BBA3F1379E31C005CE351 /* BitTickerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BitTickerAppDelegate.m; sourceTree = "<group>"; };
+		AA4BBA421379E31C005CE351 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA4BBA251379E31B005CE351 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA4BBA2D1379E31B005CE351 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA4BBA1D1379E31B005CE351 = {
+			isa = PBXGroup;
+			children = (
+				AA4BBA321379E31B005CE351 /* BitTicker */,
+				AA4BBA2B1379E31B005CE351 /* Frameworks */,
+				AA4BBA291379E31B005CE351 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA4BBA291379E31B005CE351 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA4BBA281379E31B005CE351 /* BitTicker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA4BBA2B1379E31B005CE351 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA4BBA2C1379E31B005CE351 /* Cocoa.framework */,
+				AA4BBA2E1379E31B005CE351 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA4BBA2E1379E31B005CE351 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA4BBA2F1379E31B005CE351 /* AppKit.framework */,
+				AA4BBA301379E31B005CE351 /* CoreData.framework */,
+				AA4BBA311379E31B005CE351 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		AA4BBA321379E31B005CE351 /* BitTicker */ = {
+			isa = PBXGroup;
+			children = (
+				AA4BBA3E1379E31C005CE351 /* BitTickerAppDelegate.h */,
+				AA4BBA3F1379E31C005CE351 /* BitTickerAppDelegate.m */,
+				AA4BBA411379E31C005CE351 /* MainMenu.xib */,
+				AA4BBA331379E31B005CE351 /* Supporting Files */,
+			);
+			path = BitTicker;
+			sourceTree = "<group>";
+		};
+		AA4BBA331379E31B005CE351 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA4BBA341379E31C005CE351 /* BitTicker-Info.plist */,
+				AA4BBA351379E31C005CE351 /* InfoPlist.strings */,
+				AA4BBA381379E31C005CE351 /* BitTicker-Prefix.pch */,
+				AA4BBA391379E31C005CE351 /* main.m */,
+				AA4BBA3B1379E31C005CE351 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA4BBA271379E31B005CE351 /* BitTicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA4BBA461379E31C005CE351 /* Build configuration list for PBXNativeTarget "BitTicker" */;
+			buildPhases = (
+				AA4BBA241379E31B005CE351 /* Sources */,
+				AA4BBA251379E31B005CE351 /* Frameworks */,
+				AA4BBA261379E31B005CE351 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BitTicker;
+			productName = BitTicker;
+			productReference = AA4BBA281379E31B005CE351 /* BitTicker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA4BBA1F1379E31B005CE351 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = none;
+			};
+			buildConfigurationList = AA4BBA221379E31B005CE351 /* Build configuration list for PBXProject "BitTicker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AA4BBA1D1379E31B005CE351;
+			productRefGroup = AA4BBA291379E31B005CE351 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA4BBA271379E31B005CE351 /* BitTicker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA4BBA261379E31B005CE351 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA4BBA371379E31C005CE351 /* InfoPlist.strings in Resources */,
+				AA4BBA3D1379E31C005CE351 /* Credits.rtf in Resources */,
+				AA4BBA431379E31C005CE351 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA4BBA241379E31B005CE351 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA4BBA3A1379E31C005CE351 /* main.m in Sources */,
+				AA4BBA401379E31C005CE351 /* BitTickerAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AA4BBA351379E31C005CE351 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA4BBA361379E31C005CE351 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AA4BBA3B1379E31C005CE351 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA4BBA3C1379E31C005CE351 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		AA4BBA411379E31C005CE351 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA4BBA421379E31C005CE351 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AA4BBA441379E31C005CE351 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		AA4BBA451379E31C005CE351 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		AA4BBA471379E31C005CE351 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BitTicker/BitTicker-Prefix.pch";
+				INFOPLIST_FILE = "BitTicker/BitTicker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AA4BBA481379E31C005CE351 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BitTicker/BitTicker-Prefix.pch";
+				INFOPLIST_FILE = "BitTicker/BitTicker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA4BBA221379E31B005CE351 /* Build configuration list for PBXProject "BitTicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA4BBA441379E31C005CE351 /* Debug */,
+				AA4BBA451379E31C005CE351 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA4BBA461379E31C005CE351 /* Build configuration list for PBXNativeTarget "BitTicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA4BBA471379E31C005CE351 /* Debug */,
+				AA4BBA481379E31C005CE351 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA4BBA1F1379E31B005CE351 /* Project object */;
+}

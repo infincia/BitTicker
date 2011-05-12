@@ -12,3 +12,4 @@ build/
 *.mode2v3
 *.xcuserstate
 *.xcuserdatad
+project.xcworkspace

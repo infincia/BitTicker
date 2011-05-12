@@ -1,9 +1,5 @@
-//
-//  main.m
-//  BitTicker
-//
-//  Created by steve on 5/10/11.
-//  Copyright 2011 none. All rights reserved.
+//  Created by steve on 5/2/10.
+//  Copyright 2010 none. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>

@@ -1,8 +1,4 @@
-//
-//  StatusItemView.h
-//  Mi-Fi Monitor for Mac
-//
-//  Created by steve on 10/25/10.
+//  Created by steve on 5/2/10.
 //  Copyright 2010 none. All rights reserved.
 //
 

@@ -1,5 +1,5 @@
-//
-// Prefix header for all source files of the 'BitTicker' target in the 'BitTicker' project
+//  Created by steve on 5/2/10.
+//  Copyright 2010 none. All rights reserved.
 //
 
 #ifdef __OBJC__

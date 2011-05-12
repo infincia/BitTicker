@@ -1,7 +1,3 @@
-//
-//  MIFIDevice.h
-//  Mi-Fi Manager
-//
 //  Created by steve on 5/2/10.
 //  Copyright 2010 none. All rights reserved.
 //

@@ -248,7 +248,7 @@
                                     waitUntilDone:NO];
 			}
 		}
-		sleep(30);
+		sleep(5);
 	}
 	[mainPool release];
 }

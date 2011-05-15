@@ -33,14 +33,14 @@
 	_statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
 	[_statusItem retain];
     
-    statusItemView = [[[StatusItemView alloc] init] retain];
+    statusItemView = [[StatusItemView alloc] init];
 	statusItemView.statusItem = _statusItem;
 	[statusItemView setToolTip:NSLocalizedString(@"BitTicker",
 												 @"Status Item Tooltip")];
 	[_statusItem setView:statusItemView];
     
     // menu stuff
-	trayMenu = [[[NSMenu alloc] initWithTitle:@"Ticker"] retain];
+	trayMenu = [[NSMenu alloc] initWithTitle:@"Ticker"];
 	//graphItem  = [[NSMenuItem alloc] init];
 	statsItem  = [[NSMenuItem alloc] init];
 	statsView = [[NSView alloc] initWithFrame:CGRectMake(0,70,180,90)];
@@ -73,6 +73,7 @@
 	[highLabel setTextColor:[NSColor blackColor]];
 	[highLabel setFont:[NSFont fontWithName:menuFont size:menuFontSize]];
 	[statsView addSubview:highLabel];
+    [highLabel release];
 	
 	//
 	lowValue = [[NSTextField alloc] initWithFrame:CGRectMake(valueOffset,60,valueWidth,menuHeight)];
@@ -93,6 +94,7 @@
 	[lowLabel setTextColor:[NSColor blackColor]];
 	[lowLabel setFont:[NSFont fontWithName:menuFont size:menuFontSize]];
 	[statsView addSubview:lowLabel];
+    [lowLabel release];
 	
 	//
 	buyValue = [[NSTextField alloc] initWithFrame:CGRectMake(valueOffset,45,valueWidth,menuHeight)];
@@ -113,6 +115,7 @@
 	[buyLabel setTextColor:[NSColor blackColor]];
 	[buyLabel setFont:[NSFont fontWithName:menuFont size:menuFontSize]];
 	[statsView addSubview:buyLabel];
+    [buyLabel release];
 	
 	//
 	sellValue = [[NSTextField alloc] initWithFrame:CGRectMake(valueOffset,30,valueWidth,menuHeight)];
@@ -133,7 +136,8 @@
 	[sellLabel setTextColor:[NSColor blackColor]];
 	[sellLabel setFont:[NSFont fontWithName:menuFont size:menuFontSize]];
 	[statsView addSubview:sellLabel];
-	
+	[sellLabel release];
+    
 	//
 	lastValue = [[NSTextField alloc] initWithFrame:CGRectMake(valueOffset,15,valueWidth,menuHeight)];
 	[lastValue setEditable:FALSE];
@@ -153,6 +157,7 @@
 	[lastLabel setTextColor:[NSColor blackColor]];
 	[lastLabel setFont:[NSFont fontWithName:menuFont size:menuFontSize]];
 	[statsView addSubview:lastLabel];
+    [lastLabel release];
     
     //
 	volValue = [[NSTextField alloc] initWithFrame:CGRectMake(valueOffset,0,valueWidth,menuHeight)];
@@ -174,12 +179,13 @@
 	[volLabel setTextColor:[NSColor blackColor]];
 	[volLabel setFont:[NSFont fontWithName:menuFont size:menuFontSize]];
 	[statsView addSubview:volLabel];
+    [volLabel release];
     
     
 	[trayMenu addItem:[NSMenuItem separatorItem]];
     
     technicalsItem  = [[NSMenuItem alloc] init];
-	technicalsView = [[NSView alloc] initWithFrame:CGRectMake(0,70,180,0)];
+	technicalsView = [[NSView alloc] initWithFrame:CGRectMake(0,0,180,0)];
     CGRect technicalsFrame = technicalsView.frame;
 	[technicalsItem setView:technicalsView];
 	[trayMenu addItem:technicalsItem];
@@ -238,15 +244,33 @@
     
 }
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	
-    
-	
-}
-
 - (void) updateGraph {
 	//[graph reloadData];
 }
+#pragma mark Application delegate
+
+- (void)applicationWillTerminate:(NSNotification *)notification {
+    [market release];
+    [tickerTimer invalidate];
+    [tickerTimer release];
+    [_statusItem release];
+    [statusItemView release];
+    [trayMenu release];
+    [statsItem release];
+    
+    [highValue release];
+	[lowValue release];
+	[volValue release];
+	[buyValue release];
+	[sellValue release];
+	[lastValue release];
+    [spreadValue release];
+    
+    [technicalsItem release];
+    [technicalsView release];
+    
+}
+
 #pragma mark Actions
 - (void)quitProgram:(id)sender {
 	[NSApp terminate:self];

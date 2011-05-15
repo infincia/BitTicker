@@ -55,6 +55,8 @@
     [_connectionData setObject:[NSMutableData dataWithLength:0] forIntegerKey:newTag];
     [connection start];
     
+    [connection release];
+    
     return newTag;
 }
 -(void)cancelAllRequests {
@@ -81,8 +83,6 @@
     
     [_connections removeObjectForInteger:taggedConnection.tag];
     [_connectionData removeObjectForInteger:taggedConnection.tag];
-    
-    [connection release];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
@@ -98,7 +98,5 @@
     
     [_connections removeObjectForInteger:taggedConnection.tag];
     [_connectionData removeObjectForInteger:taggedConnection.tag];
-    
-    [connection release];
 }
 @end

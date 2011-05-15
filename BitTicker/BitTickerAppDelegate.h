@@ -66,13 +66,14 @@
 	// below the line
 	NSMenuItem *quitItem;
     NSMenuItem *aboutItem;
+    NSMenuItem *refreshItem;
 	NSMenuItem *preferenceItem;
 	
 	NSMenu *trayMenu;
 }
 
 - (void) quitProgram:(id)sender;
-
+- (void)refreshTicker:(id)sender;
 @property (retain, nonatomic) NSNumber *tickerValue;
 @property (retain) NSMutableArray *stats;
 @property (nonatomic) NSInteger cancelThread;

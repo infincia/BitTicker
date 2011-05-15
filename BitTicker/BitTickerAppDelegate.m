@@ -209,6 +209,9 @@
     [trayMenu addItem:[NSMenuItem separatorItem]];
     
     
+    refreshItem = [trayMenu addItemWithTitle:@"Refresh" 
+                                      action:@selector(refreshTicker:) 
+                               keyEquivalent:@"r"];
 	aboutItem = [trayMenu addItemWithTitle: @"About"  
                                     action: @selector (orderFrontStandardAboutPanel:)  
                              keyEquivalent: @"a"];
@@ -245,9 +248,12 @@
 - (void) updateGraph {
 	//[graph reloadData];
 }
-
+#pragma mark Actions
 - (void)quitProgram:(id)sender {
 	[NSApp terminate:self];
+}
+- (void)refreshTicker:(id)sender {
+    [market fetchTicker];
 }
 
 #pragma mark Bitcoin market delegate

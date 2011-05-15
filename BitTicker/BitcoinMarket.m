@@ -95,6 +95,7 @@
         [invocation invoke];
     }
     
+    [jsonParser release];
     
     [_selectorMap removeObjectForInteger:tag];
 }

@@ -32,7 +32,7 @@
 	NSAutoreleasePool *autoreleasepool = [[NSAutoreleasePool alloc] init];
 	_statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
 	[_statusItem retain];
-    self.tickerValue = @"0.0000";
+    self.tickerValue = [NSNumber numberWithInt:0];
     statusItemView = [[[StatusItemView alloc] init] retain];
 	statusItemView.statusItem = _statusItem;
 	[statusItemView setToolTip:NSLocalizedString(@"BitTicker",

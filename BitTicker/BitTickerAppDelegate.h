@@ -23,7 +23,7 @@
 @class StatusItemView;
 
 @interface BitTickerAppDelegate : NSObject <NSApplicationDelegate> {
-    NSString *tickerValue;
+    NSNumber *tickerValue;
 	Ticker *_ticker;
 	NSThread *updateThread;
 	NSThread *tickerThread;
@@ -66,7 +66,7 @@
 - (void) updateMenu;
 - (void) quitProgram:(id)sender;
 
-@property (retain, nonatomic) NSString *tickerValue;
+@property (retain, nonatomic) NSNumber *tickerValue;
 @property (retain) Ticker *ticker;
 @property (retain) NSMutableArray *stats;
 @property (nonatomic) NSInteger cancelThread;

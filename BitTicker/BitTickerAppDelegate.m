@@ -20,20 +20,7 @@
 #import "BitTickerAppDelegate.h"
 #import "Ticker.h"
 #import "StatusItemView.h"
-
-@interface NSMutableArray (ShiftExtension)
-// returns the first element of self and removes it
--(id)shift;
-@end
-
-@implementation NSMutableArray (ShiftExtension)
--(id)shift {
-    if([self count] < 1) return nil;
-    id obj = [[[self objectAtIndex:0] retain] autorelease];
-    [self removeObjectAtIndex:0];
-    return obj;
-}
-@end
+#import "NSMutableArray+Shift.h"
 
 @implementation BitTickerAppDelegate
 

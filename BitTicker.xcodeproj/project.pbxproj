@@ -40,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		83405B2C137F68B10060CAD4 /* NSMutableArray+Shift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Shift.h"; sourceTree = "<group>"; };
+		83405B2D137F68B10060CAD4 /* NSMutableArray+Shift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Shift.m"; sourceTree = "<group>"; };
 		AA10AA0B137E0DF800CE07D5 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
 		AA10AA0C137E0DF800CE07D5 /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataCompressor.h; sourceTree = "<group>"; };
 		AA10AA0D137E0DF800CE07D5 /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataCompressor.m; sourceTree = "<group>"; };
@@ -145,6 +147,15 @@
 			name = JSON;
 			sourceTree = "<group>";
 		};
+		83405B2B137F68870060CAD4 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				83405B2C137F68B10060CAD4 /* NSMutableArray+Shift.h */,
+				83405B2D137F68B10060CAD4 /* NSMutableArray+Shift.m */,
+			);
+			name = Additions;
+			sourceTree = "<group>";
+		};
 		AA239F6F1379E92800150707 /* ASI */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +225,7 @@
 		AA4BBA321379E31B005CE351 /* BitTicker */ = {
 			isa = PBXGroup;
 			children = (
+				83405B2B137F68870060CAD4 /* Additions */,
 				83405B0D137F5D8A0060CAD4 /* JSON */,
 				AA239F6F1379E92800150707 /* ASI */,
 				AA239F4B1379E67300150707 /* Ticker.h */,
@@ -325,6 +337,7 @@
 				AA6C46D5137E10B2000A1DCB /* SBJsonStreamWriterState.m in Sources */,
 				AA6C46D6137E10B2000A1DCB /* SBJsonTokeniser.m in Sources */,
 				AA6C46D7137E10B2000A1DCB /* SBJsonWriter.m in Sources */,
+				83405B2E137F68B10060CAD4 /* NSMutableArray+Shift.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,8 +18,9 @@
  */
 
 #import <Cocoa/Cocoa.h>
-#import "Ticker.h"
-#import "StatusItemView.h"
+
+@class Ticker;
+@class StatusItemView;
 
 @interface BitTickerAppDelegate : NSObject <NSApplicationDelegate> {
     NSString *tickerValue;

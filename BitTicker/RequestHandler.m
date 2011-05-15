@@ -26,13 +26,13 @@
     _connectionData = [[NSMutableDictionary alloc] init];
     
     _currentTag = 0;
+    _activeRequests = 0;
     
     return self;
 }
 
 -(void)dealloc {
     [self cancelAllRequests];
-    
     [_connections release];
     [_connectionData release];
     [super dealloc];
@@ -49,11 +49,10 @@
     NSInteger newTag = _currentTag++;
     connection.tag = newTag;
     
-    //MSLog(@"Starting connection %i", newTag);
-    
     [_connections setObject:connection forIntegerKey:newTag];
     [_connectionData setObject:[NSMutableData dataWithLength:0] forIntegerKey:newTag];
     [connection start];
+    _activeRequests++;
     
     [connection release];
     
@@ -62,14 +61,13 @@
 -(void)cancelAllRequests {
     for(NSString *key in _connections) {
         TaggedNSURLConnection *connection = [_connections objectForKey:key];
-        //MSLog(@"Cancelling connection %i",connection.tag);
         [connection cancel];
-    } 
+    }
+    _activeRequests = 0;
 }
 #pragma mark - NSURLConnection methods 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     TaggedNSURLConnection *taggedConnection = (TaggedNSURLConnection*)connection;
-    //MSLog(@"Connection %i got data (%i bytes)",taggedConnection.tag,data.bytes);
     
     NSMutableData *existingData = [_connectionData objectForIntegerKey:taggedConnection.tag];
     [existingData appendData:data];
@@ -77,12 +75,13 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     TaggedNSURLConnection *taggedConnection = (TaggedNSURLConnection*)connection;
-    //MSLog(@"Connection %i finished", taggedConnection.tag);
+    _activeRequests--;
     
     [_delegate request:taggedConnection.tag didFinishWithData:[_connectionData objectForIntegerKey:taggedConnection.tag]];
     
     [_connections removeObjectForInteger:taggedConnection.tag];
     [_connectionData removeObjectForInteger:taggedConnection.tag];
+    
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
@@ -94,9 +93,11 @@
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     TaggedNSURLConnection *taggedConnection = (TaggedNSURLConnection*)connection;
     MSLog(@"Connection %i failed with error %@", taggedConnection.tag, error);
+    _activeRequests--;
     [_delegate request:taggedConnection.tag didFailWithError:error];
     
     [_connections removeObjectForInteger:taggedConnection.tag];
     [_connectionData removeObjectForInteger:taggedConnection.tag];
+    
 }
 @end

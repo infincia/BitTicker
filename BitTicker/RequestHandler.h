@@ -19,6 +19,7 @@
     NSInteger _currentTag;
     NSMutableDictionary *_connectionData;
     NSMutableDictionary *_connections; // For sanity in dealloc
+    NSInteger _activeRequests;
 }
 
 // Initializer

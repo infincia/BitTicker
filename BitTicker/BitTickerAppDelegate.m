@@ -308,6 +308,7 @@
 	[lastValue setStringValue: [currencyFormatter stringFromNumber:ticker.last]];
     
     NSNumberFormatter *volumeFormatter = [[NSNumberFormatter alloc] init];
+    volumeFormatter.numberStyle = NSNumberFormatterDecimalStyle;
     volumeFormatter.hasThousandSeparators = YES;
     [volValue setStringValue:[volumeFormatter stringFromNumber:ticker.volume]];
     

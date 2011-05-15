@@ -11,7 +11,7 @@
 #import "Trade.h"
 #import "Ticker.h"
 
-#define MTGOX_BASE_URL @"http://mtgox.com/code/"
+#define MTGOX_BASE_URL @"https://mtgox.com/code/"
 
 #define MTGOX_TICKER_URL @"data/ticker.php"
 #define MTGOX_TRADES_URL @"data/getTrades.php"

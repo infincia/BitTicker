@@ -119,6 +119,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		83405B0D137F5D8A0060CAD4 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				AA6C46BC137E10B2000A1DCB /* JSON.h */,
+				AA6C46BD137E10B2000A1DCB /* NSObject+JSON.h */,
+				AA6C46BE137E10B2000A1DCB /* NSObject+JSON.m */,
+				AA6C46BF137E10B2000A1DCB /* SBJsonParser.h */,
+				AA6C46C0137E10B2000A1DCB /* SBJsonParser.m */,
+				AA6C46C1137E10B2000A1DCB /* SBJsonStreamParser.h */,
+				AA6C46C2137E10B2000A1DCB /* SBJsonStreamParser.m */,
+				AA6C46C3137E10B2000A1DCB /* SBJsonStreamParserAdapter.h */,
+				AA6C46C4137E10B2000A1DCB /* SBJsonStreamParserAdapter.m */,
+				AA6C46C5137E10B2000A1DCB /* SBJsonStreamParserState.h */,
+				AA6C46C6137E10B2000A1DCB /* SBJsonStreamParserState.m */,
+				AA6C46C7137E10B2000A1DCB /* SBJsonStreamWriter.h */,
+				AA6C46C8137E10B2000A1DCB /* SBJsonStreamWriter.m */,
+				AA6C46C9137E10B2000A1DCB /* SBJsonStreamWriterState.h */,
+				AA6C46CA137E10B2000A1DCB /* SBJsonStreamWriterState.m */,
+				AA6C46CB137E10B2000A1DCB /* SBJsonTokeniser.h */,
+				AA6C46CC137E10B2000A1DCB /* SBJsonTokeniser.m */,
+				AA6C46CD137E10B2000A1DCB /* SBJsonWriter.h */,
+				AA6C46CE137E10B2000A1DCB /* SBJsonWriter.m */,
+			);
+			name = JSON;
+			sourceTree = "<group>";
+		};
 		AA239F6F1379E92800150707 /* ASI */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,25 +214,7 @@
 		AA4BBA321379E31B005CE351 /* BitTicker */ = {
 			isa = PBXGroup;
 			children = (
-				AA6C46BC137E10B2000A1DCB /* JSON.h */,
-				AA6C46BD137E10B2000A1DCB /* NSObject+JSON.h */,
-				AA6C46BE137E10B2000A1DCB /* NSObject+JSON.m */,
-				AA6C46BF137E10B2000A1DCB /* SBJsonParser.h */,
-				AA6C46C0137E10B2000A1DCB /* SBJsonParser.m */,
-				AA6C46C1137E10B2000A1DCB /* SBJsonStreamParser.h */,
-				AA6C46C2137E10B2000A1DCB /* SBJsonStreamParser.m */,
-				AA6C46C3137E10B2000A1DCB /* SBJsonStreamParserAdapter.h */,
-				AA6C46C4137E10B2000A1DCB /* SBJsonStreamParserAdapter.m */,
-				AA6C46C5137E10B2000A1DCB /* SBJsonStreamParserState.h */,
-				AA6C46C6137E10B2000A1DCB /* SBJsonStreamParserState.m */,
-				AA6C46C7137E10B2000A1DCB /* SBJsonStreamWriter.h */,
-				AA6C46C8137E10B2000A1DCB /* SBJsonStreamWriter.m */,
-				AA6C46C9137E10B2000A1DCB /* SBJsonStreamWriterState.h */,
-				AA6C46CA137E10B2000A1DCB /* SBJsonStreamWriterState.m */,
-				AA6C46CB137E10B2000A1DCB /* SBJsonTokeniser.h */,
-				AA6C46CC137E10B2000A1DCB /* SBJsonTokeniser.m */,
-				AA6C46CD137E10B2000A1DCB /* SBJsonWriter.h */,
-				AA6C46CE137E10B2000A1DCB /* SBJsonWriter.m */,
+				83405B0D137F5D8A0060CAD4 /* JSON */,
 				AA239F6F1379E92800150707 /* ASI */,
 				AA239F4B1379E67300150707 /* Ticker.h */,
 				AA239F4C1379E67300150707 /* Ticker.m */,

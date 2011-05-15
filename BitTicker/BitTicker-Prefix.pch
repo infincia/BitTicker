@@ -20,3 +20,18 @@
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
 #endif
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+// Debug
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#define DEBUG_ON  // Toggle to DEBUG_OFF or comment out to hide all debug code 
+
+#ifdef DEBUG_ON
+#define MSLog(format, ...) CFShow([[NSString stringWithFormat:@"<%@:%d> ",[[NSString stringWithUTF8String:__FILE__] lastPathComponent],__LINE__] stringByAppendingFormat:format, ## __VA_ARGS__])
+#else
+#define MSlog(format, ...) 
+#endif
+
+#define MSLogRect(rect) MSLog(@"%s x:%.4f, y:%.4f, w:%.4f, h%.4f", #rect, rect.origin.x, rect.origin.y, rect.size.width, rect.size.height)
+#define MSLogSize(size) MSLog(@"%s w:%.4f, h:%.4f", #size, size.width, size.height)
+#define MSLogPoint(point) MSLog(@"%s x:%.4f, y:%.4f", #point, point.x, point.y)

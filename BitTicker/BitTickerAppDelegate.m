@@ -185,9 +185,8 @@
 	[trayMenu addItem:[NSMenuItem separatorItem]];
     
     technicalsItem  = [[NSMenuItem alloc] init];
-	technicalsView = [[NSView alloc] initWithFrame:CGRectMake(0,0,180,0)];
-    CGRect technicalsFrame = technicalsView.frame;
-	[technicalsItem setView:technicalsView];
+	technicalsView = [[NSView alloc] initWithFrame:CGRectMake(0,0,180,13)];
+    [technicalsItem setView:technicalsView];
 	[trayMenu addItem:technicalsItem];
     
     spreadValue = [[NSTextField alloc] initWithFrame:CGRectMake(valueOffset, 0, valueWidth, menuHeight)];
@@ -197,8 +196,7 @@
 	[spreadValue setBackgroundColor:[NSColor clearColor]];
 	[spreadValue setTextColor:[NSColor blackColor]];
 	[spreadValue setFont:[NSFont fontWithName:menuFont size:menuFontSize]];
-    technicalsFrame.size.height += spreadValue.frame.size.height;
-	[technicalsView addSubview:spreadValue];
+    [technicalsView addSubview:spreadValue];
     
     NSTextField *spreadLabel = [[NSTextField alloc] initWithFrame:CGRectMake(labelOffset,0,labelWidth,menuHeight)];
 	[spreadLabel setEditable:FALSE];
@@ -209,8 +207,7 @@
 	[spreadLabel setTextColor:[NSColor blackColor]];
 	[spreadLabel setFont:[NSFont fontWithName:menuFont size:menuFontSize]];
 	[technicalsView addSubview:spreadLabel];
-    
-    technicalsView.frame = technicalsFrame;
+    [spreadLabel release];
     
     [trayMenu addItem:[NSMenuItem separatorItem]];
     

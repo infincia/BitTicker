@@ -232,7 +232,7 @@
     currencyFormatter.thousandSeparator = @","; // TODO: Base on local seperator for currency
     currencyFormatter.alwaysShowsDecimalSeparator = YES;
     currencyFormatter.hasThousandSeparators = YES;
-    currencyFormatter.minimumFractionDigits = 4;
+    currencyFormatter.minimumFractionDigits = 4; // TODO: Configurable
     
     
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"AlreadyRan"]) {

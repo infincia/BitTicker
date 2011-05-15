@@ -33,8 +33,6 @@
     NSTimer *tickerTimer;
     
     NSMutableArray *stats;
-    NSMutableArray *highArray;
-    NSMutableArray *lowArray;
 	StatusItemView *statusItemView;
 	NSStatusItem *_statusItem;
 
@@ -45,17 +43,7 @@
 	NSTextField *buyValue;
 	NSTextField *sellValue;
 	NSTextField *lastValue;
-    
     NSTextField *spreadValue;
-    
-	NSNumber *high;
-    NSNumber *low;
-    NSNumber *vol;
-    NSNumber *buy;
-    NSNumber *sell;
-    NSNumber *last;
-    
-    NSNumber *spread;
 
 	NSView *statsView;
 	NSMenuItem *statsItem;

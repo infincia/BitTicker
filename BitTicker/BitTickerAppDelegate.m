@@ -226,6 +226,15 @@
 	[statusItemView setMenu:trayMenu];
 	
     
+    currencyFormatter = [[NSNumberFormatter alloc] init];
+    currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+    currencyFormatter.currencyCode = @"USD"; // TODO: Base on market currency
+    currencyFormatter.thousandSeparator = @","; // TODO: Base on local seperator for currency
+    currencyFormatter.alwaysShowsDecimalSeparator = YES;
+    currencyFormatter.hasThousandSeparators = YES;
+    currencyFormatter.minimumFractionDigits = 4;
+    
+    
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"AlreadyRan"]) {
 		
 	} else {
@@ -254,6 +263,7 @@
     [statusItemView release];
     [trayMenu release];
     [statsItem release];
+    [currencyFormatter release];
     
     [highValue release];
 	[lowValue release];
@@ -290,16 +300,23 @@
 -(void)bitcoinMarket:(BitcoinMarket*)market didReceiveTicker:(Ticker*)ticker {
     [statusItemView setTickerValue:ticker.last];
     MSLog(@"Got mah ticker: %@",ticker);
-    [highValue setStringValue:[NSString stringWithFormat:@"$%0.4f",[ticker.high floatValue]]];
-	[lowValue setStringValue:[NSString stringWithFormat:@"$%0.4f",[ticker.low floatValue]]];
-	[volValue setStringValue:[NSString stringWithFormat:@"%@",ticker.volume]];
-	[buyValue setStringValue:[NSString stringWithFormat:@"$%0.4f",[ticker.buy floatValue]]];
-	[sellValue setStringValue: [NSString stringWithFormat:@"$%0.4f",[ticker.sell floatValue]]];
-	[lastValue setStringValue: [NSString stringWithFormat:@"$%0.4f",[ticker.last floatValue]]];
+    
+    [highValue setStringValue:[currencyFormatter stringFromNumber:ticker.high]];
+	[lowValue setStringValue:[currencyFormatter stringFromNumber:ticker.low]];
+	[buyValue setStringValue:[currencyFormatter stringFromNumber:ticker.buy]];
+	[sellValue setStringValue: [currencyFormatter stringFromNumber:ticker.sell]];
+	[lastValue setStringValue: [currencyFormatter stringFromNumber:ticker.last]];
+    
+    NSNumberFormatter *volumeFormatter = [[NSNumberFormatter alloc] init];
+    volumeFormatter.hasThousandSeparators = YES;
+    [volValue setStringValue:[volumeFormatter stringFromNumber:ticker.volume]];
+    
+    [volumeFormatter release];
     
     double ask = [ticker.sell doubleValue];
     double bid = [ticker.buy doubleValue];
-    [spreadValue setStringValue:[NSString stringWithFormat:@"$%0.4f",ask-bid]];
+    NSNumber *spread = [NSNumber numberWithDouble:ask-bid];
+    [spreadValue setStringValue:[currencyFormatter stringFromNumber:spread]];
 }
 
 -(void)bitcoinMarket:(BitcoinMarket*)market didReceiveRecentTradesData:(NSArray*)trades {

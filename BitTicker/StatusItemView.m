@@ -22,7 +22,7 @@
 
 #define StatusItemViewPaddingWidth  6
 #define StatusItemViewPaddingHeight 3
-#define StatusItemWidth 72
+#define StatusItemWidth 50
 
 @implementation StatusItemView
 
@@ -32,37 +32,44 @@
     // Draw status bar background, highlighted if menu is showing
     [statusItem drawStatusBarBackgroundInRect:[self bounds]
                                 withHighlight:isMenuVisible];
+    
     NSPoint point = NSMakePoint(1, 1);
-    NSMutableDictionary *font_attributes = [[NSMutableDictionary alloc] init];
-    NSFont *font = [NSFont fontWithName:@"LucidaGrande-Bold" size:16];
+    NSMutableDictionary *fontAttributes = [[NSMutableDictionary alloc] init];
+    NSFont *font = [NSFont fontWithName:@"LucidaGrande" size:16];
+    
     NSColor *black = [NSColor blackColor];
     NSColor *white = [NSColor whiteColor];
-    [font_attributes setObject:font forKey:NSFontAttributeName];
-    NSString *tickerPretty = [NSString stringWithFormat:@"$%0.4f",[tickerValue floatValue]];
-    CGSize expected = [tickerPretty sizeWithAttributes:font_attributes];
+    [fontAttributes setObject:font forKey:NSFontAttributeName];
+    
+    NSString *tickerPretty = [NSString stringWithFormat:@"$%0.2f",[tickerValue floatValue]];
+    CGSize expected = [tickerPretty sizeWithAttributes:fontAttributes];
     CGRect newFrame = self.frame;
     newFrame.size.width = expected.width + 5;
     self.frame = newFrame;
+    // expexted.width might be a decimal, we don't want burry edges on our highlight.
+    [statusItem setLength:(int)(expected.width+0.5)+StatusItemViewPaddingWidth];
+    
     if (isMenuVisible) {
-        [font_attributes setObject:white forKey:NSForegroundColorAttributeName];
-        [tickerPretty drawAtPoint:point withAttributes:font_attributes];
+        [fontAttributes setObject:white forKey:NSForegroundColorAttributeName];
+        [tickerPretty drawAtPoint:point withAttributes:fontAttributes];
     }
     else {
-        [font_attributes setObject:black forKey:NSForegroundColorAttributeName];
-        [tickerPretty drawAtPoint:point withAttributes:font_attributes];
+        [fontAttributes setObject:black forKey:NSForegroundColorAttributeName];
+        [tickerPretty drawAtPoint:point withAttributes:fontAttributes];
     }   
-    [font_attributes release];
+    
+    [fontAttributes release];
 }
 
 
 - (id)initWithFrame:(NSRect)frame {
-	CGRect newFrame = CGRectMake(0,0,70,20);
+	CGRect newFrame = CGRectMake(0,0,StatusItemWidth,[[NSStatusBar systemStatusBar] thickness]);
     self = [super initWithFrame:newFrame];
     if (self) {
         self.tickerValue = [NSNumber numberWithInt:0];
         statusItem = nil;
         isMenuVisible = NO;
-        [statusItem setLength:84];
+        [statusItem setLength:StatusItemWidth];
     }
     return self;
 }

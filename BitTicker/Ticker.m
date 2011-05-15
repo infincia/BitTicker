@@ -52,9 +52,9 @@
 	self.request.timeOutSeconds = 10;
 	self.request.secondsToCache = 0;
 	[self.request startSynchronous];
-	//NSLog(@"response: %@",[publicRequest responseString]);
+	//MSLog(@"response: %@",[publicRequest responseString]);
 	if (self.request.error) {
-        NSLog(@"got request error");
+        MSLog(@"got request error");
         self.outdated = [NSNumber numberWithInt:1];
         self.currentError = [self.request.error localizedDescription];
         [autoreleasepool release];

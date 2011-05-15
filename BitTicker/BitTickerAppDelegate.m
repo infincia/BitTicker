@@ -201,13 +201,13 @@
 	self.ticker = [[Ticker alloc] init];
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"AlreadyRan"]) {
 		[self startTickerThread];
-		NSLog(@"Starting");
+		MSLog(@"Starting");
 	}
 	else {
 		[[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:@"AlreadyRan"];
 		[[NSUserDefaults standardUserDefaults] synchronize];
         [self startTickerThread];
-		NSLog(@"Starting");
+		MSLog(@"Starting");
 	}
 	[autoreleasepool release];
 }
@@ -251,13 +251,13 @@
 		else {
 			[self.ticker getTickerData];
 			if ([self.ticker.outdated boolValue] == FALSE) {
-                NSLog(@"Ticker updated with valid info");
+                MSLog(@"Ticker updated with valid info");
                 [self performSelectorOnMainThread:@selector(updateMenu) 
                                        withObject:nil
                                     waitUntilDone:NO];
 			}
 			else {			
-				NSLog(@"Ticker Outdated!!!!!");
+				MSLog(@"Ticker Outdated!!!!!");
 				[self performSelectorOnMainThread:@selector(updateMenu) 
                                        withObject:nil
                                     waitUntilDone:NO];

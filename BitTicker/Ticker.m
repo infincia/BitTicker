@@ -18,7 +18,7 @@
 @synthesize last=_last;
 
 -(NSString*)description {
-    return [NSString stringWithFormat:@"<Trade: last=%@, high=%@, low=%@, volume=%@>",_last, _high, _low, _volume];
+    return [NSString stringWithFormat:@"<Ticker: last=%@, high=%@, low=%@, volume=%@>",_last, _high, _low, _volume];
 }
 
 @end

@@ -232,8 +232,7 @@
     MSLog(@"Starting");
     market = [[MtGoxMarket alloc] initWithDelegate:self];
     
-    // 1000*30 = 30 seconds
-    tickerTimer = [[NSTimer scheduledTimerWithTimeInterval:1000*30 target:market selector:@selector(fetchTicker) userInfo:nil repeats:YES] retain];
+    tickerTimer = [[NSTimer scheduledTimerWithTimeInterval:30 target:market selector:@selector(fetchTicker) userInfo:nil repeats:YES] retain];
     
     [market fetchTicker];
     

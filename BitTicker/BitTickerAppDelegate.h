@@ -70,6 +70,8 @@
 	NSMenuItem *preferenceItem;
 	
 	NSMenu *trayMenu;
+    
+    NSNumberFormatter *currencyFormatter;
 }
 
 - (void) quitProgram:(id)sender;

@@ -22,17 +22,17 @@
 #import "StatusItemView.h"
 #import "NSMutableArray+Shift.h"
 
+#import "MtGoxMarket.h"
+
 @implementation BitTickerAppDelegate
 
 @synthesize stats;
 @synthesize cancelThread;
-@synthesize ticker = _ticker, tickerValue;
+@synthesize tickerValue;
 
 - (void)awakeFromNib {    
 	_statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
 	[_statusItem retain];
-    
-    self.tickerValue = [NSNumber numberWithInt:0];
     
     statusItemView = [[[StatusItemView alloc] init] retain];
 	statusItemView.statusItem = _statusItem;
@@ -74,7 +74,6 @@
 	[highLabel setTextColor:[NSColor blackColor]];
 	[highLabel setFont:[NSFont fontWithName:menuFont size:menuFontSize]];
 	[statsView addSubview:highLabel];
-	
 	
 	//
 	lowValue = [[NSTextField alloc] initWithFrame:CGRectMake(valueOffset,60,valueWidth,menuHeight)];
@@ -185,18 +184,25 @@
 	quitItem = [trayMenu addItemWithTitle: @"Quit"  
 								   action: @selector (quitProgram:)  
 							keyEquivalent: @"q"];
+    
+    
 	[statusItemView setMenu:trayMenu];
-	self.ticker = [[Ticker alloc] init];
+	
+    
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"AlreadyRan"]) {
-		[self startTickerThread];
-		MSLog(@"Starting");
-	}
-	else {
+		
+	} else {
 		[[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:@"AlreadyRan"];
 		[[NSUserDefaults standardUserDefaults] synchronize];
-        [self startTickerThread];
-		MSLog(@"Starting");
 	}
+    MSLog(@"Starting");
+    market = [[MtGoxMarket alloc] initWithDelegate:self];
+    
+    // 1000*30 = 30 seconds
+    tickerTimer = [[NSTimer scheduledTimerWithTimeInterval:1000*30 target:market selector:@selector(fetchTicker) userInfo:nil repeats:YES] retain];
+    
+    [market fetchTicker];
+    
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
@@ -205,73 +211,38 @@
 	
 }
 
-- (void) startTickerThread {
-	NSAutoreleasePool *autoreleasepool = [[NSAutoreleasePool alloc] init];
-	tickerThread = [[NSThread alloc] initWithTarget:self selector:@selector(startTicker) object:nil];
-	[tickerThread setName:@"tickerThread"];
-	[tickerThread start];
-	[autoreleasepool release];
-}
-
-- (void) startTicker {
-	NSAutoreleasePool *autoreleasepool = [[NSAutoreleasePool alloc] init];
-	[self performSelectorOnMainThread:@selector(updateMenu) 
-                           withObject:nil
-                        waitUntilDone:NO];
-	updateThread = [[NSThread alloc] initWithTarget:self selector:@selector(updateTickerData) object:nil];
-	[updateThread setName:@"updateThread"];
-	[updateThread start];
-	[self performSelectorOnMainThread:@selector(updateMenu) 
-                           withObject:nil
-                        waitUntilDone:YES];
-	[autoreleasepool release];
-	return;
-}
-
-- (void)updateTickerData {
-	NSAutoreleasePool *mainPool = [[NSAutoreleasePool alloc] init];
- 	while (1) {
-		if([[NSThread currentThread] isCancelled]) {
-			[mainPool release];
-			[NSThread exit];
-		}
-		else {
-			[self.ticker getTickerData];
-			if ([self.ticker.outdated boolValue] == FALSE) {
-                MSLog(@"Ticker updated with valid info");
-                [self performSelectorOnMainThread:@selector(updateMenu) 
-                                       withObject:nil
-                                    waitUntilDone:NO];
-			}
-			else {			
-				MSLog(@"Ticker Outdated!!!!!");
-				[self performSelectorOnMainThread:@selector(updateMenu) 
-                                       withObject:nil
-                                    waitUntilDone:NO];
-			}
-		}
-		sleep(5);
-	}
-	[mainPool release];
-}
-
 - (void) updateGraph {
 	//[graph reloadData];
 }
 
-
-- (void) updateMenu {
-	[statusItemView setTickerValue:self.ticker.last];
-	[highValue setStringValue:[NSString stringWithFormat:@"$%0.4f",[self.ticker.high floatValue]]];
-	[lowValue setStringValue:[NSString stringWithFormat:@"$%0.4f",[self.ticker.low floatValue]]];
-	[volValue setStringValue:[NSString stringWithFormat:@"%@",self.ticker.vol]];
-	[buyValue setStringValue:[NSString stringWithFormat:@"$%0.4f",[self.ticker.buy floatValue]]];
-	[sellValue setStringValue: [NSString stringWithFormat:@"$%0.4f",[self.ticker.sell floatValue]]];
-	[lastValue setStringValue: [NSString stringWithFormat:@"$%0.4f",[self.ticker.last floatValue]]];
-}
-
 - (void)quitProgram:(id)sender {
 	[NSApp terminate:self];
+}
+
+#pragma mark Bitcoin market delegate
+// A request failed for some reason, for example the API being down
+-(void)bitcoinMarket:(BitcoinMarket*)market requestFailedWithError:(NSError*)error {
+    MSLog(@"Error: %@",error);
+}
+
+// Request wasn't formatted as expected
+-(void)bitcoinMarket:(BitcoinMarket*)market didReceiveInvalidResponse:(NSData*)data {
+    MSLog(@"Invalid response: %@",data);
+}
+
+-(void)bitcoinMarket:(BitcoinMarket*)market didReceiveTicker:(Ticker*)ticker {
+    [statusItemView setTickerValue:ticker.last];
+    MSLog(@"Got mah ticker: %@",ticker);
+    [highValue setStringValue:[NSString stringWithFormat:@"$%0.4f",[ticker.high floatValue]]];
+	[lowValue setStringValue:[NSString stringWithFormat:@"$%0.4f",[ticker.low floatValue]]];
+	[volValue setStringValue:[NSString stringWithFormat:@"%@",ticker.volume]];
+	[buyValue setStringValue:[NSString stringWithFormat:@"$%0.4f",[ticker.buy floatValue]]];
+	[sellValue setStringValue: [NSString stringWithFormat:@"$%0.4f",[ticker.sell floatValue]]];
+	[lastValue setStringValue: [NSString stringWithFormat:@"$%0.4f",[ticker.last floatValue]]];
+}
+
+-(void)bitcoinMarket:(BitcoinMarket*)market didReceiveRecentTradesData:(NSArray*)trades {
+    
 }
 
 @end

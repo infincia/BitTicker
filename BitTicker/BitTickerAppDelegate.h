@@ -21,14 +21,18 @@
 
 @class Ticker;
 @class StatusItemView;
+@class RequestHandler;
 
-@interface BitTickerAppDelegate : NSObject <NSApplicationDelegate> {
-    NSNumber *tickerValue;
-	Ticker *_ticker;
-	NSThread *updateThread;
-	NSThread *tickerThread;
-	int debugging;
-	NSMutableArray *stats;
+@class MtGoxMarket;
+
+#import "BitcoinMarketDelegate.h"
+
+@interface BitTickerAppDelegate : NSObject <NSApplicationDelegate, BitcoinMarketDelegate> {
+    MtGoxMarket *market;
+    
+    NSTimer *tickerTimer;
+    
+    NSMutableArray *stats;
     NSMutableArray *highArray;
     NSMutableArray *lowArray;
 	StatusItemView *statusItemView;
@@ -60,14 +64,9 @@
 	NSMenu *trayMenu;
 }
 
-- (void) startTickerThread;
-- (void) startTicker;
-- (void) updateTickerData;
-- (void) updateMenu;
 - (void) quitProgram:(id)sender;
 
 @property (retain, nonatomic) NSNumber *tickerValue;
-@property (retain) Ticker *ticker;
 @property (retain) NSMutableArray *stats;
 @property (nonatomic) NSInteger cancelThread;
 

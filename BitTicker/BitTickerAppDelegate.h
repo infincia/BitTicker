@@ -46,26 +46,34 @@
 	NSTextField *sellValue;
 	NSTextField *lastValue;
     
+    NSTextField *spreadValue;
+    
 	NSNumber *high;
     NSNumber *low;
     NSNumber *vol;
     NSNumber *buy;
     NSNumber *sell;
     NSNumber *last;
+    
+    NSNumber *spread;
 
 	NSView *statsView;
 	NSMenuItem *statsItem;
+    
+    NSView *technicalsView;
+    NSMenuItem *technicalsItem;
 	
 	// below the line
 	NSMenuItem *quitItem;
     NSMenuItem *aboutItem;
+    NSMenuItem *refreshItem;
 	NSMenuItem *preferenceItem;
 	
 	NSMenu *trayMenu;
 }
 
 - (void) quitProgram:(id)sender;
-
+- (void)refreshTicker:(id)sender;
 @property (retain, nonatomic) NSNumber *tickerValue;
 @property (retain) NSMutableArray *stats;
 @property (nonatomic) NSInteger cancelThread;

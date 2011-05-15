@@ -10,7 +10,6 @@
 		83405B28137F68610060CAD4 /* TaggedNSURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 83405B22137F68610060CAD4 /* TaggedNSURLConnection.m */; };
 		83405B29137F68610060CAD4 /* NSMutableDictionary+IntegerKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 83405B24137F68610060CAD4 /* NSMutableDictionary+IntegerKeys.m */; };
 		83405B2A137F68610060CAD4 /* RequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 83405B27137F68610060CAD4 /* RequestHandler.m */; };
-		83405B2E137F68B10060CAD4 /* NSMutableArray+Shift.m in Sources */ = {isa = PBXBuildFile; fileRef = 83405B2D137F68B10060CAD4 /* NSMutableArray+Shift.m */; };
 		83405B39137F6DDF0060CAD4 /* Trade.m in Sources */ = {isa = PBXBuildFile; fileRef = 83405B31137F6DDF0060CAD4 /* Trade.m */; };
 		83405B3A137F6DDF0060CAD4 /* Ticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 83405B33137F6DDF0060CAD4 /* Ticker.m */; };
 		83405B3B137F6DDF0060CAD4 /* BitcoinMarket.m in Sources */ = {isa = PBXBuildFile; fileRef = 83405B36137F6DDF0060CAD4 /* BitcoinMarket.m */; };
@@ -47,8 +46,6 @@
 		83405B25137F68610060CAD4 /* RequestHandlerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestHandlerDelegate.h; sourceTree = "<group>"; };
 		83405B26137F68610060CAD4 /* RequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestHandler.h; sourceTree = "<group>"; };
 		83405B27137F68610060CAD4 /* RequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestHandler.m; sourceTree = "<group>"; };
-		83405B2C137F68B10060CAD4 /* NSMutableArray+Shift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Shift.h"; sourceTree = "<group>"; };
-		83405B2D137F68B10060CAD4 /* NSMutableArray+Shift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Shift.m"; sourceTree = "<group>"; };
 		83405B30137F6DDF0060CAD4 /* Trade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trade.h; sourceTree = "<group>"; };
 		83405B31137F6DDF0060CAD4 /* Trade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trade.m; sourceTree = "<group>"; };
 		83405B32137F6DDF0060CAD4 /* Ticker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ticker.h; sourceTree = "<group>"; };
@@ -160,8 +157,6 @@
 				83405B22137F68610060CAD4 /* TaggedNSURLConnection.m */,
 				83405B23137F68610060CAD4 /* NSMutableDictionary+IntegerKeys.h */,
 				83405B24137F68610060CAD4 /* NSMutableDictionary+IntegerKeys.m */,
-				83405B2C137F68B10060CAD4 /* NSMutableArray+Shift.h */,
-				83405B2D137F68B10060CAD4 /* NSMutableArray+Shift.m */,
 			);
 			name = Additions;
 			sourceTree = "<group>";
@@ -332,7 +327,6 @@
 				83405B28137F68610060CAD4 /* TaggedNSURLConnection.m in Sources */,
 				83405B29137F68610060CAD4 /* NSMutableDictionary+IntegerKeys.m in Sources */,
 				83405B2A137F68610060CAD4 /* RequestHandler.m in Sources */,
-				83405B2E137F68B10060CAD4 /* NSMutableArray+Shift.m in Sources */,
 				83405B39137F6DDF0060CAD4 /* Trade.m in Sources */,
 				83405B3A137F6DDF0060CAD4 /* Ticker.m in Sources */,
 				83405B3B137F6DDF0060CAD4 /* BitcoinMarket.m in Sources */,

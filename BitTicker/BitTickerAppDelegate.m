@@ -20,7 +20,6 @@
 #import "BitTickerAppDelegate.h"
 #import "Ticker.h"
 #import "StatusItemView.h"
-#import "NSMutableArray+Shift.h"
 
 #import "MtGoxMarket.h"
 
@@ -178,6 +177,41 @@
     
     
 	[trayMenu addItem:[NSMenuItem separatorItem]];
+    
+    technicalsItem  = [[NSMenuItem alloc] init];
+	technicalsView = [[NSView alloc] initWithFrame:CGRectMake(0,70,180,0)];
+    CGRect technicalsFrame = technicalsView.frame;
+	[technicalsItem setView:technicalsView];
+	[trayMenu addItem:technicalsItem];
+    
+    spreadValue = [[NSTextField alloc] initWithFrame:CGRectMake(valueOffset, 0, valueWidth, menuHeight)];
+    [spreadValue setEditable:FALSE];
+	[spreadValue setBordered:NO];
+	[spreadValue setAlignment:NSRightTextAlignment];
+	[spreadValue setBackgroundColor:[NSColor clearColor]];
+	[spreadValue setTextColor:[NSColor blackColor]];
+	[spreadValue setFont:[NSFont fontWithName:menuFont size:menuFontSize]];
+    technicalsFrame.size.height += spreadValue.frame.size.height;
+	[technicalsView addSubview:spreadValue];
+    
+    NSTextField *spreadLabel = [[NSTextField alloc] initWithFrame:CGRectMake(labelOffset,0,labelWidth,menuHeight)];
+	[spreadLabel setEditable:FALSE];
+	[spreadLabel setBordered:NO];
+	[spreadLabel setAlignment:NSLeftTextAlignment];
+	[spreadLabel setBackgroundColor:[NSColor clearColor]];
+	[spreadLabel setStringValue:@"Spread:"];
+	[spreadLabel setTextColor:[NSColor blackColor]];
+	[spreadLabel setFont:[NSFont fontWithName:menuFont size:menuFontSize]];
+	[technicalsView addSubview:spreadLabel];
+    
+    technicalsView.frame = technicalsFrame;
+    
+    [trayMenu addItem:[NSMenuItem separatorItem]];
+    
+    
+    refreshItem = [trayMenu addItemWithTitle:@"Refresh" 
+                                      action:@selector(refreshTicker:) 
+                               keyEquivalent:@"r"];
 	aboutItem = [trayMenu addItemWithTitle: @"About"  
                                     action: @selector (orderFrontStandardAboutPanel:)  
                              keyEquivalent: @"a"];
@@ -198,8 +232,7 @@
     MSLog(@"Starting");
     market = [[MtGoxMarket alloc] initWithDelegate:self];
     
-    // 1000*30 = 30 seconds
-    tickerTimer = [[NSTimer scheduledTimerWithTimeInterval:1000*30 target:market selector:@selector(fetchTicker) userInfo:nil repeats:YES] retain];
+    tickerTimer = [[NSTimer scheduledTimerWithTimeInterval:30 target:market selector:@selector(fetchTicker) userInfo:nil repeats:YES] retain];
     
     [market fetchTicker];
     
@@ -214,9 +247,12 @@
 - (void) updateGraph {
 	//[graph reloadData];
 }
-
+#pragma mark Actions
 - (void)quitProgram:(id)sender {
 	[NSApp terminate:self];
+}
+- (void)refreshTicker:(id)sender {
+    [market fetchTicker];
 }
 
 #pragma mark Bitcoin market delegate
@@ -239,6 +275,10 @@
 	[buyValue setStringValue:[NSString stringWithFormat:@"$%0.4f",[ticker.buy floatValue]]];
 	[sellValue setStringValue: [NSString stringWithFormat:@"$%0.4f",[ticker.sell floatValue]]];
 	[lastValue setStringValue: [NSString stringWithFormat:@"$%0.4f",[ticker.last floatValue]]];
+    
+    double ask = [ticker.sell doubleValue];
+    double bid = [ticker.buy doubleValue];
+    [spreadValue setStringValue:[NSString stringWithFormat:@"$%0.4f",ask-bid]];
 }
 
 -(void)bitcoinMarket:(BitcoinMarket*)market didReceiveRecentTradesData:(NSArray*)trades {

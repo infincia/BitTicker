@@ -33,14 +33,14 @@
 	_statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
 	[_statusItem retain];
     
-    statusItemView = [[[StatusItemView alloc] init] retain];
+    statusItemView = [[StatusItemView alloc] init];
 	statusItemView.statusItem = _statusItem;
 	[statusItemView setToolTip:NSLocalizedString(@"BitTicker",
 												 @"Status Item Tooltip")];
 	[_statusItem setView:statusItemView];
     
     // menu stuff
-	trayMenu = [[[NSMenu alloc] initWithTitle:@"Ticker"] retain];
+	trayMenu = [[NSMenu alloc] initWithTitle:@"Ticker"];
 	//graphItem  = [[NSMenuItem alloc] init];
 	statsItem  = [[NSMenuItem alloc] init];
 	statsView = [[NSView alloc] initWithFrame:CGRectMake(0,70,180,90)];
@@ -179,7 +179,7 @@
 	[trayMenu addItem:[NSMenuItem separatorItem]];
     
     technicalsItem  = [[NSMenuItem alloc] init];
-	technicalsView = [[NSView alloc] initWithFrame:CGRectMake(0,70,180,0)];
+	technicalsView = [[NSView alloc] initWithFrame:CGRectMake(0,0,180,0)];
     CGRect technicalsFrame = technicalsView.frame;
 	[technicalsItem setView:technicalsView];
 	[trayMenu addItem:technicalsItem];
@@ -238,15 +238,33 @@
     
 }
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	
-    
-	
-}
-
 - (void) updateGraph {
 	//[graph reloadData];
 }
+#pragma mark Application delegate
+
+- (void)applicationWillTerminate:(NSNotification *)notification {
+    [market release];
+    [tickerTimer invalidate];
+    [tickerTimer release];
+    [_statusItem release];
+    [statusItemView release];
+    [trayMenu release];
+    [statsItem release];
+    
+    [highValue release];
+	[lowValue release];
+	[volValue release];
+	[buyValue release];
+	[sellValue release];
+	[lastValue release];
+    [spreadValue release];
+    
+    [technicalsItem release];
+    [technicalsView release];
+    
+}
+
 #pragma mark Actions
 - (void)quitProgram:(id)sender {
 	[NSApp terminate:self];

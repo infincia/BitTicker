@@ -41,12 +41,12 @@
 	NSTextField *sellValue;
 	NSTextField *lastValue;
     
-	NSString *high;
-    NSString *low;
-    NSString *vol;
-    NSString *buy;
-    NSString *sell;
-    NSString *last;
+	NSNumber *high;
+    NSNumber *low;
+    NSNumber *vol;
+    NSNumber *buy;
+    NSNumber *sell;
+    NSNumber *last;
 
 	NSView *statsView;
 	NSMenuItem *statsItem;

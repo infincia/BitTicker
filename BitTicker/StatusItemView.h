@@ -21,11 +21,13 @@
 
 @interface StatusItemView : NSView <NSMenuDelegate> {
     NSStatusItem *statusItem;
-    NSString *tickerValue;
+    NSNumber *tickerValue;
     BOOL isMenuVisible;
 }
 
 @property (retain, nonatomic) NSStatusItem *statusItem;
-@property (retain, nonatomic) NSString *tickerValue;
+@property (retain, nonatomic) NSNumber *tickerValue;
+
+- (void)setTickerValue:(NSNumber *)value;
 
 @end

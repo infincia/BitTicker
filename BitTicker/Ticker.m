@@ -34,12 +34,12 @@
 
 - (id) init {
 	[super init];
-	self.high = @"0.0000";
-    self.low = @"0.0000";
-    self.vol = @"0.0000";
-    self.buy = @"0.0000";
-    self.sell = @"0.0000";
-    self.last = @"0.0000";
+	self.high = [NSNumber numberWithInt:0];
+    self.low = [NSNumber numberWithInt:0];
+    self.vol = [NSNumber numberWithInt:0];
+    self.buy = [NSNumber numberWithInt:0];
+    self.sell = [NSNumber numberWithInt:0];
+    self.last = [NSNumber numberWithInt:0];
 	return self;
 }
 	 
@@ -61,13 +61,15 @@
         return;
 	}
     NSDictionary *dict = [self.request.responseString JSONValue];
+    NSDictionary *ticker = [dict objectForKey:@"ticker"];
+    
     self.outdated = 0;
-    self.high = [[dict objectForKey:@"ticker"] objectForKey:@"high"];
-    self.low = [[dict objectForKey:@"ticker"] objectForKey:@"low"];
-    self.vol = [[dict objectForKey:@"ticker"] objectForKey:@"vol"];
-    self.buy = [[dict objectForKey:@"ticker"] objectForKey:@"buy"];
-    self.sell = [[dict objectForKey:@"ticker"] objectForKey:@"sell"];
-    self.last = [[dict objectForKey:@"ticker"] objectForKey:@"last"];
+    self.high = [ticker objectForKey:@"high"];
+    self.low = [ticker objectForKey:@"low"];
+    self.vol = [ticker objectForKey:@"vol"];
+    self.buy = [ticker objectForKey:@"buy"];
+    self.sell = [ticker objectForKey:@"sell"];
+    self.last = [ticker objectForKey:@"last"];
 	[autoreleasepool release];
 }
 

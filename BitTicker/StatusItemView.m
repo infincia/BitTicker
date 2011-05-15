@@ -59,7 +59,7 @@
 	CGRect newFrame = CGRectMake(0,0,70,20);
     self = [super initWithFrame:newFrame];
     if (self) {
-        self.tickerValue = @"0.0000";
+        self.tickerValue = [NSNumber numberWithInt:0];
         statusItem = nil;
         isMenuVisible = NO;
         [statusItem setLength:84];
@@ -104,14 +104,14 @@
     }    
 }
 
-- (void)setTickerValue:(NSString *)value {
+- (void)setTickerValue:(NSNumber *)value {
     [value retain];
     [tickerValue release];
     tickerValue = value;
     [self setNeedsDisplay:YES];
 }
 
-- (NSString *)tickerValue {
+- (NSNumber *)tickerValue {
     return tickerValue;
 }
 

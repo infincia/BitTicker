@@ -26,23 +26,23 @@
 	NSString *currentError;
 	NSString *apiAddress;
 	ASIFormDataRequest *request;
-	NSString *high;
-    NSString *low;
-    NSString *vol;
-    NSString *buy;
-    NSString *sell;
-    NSString *last;
+	NSNumber *high;
+    NSNumber *low;
+    NSNumber *vol;
+    NSNumber *buy;
+    NSNumber *sell;
+    NSNumber *last;
     NSNumber *outdated;
 }
 
 @property (nonatomic,retain) ASIHTTPRequest *request;
 @property (nonatomic,retain) NSString *currentError;
-@property (nonatomic,retain) NSString *high;
-@property (nonatomic,retain) NSString *low;
-@property (nonatomic,retain) NSString *vol;
-@property (nonatomic,retain) NSString *buy;
-@property (nonatomic,retain) NSString *sell;
-@property (nonatomic,retain) NSString *last;
+@property (nonatomic,retain) NSNumber *high;
+@property (nonatomic,retain) NSNumber *low;
+@property (nonatomic,retain) NSNumber *vol;
+@property (nonatomic,retain) NSNumber *buy;
+@property (nonatomic,retain) NSNumber *sell;
+@property (nonatomic,retain) NSNumber *last;
 @property (nonatomic,retain) NSNumber *outdated;
 
 -(id) init;

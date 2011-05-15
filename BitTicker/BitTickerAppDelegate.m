@@ -277,7 +277,7 @@
 	[statusItemView setTickerValue:self.ticker.last];
 	[highValue setStringValue:[NSString stringWithFormat:@"$%0.4f",[self.ticker.high floatValue]]];
 	[lowValue setStringValue:[NSString stringWithFormat:@"$%0.4f",[self.ticker.low floatValue]]];
-	[volValue setStringValue:self.ticker.vol];
+	[volValue setStringValue:[NSString stringWithFormat:@"%@",self.ticker.vol]];
 	[buyValue setStringValue:[NSString stringWithFormat:@"$%0.4f",[self.ticker.buy floatValue]]];
 	[sellValue setStringValue: [NSString stringWithFormat:@"$%0.4f",[self.ticker.sell floatValue]]];
 	[lastValue setStringValue: [NSString stringWithFormat:@"$%0.4f",[self.ticker.last floatValue]]];

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83405B2E137F68B10060CAD4 /* NSMutableArray+Shift.m in Sources */ = {isa = PBXBuildFile; fileRef = 83405B2D137F68B10060CAD4 /* NSMutableArray+Shift.m */; };
 		AA10AA1D137E0DF800CE07D5 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = AA10AA0D137E0DF800CE07D5 /* ASIDataCompressor.m */; };
 		AA10AA1E137E0DF800CE07D5 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = AA10AA0F137E0DF800CE07D5 /* ASIDataDecompressor.m */; };
 		AA10AA1F137E0DF800CE07D5 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AA10AA11137E0DF800CE07D5 /* ASIDownloadCache.m */; };

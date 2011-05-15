@@ -9,7 +9,7 @@
 #import "NSMutableArray+Shift.h"
 
 
-@implementation NSMutableArray+Shift (NSMutableArray_Shift)
+@implementation NSMutableArray (Shift)
 -(id)shift {
     if([self count] < 1) return nil;
     id obj = [[[self objectAtIndex:0] retain] autorelease];

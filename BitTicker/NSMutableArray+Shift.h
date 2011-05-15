@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface NSMutableArray+Shift (NSMutableArray_Shift)
+@interface NSMutableArray (Shift)
 // returns the first element of self and removes it
 -(id)shift;
 @end

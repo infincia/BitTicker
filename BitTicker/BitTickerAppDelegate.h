@@ -46,15 +46,22 @@
 	NSTextField *sellValue;
 	NSTextField *lastValue;
     
+    NSTextField *spreadValue;
+    
 	NSNumber *high;
     NSNumber *low;
     NSNumber *vol;
     NSNumber *buy;
     NSNumber *sell;
     NSNumber *last;
+    
+    NSNumber *spread;
 
 	NSView *statsView;
 	NSMenuItem *statsItem;
+    
+    NSView *technicalsView;
+    NSMenuItem *technicalsItem;
 	
 	// below the line
 	NSMenuItem *quitItem;

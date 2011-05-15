@@ -29,10 +29,11 @@
 @synthesize ticker = _ticker, tickerValue;
 
 - (void)awakeFromNib {    
-	NSAutoreleasePool *autoreleasepool = [[NSAutoreleasePool alloc] init];
 	_statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
 	[_statusItem retain];
+    
     self.tickerValue = [NSNumber numberWithInt:0];
+    
     statusItemView = [[[StatusItemView alloc] init] retain];
 	statusItemView.statusItem = _statusItem;
 	[statusItemView setToolTip:NSLocalizedString(@"BitTicker",
@@ -40,21 +41,21 @@
 	[_statusItem setView:statusItemView];
     
     // menu stuff
-	trayMenu = [[[NSMenu alloc] initWithTitle:@""] retain];
+	trayMenu = [[[NSMenu alloc] initWithTitle:@"Ticker"] retain];
 	//graphItem  = [[NSMenuItem alloc] init];
 	statsItem  = [[NSMenuItem alloc] init];
-	statsView = [[NSView alloc] initWithFrame:CGRectMake(0,70,230,90)];
+	statsView = [[NSView alloc] initWithFrame:CGRectMake(0,70,180,90)];
 	[statsItem setView:statsView];
 	[trayMenu addItem:statsItem];
     
-	NSString *menuFont = @"LucidaGrande-Bold";
+	NSString *menuFont = @"LucidaGrande";
 	NSInteger menuFontSize = 12;
 	NSInteger menuHeight = 15;
-	NSInteger labelWidth = 120;
+	NSInteger labelWidth = 70;
 	NSInteger valueWidth = 60;
 	
 	NSInteger labelOffset = 20;
-	NSInteger valueOffset = 160;
+	NSInteger valueOffset = 110;
 	highValue = [[NSTextField alloc] initWithFrame:CGRectMake(valueOffset,75,valueWidth,menuHeight)];
 	[highValue setEditable:FALSE];
 	[highValue setBordered:NO];
@@ -196,7 +197,6 @@
         [self startTickerThread];
 		MSLog(@"Starting");
 	}
-	[autoreleasepool release];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {

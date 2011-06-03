@@ -26,6 +26,7 @@
     
     return self;
 }
+
 -(void)dealloc {
     [requestHandler release];
     [_selectorMap release];

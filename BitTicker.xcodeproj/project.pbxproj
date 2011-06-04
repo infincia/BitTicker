@@ -23,7 +23,6 @@
 		AA4BBA2D1379E31B005CE351 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4BBA2C1379E31B005CE351 /* Cocoa.framework */; };
 		AA4BBA371379E31C005CE351 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA4BBA351379E31C005CE351 /* InfoPlist.strings */; };
 		AA4BBA3A1379E31C005CE351 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4BBA391379E31C005CE351 /* main.m */; };
-		AA4BBA3D1379E31C005CE351 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AA4BBA3B1379E31C005CE351 /* Credits.rtf */; };
 		AA4BBA401379E31C005CE351 /* BitTickerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4BBA3F1379E31C005CE351 /* BitTickerAppDelegate.m */; };
 		AA4BBA431379E31C005CE351 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA4BBA411379E31C005CE351 /* MainMenu.xib */; };
 		AA6C46CF137E10B2000A1DCB /* NSObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6C46BE137E10B2000A1DCB /* NSObject+JSON.m */; };
@@ -35,6 +34,7 @@
 		AA6C46D5137E10B2000A1DCB /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6C46CA137E10B2000A1DCB /* SBJsonStreamWriterState.m */; };
 		AA6C46D6137E10B2000A1DCB /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6C46CC137E10B2000A1DCB /* SBJsonTokeniser.m */; };
 		AA6C46D7137E10B2000A1DCB /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6C46CE137E10B2000A1DCB /* SBJsonWriter.m */; };
+		AA6E6C4D1399DC3E003A4224 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = AA6E6C4C1399DC3E003A4224 /* Credits.html */; };
 		AAD172641399BA1E00B505B0 /* EMKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD172631399BA1D00B505B0 /* EMKeychainItem.m */; };
 		AAD1726D1399BD3500B505B0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD1726C1399BD3500B505B0 /* Security.framework */; };
 		AAD64420137B680E00589EAC /* Logo.icns in Resources */ = {isa = PBXBuildFile; fileRef = AAD6441F137B680E00589EAC /* Logo.icns */; };
@@ -73,7 +73,6 @@
 		AA4BBA361379E31C005CE351 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AA4BBA381379E31C005CE351 /* BitTicker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BitTicker-Prefix.pch"; sourceTree = "<group>"; };
 		AA4BBA391379E31C005CE351 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AA4BBA3C1379E31C005CE351 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		AA4BBA3E1379E31C005CE351 /* BitTickerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitTickerAppDelegate.h; sourceTree = "<group>"; };
 		AA4BBA3F1379E31C005CE351 /* BitTickerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BitTickerAppDelegate.m; sourceTree = "<group>"; };
 		AA4BBA421379E31C005CE351 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -96,6 +95,7 @@
 		AA6C46CC137E10B2000A1DCB /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
 		AA6C46CD137E10B2000A1DCB /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		AA6C46CE137E10B2000A1DCB /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		AA6E6C4C1399DC3E003A4224 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = Credits.html; path = ../../../SourceCache/BitTicker/BitTicker/Credits.html; sourceTree = "<group>"; };
 		AAD172621399BA1D00B505B0 /* EMKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychainItem.h; sourceTree = "<group>"; };
 		AAD172631399BA1D00B505B0 /* EMKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychainItem.m; sourceTree = "<group>"; };
 		AAD1726C1399BD3500B505B0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -252,7 +252,7 @@
 				AA4BBA351379E31C005CE351 /* InfoPlist.strings */,
 				AA4BBA381379E31C005CE351 /* BitTicker-Prefix.pch */,
 				AA4BBA391379E31C005CE351 /* main.m */,
-				AA4BBA3B1379E31C005CE351 /* Credits.rtf */,
+				AA6E6C4C1399DC3E003A4224 /* Credits.html */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -308,9 +308,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA4BBA371379E31C005CE351 /* InfoPlist.strings in Resources */,
-				AA4BBA3D1379E31C005CE351 /* Credits.rtf in Resources */,
 				AA4BBA431379E31C005CE351 /* MainMenu.xib in Resources */,
 				AAD64420137B680E00589EAC /* Logo.icns in Resources */,
+				AA6E6C4D1399DC3E003A4224 /* Credits.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,14 +353,6 @@
 				AA4BBA361379E31C005CE351 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		AA4BBA3B1379E31C005CE351 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AA4BBA3C1379E31C005CE351 /* en */,
-			);
-			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
 		AA4BBA411379E31C005CE351 /* MainMenu.xib */ = {

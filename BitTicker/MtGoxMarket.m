@@ -10,44 +10,42 @@
 
 #import "Trade.h"
 #import "Ticker.h"
+#import "EMKeychainItem.h"
 
-#define MTGOX_BASE_URL @"https://mtgox.com/code/"
-
-#define MTGOX_TICKER_URL @"data/ticker.php"
-#define MTGOX_TRADES_URL @"data/getTrades.php"
-#define MTGOX_MARKETDEPTH_URL @"data/getDepth.php"
+#define MTGOX_TICKER_URL @"https://mtgox.com/code/data/ticker.php"
+#define MTGOX_TRADES_URL @"https://mtgox.com/code/data/getTrades.php"
+#define MTGOX_MARKETDEPTH_URL @"https://mtgox.com/code/data/getDepth.php"
+#define MTGOX_WALLET_URL @"https://mtgox.com/code/getFunds.php"
 
 @interface MtGoxMarket (Private)
 -(NSString*)makeURLStringWithSuffix:(NSString*)suffix;
 @end
 
 @implementation MtGoxMarket
--(NSURL*)getTickerDataURL {
-    return [NSURL URLWithString:[self makeURLStringWithSuffix:MTGOX_TICKER_URL]];
-}
--(NSURL*)getRecentTradeURL {
-    return [NSURL URLWithString:[self makeURLStringWithSuffix:MTGOX_TRADES_URL]];
-}
--(NSURL*)getMarketDepthURL {
-    return [NSURL URLWithString:[self makeURLStringWithSuffix:MTGOX_MARKETDEPTH_URL]];
-}
--(NSString*)makeURLStringWithSuffix:(NSString*)suffix {
-    return [NSString stringWithFormat:@"%@%@",MTGOX_BASE_URL,suffix];
-}
+
 
 -(void)fetchRecentTrades {
     MSLog(@"Fetching recent trades...");
-    [self downloadJsonDataFromURL:[self getRecentTradeURL] callback:@selector(didFetchRecentTrades:)];
+    [self downloadJsonDataFromURL:[NSURL URLWithString:MTGOX_TRADES_URL] callback:@selector(didFetchRecentTrades:)];
 }
 
 -(void)fetchTicker {
     MSLog(@"Fetching ticker...");
-    [self downloadJsonDataFromURL:[self getTickerDataURL] callback:@selector(didFetchTickerData:)];
+    [self downloadJsonDataFromURL:[NSURL URLWithString:MTGOX_TICKER_URL] callback:@selector(didFetchTickerData:)];
 }
 
 -(void)fetchMarketDepth {
     MSLog(@"Fetching market depth...");
-    [self downloadJsonDataFromURL:[self getMarketDepthURL] callback:@selector(didFetchMarketDepth:)];
+    [self downloadJsonDataFromURL:[NSURL URLWithString:MTGOX_MARKETDEPTH_URL] callback:@selector(didFetchMarketDepth:)];
+}
+
+-(void)fetchWallet {
+    MSLog(@"Fetching wallet...");
+	NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
+	EMGenericKeychainItem *keychainItem = [EMGenericKeychainItem genericKeychainItemForService:@"BitTicker-MtGox" withUsername:username];
+	NSString *pass = keychainItem.password;
+	NSDictionary *post = [NSDictionary dictionaryWithObjectsAndKeys:username,@"name",pass,@"pass",nil];
+    [self downloadJsonDataFromURL:[NSURL URLWithString:MTGOX_WALLET_URL] withPostData:post callback:@selector(didFetchWallet:)];
 }
 
 -(void)didFetchRecentTrades:(NSArray*)tradeData {
@@ -95,6 +93,11 @@
 
 -(void)didFetchMarketDepth:(NSDictionary*)marketDepth {
     MSLog(@"Got %i asks and %i bids",[[marketDepth objectForKey:@"asks"] count],[[marketDepth objectForKey:@"bids"] count]);
+}
+
+-(void)didFetchWallet:(NSDictionary *)wallet {
+	NSLog(@"Dict: %@",wallet);
+	[_delegate bitcoinMarket:self didReceiveWallet:wallet];
 }
 
 @end

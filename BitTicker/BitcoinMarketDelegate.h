@@ -25,5 +25,5 @@
 
 -(void)bitcoinMarket:(BitcoinMarket*)market didReceiveTicker:(Ticker*)ticker;
 -(void)bitcoinMarket:(BitcoinMarket*)market didReceiveRecentTradesData:(NSArray*)trades;
-
+-(void)bitcoinMarket:(BitcoinMarket*)market didReceiveWallet:(NSDictionary*)wallet;
 @end

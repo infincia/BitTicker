@@ -262,9 +262,6 @@
 	//[market fetchWallet];
 }
 
-- (void) updateGraph {
-	//[graph reloadData];
-}
 #pragma mark Application delegate
 
 - (void)applicationWillTerminate:(NSNotification *)notification {

@@ -123,4 +123,7 @@
 -(void)fetchMarketDepth {
     [NSException raise:@"MethodNotOverwrittenException" format:@"%s must be overwritten by BitcoinMarket subclasses",__func__];
 }
+-(void)fetchWallet {
+    [NSException raise:@"MethodNotOverwrittenException" format:@"%s must be overwritten by BitcoinMarket subclasses",__func__];
+}
 @end

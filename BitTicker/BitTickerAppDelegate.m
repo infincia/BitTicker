@@ -20,7 +20,7 @@
 #import "BitTickerAppDelegate.h"
 #import "Ticker.h"
 #import "StatusItemView.h"
-
+#import "EMKeychainItem.h"
 #import "MtGoxMarket.h"
 
 @implementation BitTickerAppDelegate
@@ -28,6 +28,7 @@
 @synthesize stats;
 @synthesize cancelThread;
 @synthesize tickerValue;
+@dynamic username,password,selected_market;
 
 - (void)awakeFromNib {    
 	_statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
@@ -218,6 +219,11 @@
 	aboutItem = [trayMenu addItemWithTitle: @"About"  
                                     action: @selector (orderFrontStandardAboutPanel:)  
                              keyEquivalent: @"a"];
+	settingsItem = [trayMenu addItemWithTitle: @"Settings"  
+                                    action: @selector (showSettings:)  
+                             keyEquivalent: @"s"];
+							 
+							 
 	quitItem = [trayMenu addItemWithTitle: @"Quit"  
 								   action: @selector (quitProgram:)  
 							keyEquivalent: @"q"];
@@ -239,15 +245,18 @@
 		
 	} else {
 		[[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:@"AlreadyRan"];
+		[[NSUserDefaults standardUserDefaults] setObject:@"ChangeMe" forKey:@"username"];
+		[[NSUserDefaults standardUserDefaults] setObject:@"MtGox" forKey:@"selected_market"];
 		[[NSUserDefaults standardUserDefaults] synchronize];
 	}
     MSLog(@"Starting");
     market = [[MtGoxMarket alloc] initWithDelegate:self];
     
     tickerTimer = [[NSTimer scheduledTimerWithTimeInterval:30 target:market selector:@selector(fetchTicker) userInfo:nil repeats:YES] retain];
+    //walletTimer = [[NSTimer scheduledTimerWithTimeInterval:30 target:market selector:@selector(fetchWallet) userInfo:nil repeats:YES] retain];
     
     [market fetchTicker];
-    
+	//[market fetchWallet];
 }
 
 - (void) updateGraph {
@@ -277,6 +286,48 @@
     [technicalsView release];
     
 }
+
+- (void)showSettings:(id)sender {	
+	[settings_window makeKeyAndOrderFront:self];
+}
+
+- (IBAction)save:(id)sender {
+	self.username = [username_field stringValue];
+	self.password = [password_field value];
+	self.selected_market = [market_selector stringValue];
+}
+
+- (NSString *)username {
+	return [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
+}
+
+- (void)setUsername:(NSString *)newusername {
+	[[NSUserDefaults standardUserDefaults] setObject:newusername forKey:@"username"];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+	NSLog(@"Set Username: %@",newusername);
+}
+
+- (NSString *)password {
+	EMGenericKeychainItem *keychainItem = [EMGenericKeychainItem genericKeychainItemForService:@"BitTicker-MtGox" withUsername:self.username];
+	return keychainItem.password;
+}
+
+- (void)setPassword:(NSString *)newpassword {
+	EMGenericKeychainItem *keychain = [EMGenericKeychainItem addGenericKeychainItemForService:@"BitTicker-MtGox" withUsername:self.username password:newpassword];
+	NSLog(@"Set password: %@",newpassword);
+}
+
+- (NSString *)selected_market {
+	return [[NSUserDefaults standardUserDefaults] objectForKey:@"selected_market"];
+}
+
+- (void)setSelected_market:(NSString *)newmarket {
+	[[NSUserDefaults standardUserDefaults] setObject:newmarket forKey:@"selected_market"];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+	NSLog(@"Set Market: %@",newmarket);
+}
+
+
 
 #pragma mark Actions
 - (void)quitProgram:(id)sender {
@@ -321,6 +372,10 @@
 
 -(void)bitcoinMarket:(BitcoinMarket*)market didReceiveRecentTradesData:(NSArray*)trades {
     
+}
+
+-(void)bitcoinMarket:(BitcoinMarket*)market didReceiveWallet:(NSDictionary*)wallet {
+
 }
 
 @end

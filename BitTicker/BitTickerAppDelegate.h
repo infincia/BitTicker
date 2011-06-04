@@ -31,6 +31,7 @@
     MtGoxMarket *market;
     
     NSTimer *tickerTimer;
+	NSTimer *walletTimer;
     
     NSMutableArray *stats;
     NSMutableArray *highArray;
@@ -66,16 +67,34 @@
 	// below the line
 	NSMenuItem *quitItem;
     NSMenuItem *aboutItem;
+	NSMenuItem *settingsItem;
     NSMenuItem *refreshItem;
 	NSMenuItem *preferenceItem;
 	
 	NSMenu *trayMenu;
     
     NSNumberFormatter *currencyFormatter;
+	
+	//Settings
+	NSString *username;
+	NSString *password;
+	NSString *selected_market;
+	
+	//User interface stuff
+	IBOutlet NSWindow *settings_window;
+	IBOutlet NSTextField *username_field;
+	IBOutlet NSSecureTextField *password_field;
+	IBOutlet NSComboBox *market_selector;
 }
 
 - (void) quitProgram:(id)sender;
 - (void)refreshTicker:(id)sender;
+- (IBAction)showSettings:(id)sender;
+- (IBAction)save:(id)sender;
+
+@property (retain) NSString *username;
+@property (retain) NSString *password;
+@property (retain) NSString *selected_market;
 @property (retain, nonatomic) NSNumber *tickerValue;
 @property (retain) NSMutableArray *stats;
 @property (nonatomic) NSInteger cancelThread;

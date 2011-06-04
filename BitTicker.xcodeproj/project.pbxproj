@@ -35,6 +35,8 @@
 		AA6C46D5137E10B2000A1DCB /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6C46CA137E10B2000A1DCB /* SBJsonStreamWriterState.m */; };
 		AA6C46D6137E10B2000A1DCB /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6C46CC137E10B2000A1DCB /* SBJsonTokeniser.m */; };
 		AA6C46D7137E10B2000A1DCB /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6C46CE137E10B2000A1DCB /* SBJsonWriter.m */; };
+		AAD172641399BA1E00B505B0 /* EMKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD172631399BA1D00B505B0 /* EMKeychainItem.m */; };
+		AAD1726D1399BD3500B505B0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD1726C1399BD3500B505B0 /* Security.framework */; };
 		AAD64420137B680E00589EAC /* Logo.icns in Resources */ = {isa = PBXBuildFile; fileRef = AAD6441F137B680E00589EAC /* Logo.icns */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +96,9 @@
 		AA6C46CC137E10B2000A1DCB /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
 		AA6C46CD137E10B2000A1DCB /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		AA6C46CE137E10B2000A1DCB /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		AAD172621399BA1D00B505B0 /* EMKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychainItem.h; sourceTree = "<group>"; };
+		AAD172631399BA1D00B505B0 /* EMKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychainItem.m; sourceTree = "<group>"; };
+		AAD1726C1399BD3500B505B0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		AAD6441F137B680E00589EAC /* Logo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Logo.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAD1726D1399BD3500B505B0 /* Security.framework in Frameworks */,
 				AA239F7B1379F1B200150707 /* Quartz.framework in Frameworks */,
 				AA239F7C1379F1B200150707 /* QuartzCore.framework in Frameworks */,
 				AA239F761379F17200150707 /* CoreServices.framework in Frameworks */,
@@ -197,6 +203,7 @@
 		AA4BBA2B1379E31B005CE351 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AAD1726C1399BD3500B505B0 /* Security.framework */,
 				AA4BBA2C1379E31B005CE351 /* Cocoa.framework */,
 				AA4BBA2E1379E31B005CE351 /* Other Frameworks */,
 			);
@@ -221,6 +228,8 @@
 		AA4BBA321379E31B005CE351 /* BitTicker */ = {
 			isa = PBXGroup;
 			children = (
+				AAD172621399BA1D00B505B0 /* EMKeychainItem.h */,
+				AAD172631399BA1D00B505B0 /* EMKeychainItem.m */,
 				83405B2F137F6CFE0060CAD4 /* Models */,
 				83405B2B137F68870060CAD4 /* Additions */,
 				83405B20137F684E0060CAD4 /* Networking */,
@@ -331,6 +340,7 @@
 				83405B3A137F6DDF0060CAD4 /* Ticker.m in Sources */,
 				83405B3B137F6DDF0060CAD4 /* BitcoinMarket.m in Sources */,
 				83405B3C137F6DDF0060CAD4 /* MtGoxMarket.m in Sources */,
+				AAD172641399BA1E00B505B0 /* EMKeychainItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

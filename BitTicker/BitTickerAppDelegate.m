@@ -248,6 +248,9 @@
 		[[NSUserDefaults standardUserDefaults] setObject:@"ChangeMe" forKey:@"username"];
 		[[NSUserDefaults standardUserDefaults] setObject:@"MtGox" forKey:@"selected_market"];
 		[[NSUserDefaults standardUserDefaults] synchronize];
+		if (!self.password) {
+			self.password = @"ChangeMe";
+		}
 	}
     MSLog(@"Starting");
     market = [[MtGoxMarket alloc] initWithDelegate:self];
@@ -288,7 +291,7 @@
 }
 
 - (void)showSettings:(id)sender {	
-	[settings_window makeKeyAndOrderFront:self];
+	[settings_window makeKeyAndOrderFront:nil];
 }
 
 - (NSString *)username {
@@ -307,7 +310,7 @@
 }
 
 - (void)setPassword:(NSString *)newpassword {
-	EMGenericKeychainItem *keychain = [EMGenericKeychainItem addGenericKeychainItemForService:@"BitTicker-MtGox" withUsername:self.username password:newpassword];
+	[EMGenericKeychainItem addGenericKeychainItemForService:@"BitTicker-MtGox" withUsername:self.username password:newpassword];
 	NSLog(@"Set password: %@",newpassword);
 }
 

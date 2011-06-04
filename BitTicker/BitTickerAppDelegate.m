@@ -368,7 +368,7 @@
     
     double ask = [ticker.sell doubleValue];
     double bid = [ticker.buy doubleValue];
-    spread = [NSNumber numberWithDouble:ask-bid];
+    NSNumber *spread = [NSNumber numberWithDouble:ask-bid];
     [spreadValue setStringValue:[currencyFormatter stringFromNumber:spread]];
 }
 

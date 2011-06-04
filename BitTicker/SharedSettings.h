@@ -13,7 +13,7 @@
 	NSString *password;
 	NSString *selected_market;
 }
-
+- (void) checkDefaults;
 + (id)sharedSettingManager;
 @property (retain) NSString *username;
 @property (retain) NSString *password;

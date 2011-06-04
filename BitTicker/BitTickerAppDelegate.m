@@ -241,6 +241,7 @@
     currencyFormatter.minimumFractionDigits = 4; // TODO: Configurable
     
     sharedSettingManager = [SharedSettings sharedSettingManager];
+	[sharedSettingManager checkDefaults];
 
     MSLog(@"Starting");
     market = [[MtGoxMarket alloc] initWithDelegate:self];

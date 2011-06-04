@@ -292,6 +292,7 @@
 
 - (void)showSettings:(id)sender {	
 	[settings_window makeKeyAndOrderFront:nil];
+	[NSApp activateIgnoringOtherApps:YES];
 }
 
 - (NSString *)username {
@@ -310,7 +311,8 @@
 }
 
 - (void)setPassword:(NSString *)newpassword {
-	[EMGenericKeychainItem addGenericKeychainItemForService:@"BitTicker-MtGox" withUsername:self.username password:newpassword];
+	EMGenericKeychainItem *keychainItem = [EMGenericKeychainItem genericKeychainItemForService:@"BitTicker-MtGox" withUsername:self.username];
+	keychainItem.password = newpassword;
 	NSLog(@"Set password: %@",newpassword);
 }
 

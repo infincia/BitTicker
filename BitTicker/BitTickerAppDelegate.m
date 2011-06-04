@@ -217,7 +217,7 @@
                                       action:@selector(refreshTicker:) 
                                keyEquivalent:@"r"];
 	aboutItem = [trayMenu addItemWithTitle: @"About"  
-                                    action: @selector (orderFrontStandardAboutPanel:)  
+                                    action: @selector (showAbout:)  
                              keyEquivalent: @"a"];
 	settingsItem = [trayMenu addItemWithTitle: @"Settings"  
                                     action: @selector (showSettings:)  
@@ -290,7 +290,12 @@
     
 }
 
-- (void)showSettings:(id)sender {	
+- (IBAction)showAbout:(id)sender {
+	[NSApp orderFrontStandardAboutPanel:nil];
+	[NSApp activateIgnoringOtherApps:YES];
+}
+
+- (IBAction)showSettings:(id)sender {	
 	[settings_window makeKeyAndOrderFront:nil];
 	[NSApp activateIgnoringOtherApps:YES];
 }

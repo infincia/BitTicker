@@ -90,7 +90,7 @@
 - (void) quitProgram:(id)sender;
 - (void)refreshTicker:(id)sender;
 - (IBAction)showSettings:(id)sender;
-
+- (IBAction)showAbout:(id)sender;
 @property (retain) NSString *username;
 @property (retain) NSString *password;
 @property (retain) NSString *selected_market;

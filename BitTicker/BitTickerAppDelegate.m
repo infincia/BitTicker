@@ -291,12 +291,6 @@
 	[settings_window makeKeyAndOrderFront:self];
 }
 
-- (IBAction)save:(id)sender {
-	self.username = [username_field stringValue];
-	self.password = [password_field value];
-	self.selected_market = [market_selector stringValue];
-}
-
 - (NSString *)username {
 	return [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
 }

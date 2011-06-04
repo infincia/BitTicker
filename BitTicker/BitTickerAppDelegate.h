@@ -90,7 +90,6 @@
 - (void) quitProgram:(id)sender;
 - (void)refreshTicker:(id)sender;
 - (IBAction)showSettings:(id)sender;
-- (IBAction)save:(id)sender;
 
 @property (retain) NSString *username;
 @property (retain) NSString *password;

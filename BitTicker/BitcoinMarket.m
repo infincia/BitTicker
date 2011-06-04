@@ -11,7 +11,7 @@
 #import "RequestHandler.h"
 
 #import "JSON.h"
-
+#import "SharedSettings.h"
 @implementation BitcoinMarket
 
 @synthesize delegate=_delegate;
@@ -23,7 +23,7 @@
     self.delegate = delegate;
     
     _selectorMap = [[NSMutableDictionary alloc] init];
-    
+    sharedSettingManager = [SharedSettings sharedSettingManager];
     return self;
 }
 

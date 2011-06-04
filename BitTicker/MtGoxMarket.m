@@ -10,7 +10,6 @@
 
 #import "Trade.h"
 #import "Ticker.h"
-#import "EMKeychainItem.h"
 
 #define MTGOX_TICKER_URL @"https://mtgox.com/code/data/ticker.php"
 #define MTGOX_TRADES_URL @"https://mtgox.com/code/data/getTrades.php"
@@ -41,10 +40,7 @@
 
 -(void)fetchWallet {
     MSLog(@"Fetching wallet...");
-	NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
-	EMGenericKeychainItem *keychainItem = [EMGenericKeychainItem genericKeychainItemForService:@"BitTicker-MtGox" withUsername:username];
-	NSString *pass = keychainItem.password;
-	NSDictionary *post = [NSDictionary dictionaryWithObjectsAndKeys:username,@"name",pass,@"pass",nil];
+	NSDictionary *post = [NSDictionary dictionaryWithObjectsAndKeys:sharedSettingManager.username,@"name",sharedSettingManager.password,@"pass",nil];
     [self downloadJsonDataFromURL:[NSURL URLWithString:MTGOX_WALLET_URL] withPostData:post callback:@selector(didFetchWallet:)];
 }
 

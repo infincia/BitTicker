@@ -362,6 +362,9 @@
 			<object class="NSUserDefaultsController" id="383483247">
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
+			<object class="NSCustomObject" id="454057756">
+				<string key="NSClassName">SharedSettings</string>
+			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
 			<object class="NSMutableArray" key="connectionRecords">
@@ -424,44 +427,12 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: self.password</string>
-						<reference key="source" ref="294318684"/>
-						<reference key="destination" ref="976324537"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="294318684"/>
-							<reference key="NSDestination" ref="976324537"/>
-							<string key="NSLabel">value: self.password</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">self.password</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">713</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: self.username</string>
-						<reference key="source" ref="394061625"/>
-						<reference key="destination" ref="976324537"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="394061625"/>
-							<reference key="NSDestination" ref="976324537"/>
-							<string key="NSLabel">value: self.username</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">self.username</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">716</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: self.selected_market</string>
 						<reference key="source" ref="871451738"/>
-						<reference key="destination" ref="976324537"/>
+						<reference key="destination" ref="454057756"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="871451738"/>
-							<reference key="NSDestination" ref="976324537"/>
+							<reference key="NSDestination" ref="454057756"/>
 							<string key="NSLabel">value: self.selected_market</string>
 							<string key="NSBinding">value</string>
 							<string key="NSKeyPath">self.selected_market</string>
@@ -472,7 +443,47 @@
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">718</int>
+					<int key="connectionID">721</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: self.username</string>
+						<reference key="source" ref="394061625"/>
+						<reference key="destination" ref="454057756"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="394061625"/>
+							<reference key="NSDestination" ref="454057756"/>
+							<string key="NSLabel">value: self.username</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">self.username</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSNullPlaceholder</string>
+								<string key="NS.object.0">ChangeMe</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">726</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: self.password</string>
+						<reference key="source" ref="294318684"/>
+						<reference key="destination" ref="454057756"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="294318684"/>
+							<reference key="NSDestination" ref="454057756"/>
+							<string key="NSLabel">value: self.password</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">self.password</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSNullPlaceholder</string>
+								<string key="NS.object.0">ChangeMe</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">727</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -677,6 +688,11 @@
 						<reference key="object" ref="383483247"/>
 						<reference key="parent" ref="0"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">719</int>
+						<reference key="object" ref="454057756"/>
+						<reference key="parent" ref="0"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -725,6 +741,7 @@
 					<string>700.IBComboBoxObjectValuesKey.objectValues</string>
 					<string>700.IBPluginDependency</string>
 					<string>705.IBPluginDependency</string>
+					<string>719.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -773,6 +790,7 @@
 					</object>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="unlocalizedProperties">
@@ -787,7 +805,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">718</int>
+			<int key="maxID">727</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -796,14 +814,35 @@
 					<string key="className">BitTickerAppDelegate</string>
 					<string key="superclassName">NSObject</string>
 					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">showSettings:</string>
-						<string key="NS.object.0">id</string>
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>showAbout:</string>
+							<string>showSettings:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+						</object>
 					</object>
 					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">showSettings:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">showSettings:</string>
-							<string key="candidateClassName">id</string>
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>showAbout:</string>
+							<string>showSettings:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBActionInfo">
+								<string key="name">showAbout:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">showSettings:</string>
+								<string key="candidateClassName">id</string>
+							</object>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">
@@ -855,6 +894,14 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/BitTickerAppDelegate.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">SharedSettings</string>
+					<string key="superclassName">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/SharedSettings.h</string>
 					</object>
 				</object>
 			</object>

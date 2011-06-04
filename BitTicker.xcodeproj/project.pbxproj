@@ -35,6 +35,7 @@
 		AA6C46D6137E10B2000A1DCB /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6C46CC137E10B2000A1DCB /* SBJsonTokeniser.m */; };
 		AA6C46D7137E10B2000A1DCB /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6C46CE137E10B2000A1DCB /* SBJsonWriter.m */; };
 		AA6E6C4D1399DC3E003A4224 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = AA6E6C4C1399DC3E003A4224 /* Credits.html */; };
+		AA6E6C831399F2EB003A4224 /* SharedSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6E6C821399F2EB003A4224 /* SharedSettings.m */; };
 		AAD172641399BA1E00B505B0 /* EMKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD172631399BA1D00B505B0 /* EMKeychainItem.m */; };
 		AAD1726D1399BD3500B505B0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD1726C1399BD3500B505B0 /* Security.framework */; };
 		AAD64420137B680E00589EAC /* Logo.icns in Resources */ = {isa = PBXBuildFile; fileRef = AAD6441F137B680E00589EAC /* Logo.icns */; };
@@ -96,6 +97,8 @@
 		AA6C46CD137E10B2000A1DCB /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		AA6C46CE137E10B2000A1DCB /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		AA6E6C4C1399DC3E003A4224 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+		AA6E6C811399F2EB003A4224 /* SharedSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; path = SharedSettings.h; sourceTree = "<group>"; };
+		AA6E6C821399F2EB003A4224 /* SharedSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedSettings.m; sourceTree = "<group>"; };
 		AAD172621399BA1D00B505B0 /* EMKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychainItem.h; sourceTree = "<group>"; };
 		AAD172631399BA1D00B505B0 /* EMKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychainItem.m; sourceTree = "<group>"; };
 		AAD1726C1399BD3500B505B0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -239,6 +242,8 @@
 				AA4BBA3E1379E31C005CE351 /* BitTickerAppDelegate.h */,
 				AA4BBA3F1379E31C005CE351 /* BitTickerAppDelegate.m */,
 				AA4BBA411379E31C005CE351 /* MainMenu.xib */,
+				AA6E6C811399F2EB003A4224 /* SharedSettings.h */,
+				AA6E6C821399F2EB003A4224 /* SharedSettings.m */,
 				AA4BBA331379E31B005CE351 /* Supporting Files */,
 			);
 			path = BitTicker;
@@ -341,6 +346,7 @@
 				83405B3B137F6DDF0060CAD4 /* BitcoinMarket.m in Sources */,
 				83405B3C137F6DDF0060CAD4 /* MtGoxMarket.m in Sources */,
 				AAD172641399BA1E00B505B0 /* EMKeychainItem.m in Sources */,
+				AA6E6C831399F2EB003A4224 /* SharedSettings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

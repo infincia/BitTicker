@@ -20,15 +20,15 @@
 #import "BitTickerAppDelegate.h"
 #import "Ticker.h"
 #import "StatusItemView.h"
-#import "EMKeychainItem.h"
 #import "MtGoxMarket.h"
+#import "SharedSettings.h"
 
 @implementation BitTickerAppDelegate
 
 @synthesize stats;
 @synthesize cancelThread;
 @synthesize tickerValue;
-@dynamic username,password,selected_market;
+
 
 - (void)awakeFromNib {    
 	_statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
@@ -240,18 +240,8 @@
     currencyFormatter.hasThousandSeparators = YES;
     currencyFormatter.minimumFractionDigits = 4; // TODO: Configurable
     
-    
-	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"AlreadyRan"]) {
-		
-	} else {
-		[[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:@"AlreadyRan"];
-		[[NSUserDefaults standardUserDefaults] setObject:@"ChangeMe" forKey:@"username"];
-		[[NSUserDefaults standardUserDefaults] setObject:@"MtGox" forKey:@"selected_market"];
-		[[NSUserDefaults standardUserDefaults] synchronize];
-		if (!self.password) {
-			self.password = @"ChangeMe";
-		}
-	}
+    sharedSettingManager = [SharedSettings sharedSettingManager];
+
     MSLog(@"Starting");
     market = [[MtGoxMarket alloc] initWithDelegate:self];
     
@@ -296,39 +286,6 @@
 	[settings_window makeKeyAndOrderFront:nil];
 	[NSApp activateIgnoringOtherApps:YES];
 }
-
-- (NSString *)username {
-	return [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
-}
-
-- (void)setUsername:(NSString *)newusername {
-	[[NSUserDefaults standardUserDefaults] setObject:newusername forKey:@"username"];
-	[[NSUserDefaults standardUserDefaults] synchronize];
-	NSLog(@"Set Username: %@",newusername);
-}
-
-- (NSString *)password {
-	EMGenericKeychainItem *keychainItem = [EMGenericKeychainItem genericKeychainItemForService:@"BitTicker-MtGox" withUsername:self.username];
-	return keychainItem.password;
-}
-
-- (void)setPassword:(NSString *)newpassword {
-	EMGenericKeychainItem *keychainItem = [EMGenericKeychainItem genericKeychainItemForService:@"BitTicker-MtGox" withUsername:self.username];
-	keychainItem.password = newpassword;
-	NSLog(@"Set password: %@",newpassword);
-}
-
-- (NSString *)selected_market {
-	return [[NSUserDefaults standardUserDefaults] objectForKey:@"selected_market"];
-}
-
-- (void)setSelected_market:(NSString *)newmarket {
-	[[NSUserDefaults standardUserDefaults] setObject:newmarket forKey:@"selected_market"];
-	[[NSUserDefaults standardUserDefaults] synchronize];
-	NSLog(@"Set Market: %@",newmarket);
-}
-
-
 
 #pragma mark Actions
 - (void)quitProgram:(id)sender {

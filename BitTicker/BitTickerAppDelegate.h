@@ -18,7 +18,7 @@
  */
 
 #import <Cocoa/Cocoa.h>
-
+#import "SharedSettings.h"
 @class Ticker;
 @class StatusItemView;
 @class RequestHandler;
@@ -28,6 +28,7 @@
 #import "BitcoinMarketDelegate.h"
 
 @interface BitTickerAppDelegate : NSObject <NSApplicationDelegate, BitcoinMarketDelegate> {
+	SharedSettings *sharedSettingManager;
     MtGoxMarket *market;
     
     NSTimer *tickerTimer;
@@ -63,11 +64,6 @@
     
     NSNumberFormatter *currencyFormatter;
 	
-	//Settings
-	NSString *username;
-	NSString *password;
-	NSString *selected_market;
-	
 	//User interface stuff
 	IBOutlet NSWindow *settings_window;
 	IBOutlet NSTextField *username_field;
@@ -79,9 +75,6 @@
 - (void)refreshTicker:(id)sender;
 - (IBAction)showSettings:(id)sender;
 - (IBAction)showAbout:(id)sender;
-@property (retain) NSString *username;
-@property (retain) NSString *password;
-@property (retain) NSString *selected_market;
 @property (retain, nonatomic) NSNumber *tickerValue;
 @property (retain) NSMutableArray *stats;
 @property (nonatomic) NSInteger cancelThread;

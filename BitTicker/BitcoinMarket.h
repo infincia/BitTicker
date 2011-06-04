@@ -10,7 +10,7 @@
 
 #import "BitcoinMarketDelegate.h"
 #import "RequestHandlerDelegate.h"
-
+#import "SharedSettings.h"
 @class RequestHandler;
 
 @interface BitcoinMarket : NSObject <RequestHandlerDelegate> {
@@ -18,6 +18,7 @@
     id<BitcoinMarketDelegate> _delegate;
     
     NSMutableDictionary *_selectorMap;
+	SharedSettings *sharedSettingManager;
 }
 -(id)initWithDelegate:(id<BitcoinMarketDelegate>)delegate;
 

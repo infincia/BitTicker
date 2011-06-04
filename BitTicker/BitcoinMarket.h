@@ -31,6 +31,7 @@
 -(void)fetchRecentTrades;
 -(void)fetchTicker;
 -(void)fetchMarketDepth;
+-(void)fetchWallet;
 
 @property (nonatomic, assign) id<BitcoinMarketDelegate> delegate;
 

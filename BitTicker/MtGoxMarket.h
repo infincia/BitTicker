@@ -11,7 +11,9 @@
 #import "BitcoinMarket.h"
 
 @interface MtGoxMarket : BitcoinMarket {
-    
+
 }
+
+-(id)initWithDelegate:(id<BitcoinMarketDelegate>)delegate;
 
 @end

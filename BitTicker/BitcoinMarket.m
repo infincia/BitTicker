@@ -15,6 +15,10 @@
 @implementation BitcoinMarket
 
 @synthesize delegate=_delegate;
+@synthesize tickerURL = _tickerURL;
+@synthesize tradeURL = _tradeURL;
+@synthesize walletURL = _walletURL;
+@synthesize depthURL = _depthURL;
 
 -(id)initWithDelegate:(id<BitcoinMarketDelegate>)delegate {
     if (!(self = [super init])) return self;

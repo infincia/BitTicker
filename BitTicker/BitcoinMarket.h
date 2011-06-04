@@ -19,6 +19,11 @@
     
     NSMutableDictionary *_selectorMap;
 	SharedSettings *sharedSettingManager;
+	
+	NSString *_tradeURL;
+	NSString *_tickerURL;
+	NSString *_depthURL;
+	NSString *_walletURL;
 }
 -(id)initWithDelegate:(id<BitcoinMarketDelegate>)delegate;
 
@@ -35,5 +40,10 @@
 -(void)fetchWallet;
 
 @property (nonatomic, assign) id<BitcoinMarketDelegate> delegate;
+
+@property (readonly,nonatomic,retain) NSString *tradeURL;
+@property (readonly,nonatomic,retain) NSString *tickerURL;
+@property (readonly,nonatomic,retain) NSString *depthURL;
+@property (readonly,nonatomic,retain) NSString *walletURL;
 
 @end

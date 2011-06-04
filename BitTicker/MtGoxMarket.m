@@ -10,11 +10,11 @@
 
 #import "Trade.h"
 #import "Ticker.h"
-
 #define MTGOX_TICKER_URL @"https://mtgox.com/code/data/ticker.php"
 #define MTGOX_TRADES_URL @"https://mtgox.com/code/data/getTrades.php"
 #define MTGOX_MARKETDEPTH_URL @"https://mtgox.com/code/data/getDepth.php"
 #define MTGOX_WALLET_URL @"https://mtgox.com/code/getFunds.php"
+
 
 @interface MtGoxMarket (Private)
 -(NSString*)makeURLStringWithSuffix:(NSString*)suffix;
@@ -22,26 +22,34 @@
 
 @implementation MtGoxMarket
 
+-(id)initWithDelegate:(id<BitcoinMarketDelegate>)delegate {
+    if (!(self = [super initWithDelegate:delegate])) return self;
+    _tickerURL = MTGOX_TICKER_URL;
+	_tradeURL = MTGOX_TRADES_URL;
+	_depthURL = MTGOX_MARKETDEPTH_URL;
+	_walletURL = MTGOX_WALLET_URL;
+    return self;
+}
 
 -(void)fetchRecentTrades {
     MSLog(@"Fetching recent trades...");
-    [self downloadJsonDataFromURL:[NSURL URLWithString:MTGOX_TRADES_URL] callback:@selector(didFetchRecentTrades:)];
+    [self downloadJsonDataFromURL:[NSURL URLWithString:self.tradeURL] callback:@selector(didFetchRecentTrades:)];
 }
 
 -(void)fetchTicker {
     MSLog(@"Fetching ticker...");
-    [self downloadJsonDataFromURL:[NSURL URLWithString:MTGOX_TICKER_URL] callback:@selector(didFetchTickerData:)];
+    [self downloadJsonDataFromURL:[NSURL URLWithString:self.tickerURL] callback:@selector(didFetchTickerData:)];
 }
 
 -(void)fetchMarketDepth {
     MSLog(@"Fetching market depth...");
-    [self downloadJsonDataFromURL:[NSURL URLWithString:MTGOX_MARKETDEPTH_URL] callback:@selector(didFetchMarketDepth:)];
+    [self downloadJsonDataFromURL:[NSURL URLWithString:self.depthURL] callback:@selector(didFetchMarketDepth:)];
 }
 
 -(void)fetchWallet {
     MSLog(@"Fetching wallet...");
 	NSDictionary *post = [NSDictionary dictionaryWithObjectsAndKeys:sharedSettingManager.username,@"name",sharedSettingManager.password,@"pass",nil];
-    [self downloadJsonDataFromURL:[NSURL URLWithString:MTGOX_WALLET_URL] withPostData:post callback:@selector(didFetchWallet:)];
+    [self downloadJsonDataFromURL:[NSURL URLWithString:self.walletURL] withPostData:post callback:@selector(didFetchWallet:)];
 }
 
 -(void)didFetchRecentTrades:(NSArray*)tradeData {

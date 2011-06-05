@@ -11,6 +11,13 @@
 #import "BitcoinMarketDelegate.h"
 #import "RequestHandlerDelegate.h"
 #import "SharedSettings.h"
+
+enum kBitcoinMarkets {
+    eMarketMtGox = 0,
+    // Used for market enumeration. Keep this as the last value.
+    eNumberOfMarkets = 1 
+};
+
 @class RequestHandler;
 
 @interface BitcoinMarket : NSObject <RequestHandlerDelegate> {

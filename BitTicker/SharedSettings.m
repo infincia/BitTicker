@@ -7,67 +7,94 @@
 #import "SharedSettings.h"
 #import "EMKeychainItem.h"
 
+#import "BitcoinMarket.h"
+
 static SharedSettings *sharedSettingManager = nil;
 
 @implementation SharedSettings
 
-@dynamic username;
-@dynamic password;
-@dynamic selectedMarket;
-
 - (id)init {
-	NSAutoreleasePool *autoreleasepool = [[NSAutoreleasePool alloc] init];
-	if ((self = [super init])) {
-
-	}
-	[autoreleasepool release];
-	return self;
+	if (!(self = [super init])) return self;
+        
+    [EMGenericKeychainItem setLogsErrors:YES];
+	keychainItems = [[NSMutableDictionary alloc] init];
+    
+    return self;
 }
 
-- (void) checkDefaults {
-	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"AlreadyRan"]) {
-		
-	} else {
-		[[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:@"AlreadyRan"];
-		[[NSUserDefaults standardUserDefaults] setObject:@"ChangeMe" forKey:@"username"];
-		[[NSUserDefaults standardUserDefaults] setObject:@"MtGox" forKey:@"selectedMarket"];
-		[[NSUserDefaults standardUserDefaults] synchronize];
-		if (!self.password) {
-			self.password = @"ChangeMe";
-		}
-	}
+-(EMGenericKeychainItem*)keychainItemForService:(NSInteger)service {
+    NSString *serviceString = [@"BitTicker-" stringByAppendingString:[self stringForMarket:service]];
+    
+    EMGenericKeychainItem *item = [keychainItems objectForKey:serviceString];
+    
+    if (!item) {
+        // We don't have one cached, check if one exists for the username
+        NSString *username = [self usernameForMarket:service];
+        if (!username) {
+            // Username isn't in defaults, obviously password isn't either.
+            item = [EMGenericKeychainItem addGenericKeychainItemForService:serviceString withUsername:@"" password:@""];
+        } else {
+            item = [EMGenericKeychainItem genericKeychainItemForService:serviceString withUsername:username];
+            
+            if (!item) {
+                // We still don't have it. Make a new one.
+                item = [EMGenericKeychainItem addGenericKeychainItemForService:serviceString withUsername:username password:@""];
+            }
+        }
+    }
+    [keychainItems setObject:item forKey:serviceString];
+    return item;
 }
 
-- (NSString *)username {
-	return [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
+-(BOOL)isMarketEnabled:(NSInteger)market {
+    NSString *enabledKey = [NSString stringWithFormat:@"%@-enabled",[self stringForMarket:market]];
+    return [[NSUserDefaults standardUserDefaults] boolForKey:enabledKey];
+}
+-(void)setIsEnabled:(BOOL)enabled forMarket:(NSInteger)market {
+    NSString *enabledKey = [NSString stringWithFormat:@"%@-enabled",[self stringForMarket:market]];
+    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:enabledKey];
 }
 
-- (void)setUsername:(NSString *)newusername {
-	[[NSUserDefaults standardUserDefaults] setObject:newusername forKey:@"username"];
+-(NSString*)usernameForMarket:(NSInteger)market {
+    NSString *usernameKey = [NSString stringWithFormat:@"%@-username",[self stringForMarket:market]];
+    return [[NSUserDefaults standardUserDefaults] stringForKey:usernameKey];
+}
+-(void)setUsername:(NSString*)username forMarket:(NSInteger)market {
+    NSString *usernameKey = [NSString stringWithFormat:@"%@-username",[self stringForMarket:market]];
+    
+    // Check for old username/password in keychain
+    EMGenericKeychainItem *keychainItem = [self keychainItemForService:market];
+    
+    // If there is one, we need to update it.
+    if (keychainItem) {
+        keychainItem.username = username;
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setObject:username forKey:usernameKey];
 	[[NSUserDefaults standardUserDefaults] synchronize];
-	NSLog(@"Set Username: %@",newusername);
 }
 
-- (NSString *)password {
-	EMGenericKeychainItem *keychainItem = [EMGenericKeychainItem genericKeychainItemForService:@"BitTicker-MtGox" withUsername:self.username];
-	return keychainItem.password;
+-(NSString*)passwordForMarket:(NSInteger)market {
+    EMGenericKeychainItem *keychainItem = [self keychainItemForService:market];
+    return keychainItem.password;
+}
+-(void)setPassword:(NSString*)password forMarket:(NSInteger)market {
+    EMGenericKeychainItem *keychainItem = [self keychainItemForService:market];
+    keychainItem.password = password;
 }
 
-- (void)setPassword:(NSString *)newpassword {
-	EMGenericKeychainItem *keychainItem = [EMGenericKeychainItem genericKeychainItemForService:@"BitTicker-MtGox" withUsername:self.username];
-	keychainItem.password = newpassword;
-	NSLog(@"Set password: %@",newpassword);
+-(NSString*)stringForMarket:(NSInteger)market {
+    switch (market) {
+        case eMarketMtGox:
+            return @"MtGox";
+            break;
+        default:
+            return @"Unknown";
+            break;
+    }
 }
 
-- (NSString *)selectedMarket {
-	return [[NSUserDefaults standardUserDefaults] objectForKey:@"selectedMarket"];
-}
-
-- (void)setSelectedMarket:(NSString *)newmarket {
-	[[NSUserDefaults standardUserDefaults] setObject:newmarket forKey:@"selectedMarket"];
-	[[NSUserDefaults standardUserDefaults] synchronize];
-	NSLog(@"Set Market: %@",newmarket);
-}
+#pragma mark - Singleton jazz
 
 + (id)sharedSettingManager {
 	@synchronized(self) {
@@ -99,6 +126,7 @@ static SharedSettings *sharedSettingManager = nil;
 
 
 -(void)dealloc {
+    [keychainItems release];
 	[super dealloc];
 }
 

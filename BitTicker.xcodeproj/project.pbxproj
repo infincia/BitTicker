@@ -14,6 +14,9 @@
 		83405B3A137F6DDF0060CAD4 /* Ticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 83405B33137F6DDF0060CAD4 /* Ticker.m */; };
 		83405B3B137F6DDF0060CAD4 /* BitcoinMarket.m in Sources */ = {isa = PBXBuildFile; fileRef = 83405B36137F6DDF0060CAD4 /* BitcoinMarket.m */; };
 		83405B3C137F6DDF0060CAD4 /* MtGoxMarket.m in Sources */ = {isa = PBXBuildFile; fileRef = 83405B38137F6DDF0060CAD4 /* MtGoxMarket.m */; };
+		837DF12D139B2E97009987F3 /* SettingsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 837DF12C139B2E97009987F3 /* SettingsWindow.xib */; };
+		837DF131139B319F009987F3 /* SettingsWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 837DF130139B319F009987F3 /* SettingsWindow.m */; };
+		837DF135139B8E19009987F3 /* SettingsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 837DF134139B8E18009987F3 /* SettingsWindowController.m */; };
 		AA239F511379E67300150707 /* StatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA239F4E1379E67300150707 /* StatusItemView.m */; };
 		AA239F761379F17200150707 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA239F731379F17200150707 /* CoreServices.framework */; };
 		AA239F771379F17200150707 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA239F741379F17200150707 /* libz.dylib */; };
@@ -59,6 +62,11 @@
 		83405B36137F6DDF0060CAD4 /* BitcoinMarket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitcoinMarket.m; sourceTree = "<group>"; };
 		83405B37137F6DDF0060CAD4 /* MtGoxMarket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MtGoxMarket.h; sourceTree = "<group>"; };
 		83405B38137F6DDF0060CAD4 /* MtGoxMarket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MtGoxMarket.m; sourceTree = "<group>"; };
+		837DF12C139B2E97009987F3 /* SettingsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsWindow.xib; sourceTree = "<group>"; };
+		837DF12F139B319E009987F3 /* SettingsWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsWindow.h; sourceTree = "<group>"; };
+		837DF130139B319F009987F3 /* SettingsWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsWindow.m; sourceTree = "<group>"; };
+		837DF133139B8E18009987F3 /* SettingsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsWindowController.h; sourceTree = "<group>"; };
+		837DF134139B8E18009987F3 /* SettingsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsWindowController.m; sourceTree = "<group>"; };
 		AA239F4D1379E67300150707 /* StatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusItemView.h; sourceTree = "<group>"; };
 		AA239F4E1379E67300150707 /* StatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusItemView.m; sourceTree = "<group>"; };
 		AA239F731379F17200150707 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
@@ -193,6 +201,28 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		837DF12E139B2EC8009987F3 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				AA4BBA411379E31C005CE351 /* MainMenu.xib */,
+				837DF12C139B2E97009987F3 /* SettingsWindow.xib */,
+			);
+			name = Nibs;
+			sourceTree = "<group>";
+		};
+		837DF132139B3B8A009987F3 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AA6E6C811399F2EB003A4224 /* SharedSettings.h */,
+				AA6E6C821399F2EB003A4224 /* SharedSettings.m */,
+				837DF12F139B319E009987F3 /* SettingsWindow.h */,
+				837DF130139B319F009987F3 /* SettingsWindow.m */,
+				837DF133139B8E18009987F3 /* SettingsWindowController.h */,
+				837DF134139B8E18009987F3 /* SettingsWindowController.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		AA4BBA1D1379E31B005CE351 = {
 			isa = PBXGroup;
 			children = (
@@ -242,13 +272,12 @@
 				83405B2B137F68870060CAD4 /* Additions */,
 				83405B20137F684E0060CAD4 /* Networking */,
 				83405B0D137F5D8A0060CAD4 /* JSON */,
+				837DF132139B3B8A009987F3 /* Settings */,
 				AA239F4D1379E67300150707 /* StatusItemView.h */,
 				AA239F4E1379E67300150707 /* StatusItemView.m */,
 				AA4BBA3E1379E31C005CE351 /* BitTickerAppDelegate.h */,
 				AA4BBA3F1379E31C005CE351 /* BitTickerAppDelegate.m */,
-				AA4BBA411379E31C005CE351 /* MainMenu.xib */,
-				AA6E6C811399F2EB003A4224 /* SharedSettings.h */,
-				AA6E6C821399F2EB003A4224 /* SharedSettings.m */,
+				837DF12E139B2EC8009987F3 /* Nibs */,
 				AA4BBA331379E31B005CE351 /* Supporting Files */,
 			);
 			path = BitTicker;
@@ -321,6 +350,7 @@
 				AA4BBA431379E31C005CE351 /* MainMenu.xib in Resources */,
 				AAD64420137B680E00589EAC /* Logo.icns in Resources */,
 				AA6E6C4D1399DC3E003A4224 /* Credits.html in Resources */,
+				837DF12D139B2E97009987F3 /* SettingsWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +383,8 @@
 				AAD172641399BA1E00B505B0 /* EMKeychainItem.m in Sources */,
 				AA6E6C831399F2EB003A4224 /* SharedSettings.m in Sources */,
 				AAB399B3139B0D8500B9438F /* Wallet.m in Sources */,
+				837DF131139B319F009987F3 /* SettingsWindow.m in Sources */,
+				837DF135139B8E19009987F3 /* SettingsWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

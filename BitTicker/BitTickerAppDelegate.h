@@ -22,6 +22,7 @@
 @class Ticker;
 @class StatusItemView;
 @class RequestHandler;
+@class SettingsWindow;
 
 @class MtGoxMarket;
 
@@ -69,11 +70,7 @@
     
     NSNumberFormatter *currencyFormatter;
 	
-	//User interface stuff
-	IBOutlet NSWindow *settings_window;
-	IBOutlet NSTextField *username_field;
-	IBOutlet NSSecureTextField *password_field;
-	IBOutlet NSComboBox *market_selector;
+    NSWindowController *settingsWindowController;
 }
 
 - (void) quitProgram:(id)sender;

@@ -11,7 +11,7 @@ static SharedSettings *sharedSettingManager = nil;
 
 @implementation SharedSettings
 
-@dynamic username,password,selected_market;
+@dynamic username,password,selectedMarket;
 
 - (id)init {
 	NSAutoreleasePool *autoreleasepool = [[NSAutoreleasePool alloc] init];
@@ -28,7 +28,7 @@ static SharedSettings *sharedSettingManager = nil;
 	} else {
 		[[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:@"AlreadyRan"];
 		[[NSUserDefaults standardUserDefaults] setObject:@"ChangeMe" forKey:@"username"];
-		[[NSUserDefaults standardUserDefaults] setObject:@"MtGox" forKey:@"selected_market"];
+		[[NSUserDefaults standardUserDefaults] setObject:@"MtGox" forKey:@"selectedMarket"];
 		[[NSUserDefaults standardUserDefaults] synchronize];
 		if (!self.password) {
 			self.password = @"ChangeMe";
@@ -57,12 +57,12 @@ static SharedSettings *sharedSettingManager = nil;
 	NSLog(@"Set password: %@",newpassword);
 }
 
-- (NSString *)selected_market {
-	return [[NSUserDefaults standardUserDefaults] objectForKey:@"selected_market"];
+- (NSString *)selectedMarket {
+	return [[NSUserDefaults standardUserDefaults] objectForKey:@"selectedMarket"];
 }
 
-- (void)setSelected_market:(NSString *)newmarket {
-	[[NSUserDefaults standardUserDefaults] setObject:newmarket forKey:@"selected_market"];
+- (void)setSelectedMarket:(NSString *)newmarket {
+	[[NSUserDefaults standardUserDefaults] setObject:newmarket forKey:@"selectedMarket"];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	NSLog(@"Set Market: %@",newmarket);
 }

@@ -235,7 +235,7 @@
 	[walletSectionLabel setBordered:NO];
 	[walletSectionLabel setAlignment:NSLeftTextAlignment];
 	[walletSectionLabel setBackgroundColor:[NSColor clearColor]];
-	[walletSectionLabel setStringValue:[NSString stringWithFormat:@"%@ Wallet",sharedSettingManager.selected_market]];
+	[walletSectionLabel setStringValue:[NSString stringWithFormat:@"%@ Wallet",sharedSettingManager.selectedMarket]];
 	[walletSectionLabel setTextColor:[NSColor blueColor]];
 	[walletSectionLabel setFont:[NSFont fontWithName:headerFont size:headerFontSize]];
 	[walletView addSubview:walletSectionLabel];

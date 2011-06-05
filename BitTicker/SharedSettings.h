@@ -11,11 +11,11 @@
 	//Settings
 	NSString *username;
 	NSString *password;
-	NSString *selected_market;
+	NSString *selectedMarket;
 }
 - (void) checkDefaults;
 + (id)sharedSettingManager;
 @property (retain) NSString *username;
 @property (retain) NSString *password;
-@property (retain) NSString *selected_market;
+@property (retain) NSString *selectedMarket;
 @end

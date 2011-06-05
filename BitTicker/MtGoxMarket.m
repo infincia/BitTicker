@@ -10,6 +10,8 @@
 
 #import "Trade.h"
 #import "Ticker.h"
+#import "Wallet.h"
+
 #define MTGOX_TICKER_URL @"https://mtgox.com/code/data/ticker.php"
 #define MTGOX_TRADES_URL @"https://mtgox.com/code/data/getTrades.php"
 #define MTGOX_MARKETDEPTH_URL @"https://mtgox.com/code/data/getDepth.php"
@@ -107,8 +109,11 @@
     MSLog(@"Got %i asks and %i bids",[[marketDepth objectForKey:@"asks"] count],[[marketDepth objectForKey:@"bids"] count]);
 }
 
--(void)didFetchWallet:(NSDictionary *)wallet {
-	[_delegate bitcoinMarket:self didReceiveWallet:wallet];
+-(void)didFetchWallet:(NSDictionary *)dictwallet {
+	Wallet *newwallet = [[Wallet alloc] init];
+	newwallet.btc = [dictwallet objectForKey:@"btcs"];
+	newwallet.usd = [dictwallet objectForKey:@"usds"];
+	[_delegate bitcoinMarket:self didReceiveWallet:newwallet];
 }
 
 @end

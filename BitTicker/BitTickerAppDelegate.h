@@ -46,13 +46,22 @@
 	NSTextField *sellValue;
 	NSTextField *lastValue;
     NSTextField *spreadValue;
+	
+	//wallet stuff
+	NSTextField *BTCValue;
+	NSTextField *BTCxUSDValue;
+	NSTextField *USDValue;
+    NSTextField *walletUSDValue;	
 
 	NSView *statsView;
 	NSMenuItem *statsItem;
     
     NSView *technicalsView;
     NSMenuItem *technicalsItem;
-	
+
+    NSView *walletView;
+    NSMenuItem *walletItem;
+		
 	// below the line
 	NSMenuItem *quitItem;
     NSMenuItem *aboutItem;

@@ -10,6 +10,7 @@
 
 @class BitcoinMarket;
 @class Ticker;
+@class Wallet;
 
 @protocol BitcoinMarketDelegate <NSObject>
 
@@ -25,5 +26,5 @@
 
 -(void)bitcoinMarket:(BitcoinMarket*)market didReceiveTicker:(Ticker*)ticker;
 -(void)bitcoinMarket:(BitcoinMarket*)market didReceiveRecentTradesData:(NSArray*)trades;
--(void)bitcoinMarket:(BitcoinMarket*)market didReceiveWallet:(NSDictionary*)wallet;
+-(void)bitcoinMarket:(BitcoinMarket*)market didReceiveWallet:(Wallet*)wallet;
 @end

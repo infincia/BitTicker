@@ -48,7 +48,7 @@
 	trayMenu = [[NSMenu alloc] initWithTitle:@"Ticker"];
 	//graphItem  = [[NSMenuItem alloc] init];
 	statsItem  = [[NSMenuItem alloc] init];
-	statsView = [[NSView alloc] initWithFrame:CGRectMake(0,70,180,90)];
+	statsView = [[NSView alloc] initWithFrame:CGRectMake(0,70,180,105)];
 	[statsItem setView:statsView];
 	[trayMenu addItem:statsItem];
     
@@ -64,6 +64,19 @@
 	
 	NSInteger labelOffset = 20;
 	NSInteger valueOffset = 110;
+	
+		//section header
+	NSTextField *tickerSectionLabel = [[NSTextField alloc] initWithFrame:CGRectMake(labelOffset,93,headerWidth,menuHeight)];
+	[tickerSectionLabel setEditable:FALSE];
+	[tickerSectionLabel setBordered:NO];
+	[tickerSectionLabel setAlignment:NSLeftTextAlignment];
+	[tickerSectionLabel setBackgroundColor:[NSColor clearColor]];
+	[tickerSectionLabel setStringValue:[NSString stringWithFormat:@"%@ Ticker",sharedSettingManager.selectedMarket]];
+	[tickerSectionLabel setTextColor:[NSColor blueColor]];
+	[tickerSectionLabel setFont:[NSFont fontWithName:headerFont size:headerFontSize]];
+	[statsView addSubview:tickerSectionLabel];
+    [tickerSectionLabel release];
+	
 	highValue = [[NSTextField alloc] initWithFrame:CGRectMake(valueOffset,75,valueWidth,menuHeight)];
 	[highValue setEditable:FALSE];
 	[highValue setBordered:NO];

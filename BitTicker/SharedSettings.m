@@ -11,7 +11,9 @@ static SharedSettings *sharedSettingManager = nil;
 
 @implementation SharedSettings
 
-@dynamic username,password,selectedMarket;
+@dynamic username;
+@dynamic password;
+@dynamic selectedMarket;
 
 - (id)init {
 	NSAutoreleasePool *autoreleasepool = [[NSAutoreleasePool alloc] init];

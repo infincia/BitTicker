@@ -48,8 +48,16 @@
 
 -(void)fetchWallet {
     MSLog(@"Fetching wallet...");
-	NSDictionary *post = [NSDictionary dictionaryWithObjectsAndKeys:sharedSettingManager.username,@"name",sharedSettingManager.password,@"pass",nil];
-    [self downloadJsonDataFromURL:[NSURL URLWithString:self.walletURL] withPostData:post callback:@selector(didFetchWallet:)];
+	NSString *username = sharedSettingManager.username;
+	NSString *password = sharedSettingManager.password;
+	if ([username isEqualToString:@"ChangeMe"] || username == nil) {
+		return;
+	}
+	if ([password isEqualToString:@"ChangeMe"] || password == nil) {
+		return;
+	}
+	NSDictionary *post = [NSDictionary dictionaryWithObjectsAndKeys:username,@"name",password,@"pass",nil];
+	[self downloadJsonDataFromURL:[NSURL URLWithString:self.walletURL] withPostData:post callback:@selector(didFetchWallet:)];
 }
 
 -(void)didFetchRecentTrades:(NSArray*)tradeData {

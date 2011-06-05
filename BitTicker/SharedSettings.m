@@ -32,7 +32,11 @@ static SharedSettings *sharedSettingManager = nil;
         NSString *username = [self usernameForMarket:service];
         if (!username) {
             // Username isn't in defaults, obviously password isn't either.
-            item = [EMGenericKeychainItem addGenericKeychainItemForService:serviceString withUsername:@"" password:@""];
+			item = [EMGenericKeychainItem genericKeychainItemForService:serviceString withUsername:@""];
+			if (!item) {
+				// getting a generic/blank item didnt work either so it must not exist
+				item = [EMGenericKeychainItem addGenericKeychainItemForService:serviceString withUsername:@"" password:@""];
+			}
         } else {
             item = [EMGenericKeychainItem genericKeychainItemForService:serviceString withUsername:username];
             

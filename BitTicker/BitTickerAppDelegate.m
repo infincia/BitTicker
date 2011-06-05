@@ -75,7 +75,7 @@
 	[tickerSectionLabel setBordered:NO];
 	[tickerSectionLabel setAlignment:NSLeftTextAlignment];
 	[tickerSectionLabel setBackgroundColor:[NSColor clearColor]];
-	[tickerSectionLabel setStringValue:[NSString stringWithFormat:@"%@ Ticker",sharedSettingManager.selectedMarket]];
+	[tickerSectionLabel setStringValue:@"Ticker"];
 	[tickerSectionLabel setTextColor:[NSColor blueColor]];
 	[tickerSectionLabel setFont:[NSFont fontWithName:headerFont size:headerFontSize]];
 	[statsView addSubview:tickerSectionLabel];
@@ -464,16 +464,23 @@
 -(void)bitcoinMarket:(BitcoinMarket*)market didReceiveWallet:(Wallet*)wallet {
     double btc = [wallet.btc doubleValue];
     double usd = [wallet.usd doubleValue];
-	double last = [self.tickerValue doubleValue];
-    [BTCValue setStringValue:[NSString stringWithFormat:@"%f.04",[wallet.btc floatValue]]];
+	[BTCValue setStringValue:[NSString stringWithFormat:@"%f.04",[wallet.btc floatValue]]];
 	[USDValue setStringValue:[currencyFormatter stringFromNumber:wallet.usd]];
 	
-		    
-	NSNumber *BTCxRate = [NSNumber numberWithDouble:btc*last];
-    [BTCxUSDValue setStringValue:[currencyFormatter stringFromNumber:BTCxRate]];
+	double last = [self.tickerValue doubleValue];
+	if (last == 0) {
+		//no last yet so cant multiply anyway
+	}
+	else {
+		NSNumber *BTCxRate = [NSNumber numberWithDouble:btc*last];
+		[BTCxUSDValue setStringValue:[currencyFormatter stringFromNumber:BTCxRate]];
 	
-	NSNumber *walletUSD = [NSNumber numberWithDouble:[BTCxRate doubleValue] + usd];
-	[walletUSDValue setStringValue: [currencyFormatter stringFromNumber:walletUSD]];
+		NSNumber *walletUSD = [NSNumber numberWithDouble:[BTCxRate doubleValue] + usd];
+		[walletUSDValue setStringValue: [currencyFormatter stringFromNumber:walletUSD]];
+		
+	}
+		    
+
 }
 
 @end

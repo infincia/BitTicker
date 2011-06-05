@@ -50,8 +50,8 @@
 
 -(void)fetchWallet {
     MSLog(@"Fetching wallet...");
-	NSString *username = sharedSettingManager.username;
-	NSString *password = sharedSettingManager.password;
+	NSString *username = [sharedSettingManager usernameForMarket:eMarketMtGox];
+	NSString *password = [sharedSettingManager passwordForMarket:eMarketMtGox];
 	if ([username isEqualToString:@"ChangeMe"] || username == nil) {
 		return;
 	}

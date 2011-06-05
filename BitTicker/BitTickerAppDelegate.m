@@ -24,6 +24,9 @@
 #import "MtGoxMarket.h"
 #import "SharedSettings.h"
 
+#import "SettingsWindowController.h"
+#import "SettingsWindow.h"
+
 @implementation BitTickerAppDelegate
 
 @synthesize stats;
@@ -44,6 +47,8 @@
 	sharedSettingManager = [SharedSettings sharedSettingManager];
 	[sharedSettingManager checkDefaults];
 	
+    settingsWindowController = [[SettingsWindowController alloc] init];
+    
     // menu stuff
 	trayMenu = [[NSMenu alloc] initWithTitle:@"Ticker"];
 	//graphItem  = [[NSMenuItem alloc] init];
@@ -207,7 +212,8 @@
 	[walletSectionLabel setBordered:NO];
 	[walletSectionLabel setAlignment:NSLeftTextAlignment];
 	[walletSectionLabel setBackgroundColor:[NSColor clearColor]];
-	[walletSectionLabel setStringValue:[NSString stringWithFormat:@"%@ Wallet",sharedSettingManager.selectedMarket]];
+    // TODO: Allow multiple wallets
+    [walletSectionLabel setStringValue:@"MtGox Wallet"];
 	[walletSectionLabel setTextColor:[NSColor blueColor]];
 	[walletSectionLabel setFont:[NSFont fontWithName:headerFont size:headerFontSize]];
 	[walletView addSubview:walletSectionLabel];
@@ -370,6 +376,8 @@
     [statsItem release];
     [currencyFormatter release];
     
+    [settingsWindowController release];
+    
 	//ticker stuff
     [highValue release];
 	[lowValue release];
@@ -391,11 +399,14 @@
 	[NSApp activateIgnoringOtherApps:YES];
 }
 
-- (IBAction)showSettings:(id)sender {	
-	[settings_window makeKeyAndOrderFront:nil];
+- (IBAction)showSettings:(id)sender {
+    [settingsWindowController.window makeKeyAndOrderFront:nil];
 	[NSApp activateIgnoringOtherApps:YES];
 }
 
+-(void)settingsWindowClosed {
+    
+}
 #pragma mark Actions
 - (void)quitProgram:(id)sender {
 	[NSApp terminate:self];

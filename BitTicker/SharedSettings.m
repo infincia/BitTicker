@@ -7,12 +7,12 @@
 #import "SharedSettings.h"
 #import "EMKeychainItem.h"
 
+#import "BitcoinMarket.h"
+
 static SharedSettings *sharedSettingManager = nil;
 
 @implementation SharedSettings
 
-@dynamic username;
-@dynamic password;
 @dynamic selectedMarket;
 
 - (id)init {
@@ -32,35 +32,46 @@ static SharedSettings *sharedSettingManager = nil;
 		[[NSUserDefaults standardUserDefaults] setObject:@"ChangeMe" forKey:@"username"];
 		[[NSUserDefaults standardUserDefaults] setObject:@"MtGox" forKey:@"selectedMarket"];
 		[[NSUserDefaults standardUserDefaults] synchronize];
-		if (!self.password) {
-			self.password = @"ChangeMe";
-		}
 	}
 }
 
-- (NSString *)username {
-	return [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
+
+-(BOOL)isMarketEnabled:(NSInteger)market {
+    NSString *enabledKey = [NSString stringWithFormat:@"%@-enabled",[self stringForMarket:market]];
+    return [[NSUserDefaults standardUserDefaults] boolForKey:enabledKey];
+}
+-(void)setIsEnabled:(BOOL)enabled forMarket:(NSInteger)market {
+    NSString *enabledKey = [NSString stringWithFormat:@"%@-enabled",[self stringForMarket:market]];
+    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:enabledKey];
 }
 
-- (void)setUsername:(NSString *)newusername {
-	[[NSUserDefaults standardUserDefaults] setObject:newusername forKey:@"username"];
+-(NSString*)usernameForMarket:(NSInteger)market {
+    NSString *usernameKey = [NSString stringWithFormat:@"%@-username",[self stringForMarket:market]];
+    return [[NSUserDefaults standardUserDefaults] stringForKey:usernameKey];
+}
+-(void)setUsername:(NSString*)username forMarket:(NSInteger)market {
+    NSString *usernameKey = [NSString stringWithFormat:@"%@-username",[self stringForMarket:market]];
+    [[NSUserDefaults standardUserDefaults] setObject:username forKey:usernameKey];
 	[[NSUserDefaults standardUserDefaults] synchronize];
-	NSLog(@"Set Username: %@",newusername);
 }
 
-- (NSString *)password {
-	EMGenericKeychainItem *keychainItem = [EMGenericKeychainItem genericKeychainItemForService:@"BitTicker-MtGox" withUsername:self.username];
+-(NSString*)passwordForMarket:(NSInteger)market {
+    NSString *username = [self usernameForMarket:market];
+    NSString *passwordKey = [NSString stringWithFormat:@"BitTicker-%@",[self stringForMarket:market]];
+    EMGenericKeychainItem *keychainItem = [EMGenericKeychainItem genericKeychainItemForService:passwordKey withUsername:username];
+    MSLog(@"Returning password from key %@: %@",passwordKey,keychainItem.password);
 	return keychainItem.password;
 }
-
-- (void)setPassword:(NSString *)newpassword {
-	EMGenericKeychainItem *keychainItem = [EMGenericKeychainItem genericKeychainItemForService:@"BitTicker-MtGox" withUsername:self.username];
-	keychainItem.password = newpassword;
-	NSLog(@"Set password: %@",newpassword);
+-(void)setPassword:(NSString*)password forMarket:(NSInteger)market {
+    NSString *username = [self usernameForMarket:market];
+    NSString *passwordKey = [NSString stringWithFormat:@"BitTicker-%@",[self stringForMarket:market]];
+    MSLog(@"Setting password %@ with key %@",password,passwordKey);
+    EMGenericKeychainItem *keychainItem = [EMGenericKeychainItem genericKeychainItemForService:passwordKey withUsername:username];
+	keychainItem.password = password;
 }
 
 - (NSString *)selectedMarket {
-	return [[NSUserDefaults standardUserDefaults] objectForKey:@"selectedMarket"];
+	return [[NSUserDefaults standardUserDefaults] stringForKey:@"selectedMarket"];
 }
 
 - (void)setSelectedMarket:(NSString *)newmarket {
@@ -68,6 +79,19 @@ static SharedSettings *sharedSettingManager = nil;
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	NSLog(@"Set Market: %@",newmarket);
 }
+
+-(NSString*)stringForMarket:(NSInteger)market {
+    switch (market) {
+        case eMarketMtGox:
+            return @"MtGox";
+            break;
+        default:
+            return @"Unknown";
+            break;
+    }
+}
+
+#pragma mark - Singleton jazz
 
 + (id)sharedSettingManager {
 	@synchronized(self) {

@@ -100,7 +100,6 @@
 }
 
 -(void)didFetchWallet:(NSDictionary *)wallet {
-	NSLog(@"Dict: %@",wallet);
 	[_delegate bitcoinMarket:self didReceiveWallet:wallet];
 }
 

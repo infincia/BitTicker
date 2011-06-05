@@ -53,9 +53,11 @@
         BOOL appendAmpersand = NO;
         for(NSString *key in postData) {
             NSString *value = [postData objectForKey:key];
-            [body appendFormat:@"%@=%@%@",key,value,appendAmpersand?@"&":@""];
+            [body appendFormat:@"%@=%@%@",key,value,appendAmpersand?@"":@"&"];
             if (!appendAmpersand) appendAmpersand = YES;
         }
+		
+		[urlRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
     } else {
         [urlRequest setHTTPMethod:@"GET"];
     }

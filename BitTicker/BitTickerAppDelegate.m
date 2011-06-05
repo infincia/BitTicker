@@ -247,10 +247,10 @@
     market = [[MtGoxMarket alloc] initWithDelegate:self];
     
     tickerTimer = [[NSTimer scheduledTimerWithTimeInterval:30 target:market selector:@selector(fetchTicker) userInfo:nil repeats:YES] retain];
-    //walletTimer = [[NSTimer scheduledTimerWithTimeInterval:30 target:market selector:@selector(fetchWallet) userInfo:nil repeats:YES] retain];
+    walletTimer = [[NSTimer scheduledTimerWithTimeInterval:60 target:market selector:@selector(fetchWallet) userInfo:nil repeats:YES] retain];
     
     [market fetchTicker];
-	//[market fetchWallet];
+	[market fetchWallet];
 }
 
 #pragma mark Application delegate

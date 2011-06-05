@@ -6,10 +6,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SharedSettings : NSObject {
+@class EMGenericKeychainItem;
 
+@interface SharedSettings : NSObject {
+    NSMutableDictionary *keychainItems;
 }
 + (id)sharedSettingManager;
+-(EMGenericKeychainItem*)keychainItemForService:(NSInteger)service;
 
 -(BOOL)isMarketEnabled:(NSInteger)market;
 -(void)setIsEnabled:(BOOL)enabled forMarket:(NSInteger)market;
@@ -21,5 +24,7 @@
 -(void)setPassword:(NSString*)password forMarket:(NSInteger)market;
 
 -(NSString*)stringForMarket:(NSInteger)market;
+
+
 
 @end

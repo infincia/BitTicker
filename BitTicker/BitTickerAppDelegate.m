@@ -45,7 +45,6 @@
 	[_statusItem setView:statusItemView];
     
 	sharedSettingManager = [SharedSettings sharedSettingManager];
-	[sharedSettingManager checkDefaults];
 	
     settingsWindowController = [[SettingsWindowController alloc] init];
     

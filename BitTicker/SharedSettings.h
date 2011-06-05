@@ -7,9 +7,8 @@
 #import <Foundation/Foundation.h>
 
 @interface SharedSettings : NSObject {
-	NSString *selectedMarket;
+
 }
-- (void) checkDefaults;
 + (id)sharedSettingManager;
 
 -(BOOL)isMarketEnabled:(NSInteger)market;
@@ -23,5 +22,4 @@
 
 -(NSString*)stringForMarket:(NSInteger)market;
 
-@property (retain) NSString *selectedMarket;
 @end

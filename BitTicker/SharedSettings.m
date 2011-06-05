@@ -13,8 +13,6 @@ static SharedSettings *sharedSettingManager = nil;
 
 @implementation SharedSettings
 
-@dynamic selectedMarket;
-
 - (id)init {
 	NSAutoreleasePool *autoreleasepool = [[NSAutoreleasePool alloc] init];
 	if ((self = [super init])) {
@@ -22,17 +20,6 @@ static SharedSettings *sharedSettingManager = nil;
 	}
 	[autoreleasepool release];
 	return self;
-}
-
-- (void) checkDefaults {
-	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"AlreadyRan"]) {
-		
-	} else {
-		[[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:@"AlreadyRan"];
-		[[NSUserDefaults standardUserDefaults] setObject:@"ChangeMe" forKey:@"username"];
-		[[NSUserDefaults standardUserDefaults] setObject:@"MtGox" forKey:@"selectedMarket"];
-		[[NSUserDefaults standardUserDefaults] synchronize];
-	}
 }
 
 
@@ -59,25 +46,15 @@ static SharedSettings *sharedSettingManager = nil;
     NSString *username = [self usernameForMarket:market];
     NSString *passwordKey = [NSString stringWithFormat:@"BitTicker-%@",[self stringForMarket:market]];
     EMGenericKeychainItem *keychainItem = [EMGenericKeychainItem genericKeychainItemForService:passwordKey withUsername:username];
-    MSLog(@"Returning password from key %@: %@",passwordKey,keychainItem.password);
+    MSLog(@"Returning password for username: %@",username);
 	return keychainItem.password;
 }
 -(void)setPassword:(NSString*)password forMarket:(NSInteger)market {
     NSString *username = [self usernameForMarket:market];
     NSString *passwordKey = [NSString stringWithFormat:@"BitTicker-%@",[self stringForMarket:market]];
-    MSLog(@"Setting password %@ with key %@",password,passwordKey);
+    MSLog(@"Setting password for username %@",username);
     EMGenericKeychainItem *keychainItem = [EMGenericKeychainItem genericKeychainItemForService:passwordKey withUsername:username];
 	keychainItem.password = password;
-}
-
-- (NSString *)selectedMarket {
-	return [[NSUserDefaults standardUserDefaults] stringForKey:@"selectedMarket"];
-}
-
-- (void)setSelectedMarket:(NSString *)newmarket {
-	[[NSUserDefaults standardUserDefaults] setObject:newmarket forKey:@"selectedMarket"];
-	[[NSUserDefaults standardUserDefaults] synchronize];
-	NSLog(@"Set Market: %@",newmarket);
 }
 
 -(NSString*)stringForMarket:(NSInteger)market {

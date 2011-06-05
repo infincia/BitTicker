@@ -192,35 +192,7 @@
     
     
 	[trayMenu addItem:[NSMenuItem separatorItem]];
-    
-    technicalsItem  = [[NSMenuItem alloc] init];
-	technicalsView = [[NSView alloc] initWithFrame:CGRectMake(0,0,180,13)];
-    [technicalsItem setView:technicalsView];
-	[trayMenu addItem:technicalsItem];
-    
-    spreadValue = [[NSTextField alloc] initWithFrame:CGRectMake(valueOffset, 0, valueWidth, menuHeight)];
-    [spreadValue setEditable:FALSE];
-	[spreadValue setBordered:NO];
-	[spreadValue setAlignment:NSRightTextAlignment];
-	[spreadValue setBackgroundColor:[NSColor clearColor]];
-	[spreadValue setTextColor:[NSColor blackColor]];
-	[spreadValue setFont:[NSFont fontWithName:menuFont size:menuFontSize]];
-    [technicalsView addSubview:spreadValue];
-    
-    NSTextField *spreadLabel = [[NSTextField alloc] initWithFrame:CGRectMake(labelOffset,0,labelWidth,menuHeight)];
-	[spreadLabel setEditable:FALSE];
-	[spreadLabel setBordered:NO];
-	[spreadLabel setAlignment:NSLeftTextAlignment];
-	[spreadLabel setBackgroundColor:[NSColor clearColor]];
-	[spreadLabel setStringValue:@"Spread:"];
-	[spreadLabel setTextColor:[NSColor blackColor]];
-	[spreadLabel setFont:[NSFont fontWithName:menuFont size:menuFontSize]];
-	[technicalsView addSubview:spreadLabel];
-    [spreadLabel release];
-    
-    [trayMenu addItem:[NSMenuItem separatorItem]];
-	
-	
+
 	
 	walletItem  = [[NSMenuItem alloc] init];
 	walletView = [[NSView alloc] initWithFrame:CGRectMake(0,0,180,75)];
@@ -405,16 +377,12 @@
 	[buyValue release];
 	[sellValue release];
 	[lastValue release];
-    [spreadValue release];
 	
 	//wallet stuff
 	[BTCValue release];
 	[BTCxUSDValue release];
 	[USDValue release];
     [walletUSDValue release];
-    
-    [technicalsItem release];
-    [technicalsView release];
     
 }
 
@@ -464,11 +432,6 @@
     [volValue setStringValue:[volumeFormatter stringFromNumber:ticker.volume]];
     
     [volumeFormatter release];
-    
-    double ask = [ticker.sell doubleValue];
-    double bid = [ticker.buy doubleValue];
-    NSNumber *spread = [NSNumber numberWithDouble:ask-bid];
-    [spreadValue setStringValue:[currencyFormatter stringFromNumber:spread]];
 }
 
 -(void)bitcoinMarket:(BitcoinMarket*)market didReceiveRecentTradesData:(NSArray*)trades {

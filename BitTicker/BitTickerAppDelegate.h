@@ -45,7 +45,6 @@
 	NSTextField *buyValue;
 	NSTextField *sellValue;
 	NSTextField *lastValue;
-    NSTextField *spreadValue;
 	
 	//wallet stuff
 	NSTextField *BTCValue;
@@ -55,9 +54,6 @@
 
 	NSView *statsView;
 	NSMenuItem *statsItem;
-    
-    NSView *technicalsView;
-    NSMenuItem *technicalsItem;
 
     NSView *walletView;
     NSMenuItem *walletItem;

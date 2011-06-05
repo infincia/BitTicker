@@ -137,7 +137,7 @@ static BOOL _logsErrors;
 		mPassword = [newPassword copy];
 		
 		const char *newPasswordCString = [newPassword UTF8String];
-		SecKeychainItemModifyAttributesAndData(mCoreKeychainItem, NULL, strlen(newPasswordCString), (void *)newPasswordCString);
+		SecKeychainItemModifyAttributesAndData(mCoreKeychainItem, NULL, (UInt32)strlen(newPasswordCString), (void *)newPasswordCString);
 	}
 }
 
@@ -162,7 +162,7 @@ static BOOL _logsErrors;
 		mUsername = [newUsername copy];
 		
 		const char *newUsernameCString = [newUsername UTF8String];
-		[self _modifyAttributeWithTag:kSecAccountItemAttr toBeValue:(void *)newUsernameCString ofLength:strlen(newUsernameCString)];
+		[self _modifyAttributeWithTag:kSecAccountItemAttr toBeValue:(void *)newUsernameCString ofLength:(UInt32)strlen(newUsernameCString)];
 	}
 }
 
@@ -187,7 +187,7 @@ static BOOL _logsErrors;
 		mLabel = [newLabel copy];
 		
 		const char *newLabelCString = [newLabel UTF8String];
-		[self _modifyAttributeWithTag:kSecLabelItemAttr toBeValue:(void *)newLabelCString ofLength:strlen(newLabelCString)];
+		[self _modifyAttributeWithTag:kSecLabelItemAttr toBeValue:(void *)newLabelCString ofLength:(UInt32)strlen(newLabelCString)];
 	}
 }
 
@@ -258,7 +258,7 @@ static BOOL _logsErrors;
 	char *password = nil;
 	
 	SecKeychainItemRef item = nil;
-	OSStatus returnStatus = SecKeychainFindGenericPassword(NULL, strlen(serviceNameCString), serviceNameCString, strlen(usernameCString), usernameCString, &passwordLength, (void **)&password, &item);
+	OSStatus returnStatus = SecKeychainFindGenericPassword(NULL, (UInt32)strlen(serviceNameCString), serviceNameCString, (UInt32)strlen(usernameCString), usernameCString, &passwordLength, (void **)&password, &item);
 	if (returnStatus != noErr || !item)
 	{
 		if (_logsErrors)
@@ -283,7 +283,7 @@ static BOOL _logsErrors;
 	const char *passwordCString = [password UTF8String];
 	
 	SecKeychainItemRef item = nil;
-	OSStatus returnStatus = SecKeychainAddGenericPassword(NULL, strlen(serviceNameCString), serviceNameCString, strlen(usernameCString), usernameCString, strlen(passwordCString), (void *)passwordCString, &item);
+	OSStatus returnStatus = SecKeychainAddGenericPassword(NULL, (UInt32)strlen(serviceNameCString), serviceNameCString, (UInt32)strlen(usernameCString), usernameCString, (UInt32)strlen(passwordCString), (void *)passwordCString, &item);
 	
 	if (returnStatus != noErr || !item)
 	{
@@ -316,7 +316,7 @@ static BOOL _logsErrors;
 		mServiceName = [newServiceName copy];
 		
 		const char *newServiceNameCString = [newServiceName UTF8String];
-		[self _modifyAttributeWithTag:kSecServiceItemAttr toBeValue:(void *)newServiceNameCString ofLength:strlen(newServiceNameCString)];
+		[self _modifyAttributeWithTag:kSecServiceItemAttr toBeValue:(void *)newServiceNameCString ofLength:(UInt32)strlen(newServiceNameCString)];
 	}
 }
 
@@ -392,13 +392,13 @@ static BOOL _logsErrors;
 	
 	SecKeychainItemRef item = nil;
 	//0 is kSecAuthenticationTypeAny
-	OSStatus returnStatus = SecKeychainFindInternetPassword(NULL, strlen(serverCString), serverCString, 0, NULL, strlen(usernameCString), usernameCString, strlen(pathCString), pathCString, port, protocol, 0, &passwordLength, (void **)&password, &item);
+	OSStatus returnStatus = SecKeychainFindInternetPassword(NULL, (UInt32)strlen(serverCString), serverCString, 0, NULL, (UInt32)strlen(usernameCString), usernameCString, (UInt32)strlen(pathCString), pathCString, port, protocol, 0, &passwordLength, (void **)&password, &item);
 	
 	if (returnStatus != noErr && protocol == kSecProtocolTypeFTP)
 	{
 		//Some clients (like Transmit) still save passwords with kSecProtocolTypeFTPAccount, which was deprecated.  Let's check for that.
 		protocol = kSecProtocolTypeFTPAccount;		
-		returnStatus = SecKeychainFindInternetPassword(NULL, strlen(serverCString), serverCString, 0, NULL, strlen(usernameCString), usernameCString, strlen(pathCString), pathCString, port, protocol, 0, &passwordLength, (void **)&password, &item);
+		returnStatus = SecKeychainFindInternetPassword(NULL, (UInt32)strlen(serverCString), serverCString, 0, NULL, (UInt32)strlen(usernameCString), usernameCString, (UInt32)strlen(pathCString), pathCString, port, protocol, 0, &passwordLength, (void **)&password, &item);
 	}
 	
 	if (returnStatus != noErr || !item)
@@ -432,7 +432,7 @@ static BOOL _logsErrors;
 		pathCString = "";
 	
 	SecKeychainItemRef item = nil;
-	OSStatus returnStatus = SecKeychainAddInternetPassword(NULL, strlen(serverCString), serverCString, 0, NULL, strlen(usernameCString), usernameCString, strlen(pathCString), pathCString, port, protocol, kSecAuthenticationTypeDefault, strlen(passwordCString), (void *)passwordCString, &item);
+	OSStatus returnStatus = SecKeychainAddInternetPassword(NULL, (UInt32)strlen(serverCString), serverCString, 0, NULL, (UInt32)strlen(usernameCString), usernameCString, (UInt32)strlen(pathCString), pathCString, port, protocol, kSecAuthenticationTypeDefault, (UInt32)strlen(passwordCString), (void *)passwordCString, &item);
 	
 	if (returnStatus != noErr || !item)
 	{
@@ -465,7 +465,7 @@ static BOOL _logsErrors;
 		mServer = [newServer copy];	
 		
 		const char *newServerCString = [newServer UTF8String];
-		[self _modifyAttributeWithTag:kSecServerItemAttr toBeValue:(void *)newServerCString ofLength:strlen(newServerCString)];
+		[self _modifyAttributeWithTag:kSecServerItemAttr toBeValue:(void *)newServerCString ofLength:(UInt32)strlen(newServerCString)];
 	}
 }
 
@@ -488,7 +488,7 @@ static BOOL _logsErrors;
 	mPath = [newPath copy];
 	
 	const char *newPathCString = [newPath UTF8String];
-	[self _modifyAttributeWithTag:kSecPathItemAttr toBeValue:(void *)newPathCString ofLength:strlen(newPathCString)];
+	[self _modifyAttributeWithTag:kSecPathItemAttr toBeValue:(void *)newPathCString ofLength:(UInt32)strlen(newPathCString)];
 }
 
 #pragma mark -
@@ -510,7 +510,7 @@ static BOOL _logsErrors;
 		
 		mPort = newPort;
 		
-		UInt32 newPortValue = newPort;
+		UInt32 newPortValue = (UInt32)newPort;
 		[self _modifyAttributeWithTag:kSecPortItemAttr toBeValue:&newPortValue ofLength:sizeof(newPortValue)];
 	}
 }

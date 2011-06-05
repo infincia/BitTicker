@@ -100,8 +100,8 @@
 		AA6E6C4C1399DC3E003A4224 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		AA6E6C811399F2EB003A4224 /* SharedSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedSettings.h; sourceTree = "<group>"; };
 		AA6E6C821399F2EB003A4224 /* SharedSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedSettings.m; sourceTree = "<group>"; };
-		AAB399B1139B0D8500B9438F /* Wallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Wallet.h; path = ../../../SourceCache/BitTicker/BitTicker/Wallet.h; sourceTree = "<group>"; };
-		AAB399B2139B0D8500B9438F /* Wallet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Wallet.m; path = ../../../SourceCache/BitTicker/BitTicker/Wallet.m; sourceTree = "<group>"; };
+		AAB399B1139B0D8500B9438F /* Wallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wallet.h; sourceTree = "<group>"; };
+		AAB399B2139B0D8500B9438F /* Wallet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wallet.m; sourceTree = "<group>"; };
 		AAD172621399BA1D00B505B0 /* EMKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychainItem.h; sourceTree = "<group>"; };
 		AAD172631399BA1D00B505B0 /* EMKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychainItem.m; sourceTree = "<group>"; };
 		AAD1726C1399BD3500B505B0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };

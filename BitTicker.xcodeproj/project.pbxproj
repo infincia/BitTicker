@@ -187,6 +187,8 @@
 				83405B38137F6DDF0060CAD4 /* MtGoxMarket.m */,
 				AAB399B1139B0D8500B9438F /* Wallet.h */,
 				AAB399B2139B0D8500B9438F /* Wallet.m */,
+				AAD172621399BA1D00B505B0 /* EMKeychainItem.h */,
+				AAD172631399BA1D00B505B0 /* EMKeychainItem.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -236,8 +238,6 @@
 		AA4BBA321379E31B005CE351 /* BitTicker */ = {
 			isa = PBXGroup;
 			children = (
-				AAD172621399BA1D00B505B0 /* EMKeychainItem.h */,
-				AAD172631399BA1D00B505B0 /* EMKeychainItem.m */,
 				83405B2F137F6CFE0060CAD4 /* Models */,
 				83405B2B137F68870060CAD4 /* Additions */,
 				83405B20137F684E0060CAD4 /* Networking */,

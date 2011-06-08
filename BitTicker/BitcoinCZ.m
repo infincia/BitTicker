@@ -54,23 +54,5 @@
 	[formatter release];
 	[_delegate bitcoinMarket:self didReceiveMiner:newminer];
 }
-/*{
-	"username": "mrsteveman1", 
-	"unconfirmed_reward": "0.00346862", 
-	"send_threshold": "1.00000000", 
-	"confirmed_reward": "0.00000000", 
-	"workers": {
-		"mrsteveman1.office": {
-			"last_share": 1307558336, 
-			"score": "13.8764", 
-			"hashrate": 169, 
-			"shares": 9, 
-			"alive": true
-		}
-	}, 
-	"wallet": "1Hob3YewSMPjx6B9ULLhdBVEmFRmdsrEF6", 
-	"estimated_reward": "0.00713821"
-
-}*/
 
 @end

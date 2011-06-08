@@ -20,8 +20,10 @@
 #import "BitTickerAppDelegate.h"
 #import "Ticker.h"
 #import "Wallet.h"
+#import "Miner.h"
 #import "StatusItemView.h"
 #import "MtGoxMarket.h"
+#import "BitcoinCZ.h"
 #import "SharedSettings.h"
 
 #import "SettingsWindowController.h"
@@ -328,14 +330,113 @@
 	[trayMenu addItem:[NSMenuItem separatorItem]];
 	
 	
+	minerItem  = [[NSMenuItem alloc] init];
+	minerView = [[NSView alloc] initWithFrame:CGRectMake(0,0,180,75)];
+    [minerItem setView:minerView];
+	[trayMenu addItem:minerItem];
 	
+	//section header
+	NSTextField *minerSectionLabel = [[NSTextField alloc] initWithFrame:CGRectMake(labelOffset,64,headerWidth,menuHeight)];
+	[minerSectionLabel setEditable:FALSE];
+	[minerSectionLabel setBordered:NO];
+	[minerSectionLabel setAlignment:NSLeftTextAlignment];
+	[minerSectionLabel setBackgroundColor:[NSColor clearColor]];
+    [minerSectionLabel setStringValue:@"Miner Data"];
+	[minerSectionLabel setTextColor:[NSColor blueColor]];
+	[minerSectionLabel setFont:[NSFont fontWithName:headerFont size:headerFontSize]];
+	[minerView addSubview:minerSectionLabel];
+    [minerSectionLabel release];
 	
-	
-	
-	
-	
-	
+    confirmedReward = [[NSTextField alloc] initWithFrame:CGRectMake(valueOffset, 45, valueWidth, menuHeight)];
+    [confirmedReward setEditable:FALSE];
+	[confirmedReward setBordered:NO];
+	[confirmedReward setAlignment:NSRightTextAlignment];
+	[confirmedReward setBackgroundColor:[NSColor clearColor]];
+	[confirmedReward setTextColor:[NSColor blackColor]];
+	[confirmedReward setFont:[NSFont fontWithName:menuFont size:menuFontSize]];
+    [minerView addSubview:confirmedReward];
     
+    NSTextField *confirmedRewardLabel = [[NSTextField alloc] initWithFrame:CGRectMake(labelOffset,45,labelWidth,menuHeight)];
+	[confirmedRewardLabel setEditable:FALSE];
+	[confirmedRewardLabel setBordered:NO];
+	[confirmedRewardLabel setAlignment:NSLeftTextAlignment];
+	[confirmedRewardLabel setBackgroundColor:[NSColor clearColor]];
+	[confirmedRewardLabel setStringValue:@"Confirmed:"];
+	[confirmedRewardLabel setTextColor:[NSColor blackColor]];
+	[confirmedRewardLabel setFont:[NSFont fontWithName:menuFont size:menuFontSize]];
+	[minerView addSubview:confirmedRewardLabel];
+    [confirmedRewardLabel release];
+	
+    unconfirmedReward = [[NSTextField alloc] initWithFrame:CGRectMake(valueOffset, 30, valueWidth, menuHeight)];
+    [unconfirmedReward setEditable:FALSE];
+	[unconfirmedReward setBordered:NO];
+	[unconfirmedReward setAlignment:NSRightTextAlignment];
+	[unconfirmedReward setBackgroundColor:[NSColor clearColor]];
+	[unconfirmedReward setTextColor:[NSColor blackColor]];
+	[unconfirmedReward setFont:[NSFont fontWithName:menuFont size:menuFontSize]];
+    [minerView addSubview:unconfirmedReward];
+    
+    NSTextField *unconfirmedRewardLabel = [[NSTextField alloc] initWithFrame:CGRectMake(labelOffset,30,labelWidth,menuHeight)];
+	[unconfirmedRewardLabel setEditable:FALSE];
+	[unconfirmedRewardLabel setBordered:NO];
+	[unconfirmedRewardLabel setAlignment:NSLeftTextAlignment];
+	[unconfirmedRewardLabel setBackgroundColor:[NSColor clearColor]];
+	[unconfirmedRewardLabel setStringValue:@"Unconfirmed:"];
+	[unconfirmedRewardLabel setTextColor:[NSColor blackColor]];
+	[unconfirmedRewardLabel setFont:[NSFont fontWithName:menuFont size:menuFontSize]];
+	[minerView addSubview:unconfirmedRewardLabel];
+    [unconfirmedRewardLabel release];	
+	
+	
+	
+    estimatedReward = [[NSTextField alloc] initWithFrame:CGRectMake(valueOffset, 15, valueWidth, menuHeight)];
+    [estimatedReward setEditable:FALSE];
+	[estimatedReward setBordered:NO];
+	[estimatedReward setAlignment:NSRightTextAlignment];
+	[estimatedReward setBackgroundColor:[NSColor clearColor]];
+	[estimatedReward setTextColor:[NSColor blackColor]];
+	[estimatedReward setFont:[NSFont fontWithName:menuFont size:menuFontSize]];
+    [minerView addSubview:estimatedReward];
+    
+    NSTextField *estimatedRewardLabel = [[NSTextField alloc] initWithFrame:CGRectMake(labelOffset,15,labelWidth,menuHeight)];
+	[estimatedRewardLabel setEditable:FALSE];
+	[estimatedRewardLabel setBordered:NO];
+	[estimatedRewardLabel setAlignment:NSLeftTextAlignment];
+	[estimatedRewardLabel setBackgroundColor:[NSColor clearColor]];
+	[estimatedRewardLabel setStringValue:@"Estimated:"];
+	[estimatedRewardLabel setTextColor:[NSColor blackColor]];
+	[estimatedRewardLabel setFont:[NSFont fontWithName:menuFont size:menuFontSize]];
+	[minerView addSubview:estimatedRewardLabel];
+    [estimatedRewardLabel release];		
+	
+	
+	
+    hashOutput = [[NSTextField alloc] initWithFrame:CGRectMake(valueOffset, 0, valueWidth, menuHeight)];
+    [hashOutput setEditable:FALSE];
+	[hashOutput setBordered:NO];
+	[hashOutput setAlignment:NSRightTextAlignment];
+	[hashOutput setBackgroundColor:[NSColor clearColor]];
+	[hashOutput setTextColor:[NSColor blackColor]];
+	[hashOutput setFont:[NSFont fontWithName:menuFont size:menuFontSize]];
+    [minerView addSubview:hashOutput];
+    
+    NSTextField *hashOutputLabel = [[NSTextField alloc] initWithFrame:CGRectMake(labelOffset,0,labelWidth,menuHeight)];
+	[hashOutputLabel setEditable:FALSE];
+	[hashOutputLabel setBordered:NO];
+	[hashOutputLabel setAlignment:NSLeftTextAlignment];
+	[hashOutputLabel setBackgroundColor:[NSColor clearColor]];
+	[hashOutputLabel setStringValue:@"MHash/s:"];
+	[hashOutputLabel setTextColor:[NSColor blackColor]];
+	[hashOutputLabel setFont:[NSFont fontWithName:menuFont size:menuFontSize]];
+	[minerView addSubview:hashOutputLabel];
+    [hashOutputLabel release];			
+	
+	
+	
+	
+	
+	
+	[trayMenu addItem:[NSMenuItem separatorItem]];
     
     refreshItem = [trayMenu addItemWithTitle:@"Refresh" 
                                       action:@selector(refreshTicker:) 
@@ -368,12 +469,15 @@
 
     MSLog(@"Starting");
     market = [[MtGoxMarket alloc] initWithDelegate:self];
+	miner = [[BitcoinCZ alloc] initWithDelegate:self];
     
     tickerTimer = [[NSTimer scheduledTimerWithTimeInterval:30 target:market selector:@selector(fetchTicker) userInfo:nil repeats:YES] retain];
     walletTimer = [[NSTimer scheduledTimerWithTimeInterval:60 target:market selector:@selector(fetchWallet) userInfo:nil repeats:YES] retain];
+	minerTimer = [[NSTimer scheduledTimerWithTimeInterval:60 target:miner selector:@selector(fetchMiner) userInfo:nil repeats:YES] retain];
     
     [market fetchTicker];
 	[market fetchWallet];
+	[miner fetchMiner];
 }
 
 #pragma mark Application delegate
@@ -479,8 +583,22 @@
 		[walletUSDValue setStringValue: [currencyFormatter stringFromNumber:walletUSD]];
 		
 	}
-		    
+}
 
+-(void)bitcoinMarket:(BitcoinMarket*)market didReceiveMiner:(Miner*)minerdata {
+	[unconfirmedReward setStringValue:[minerdata.unconfirmed_reward stringValue]];
+	[confirmedReward setStringValue:[minerdata.confirmed_reward stringValue]];
+	[estimatedReward setStringValue:[minerdata.estimated_reward stringValue]];
+	double hashcount;
+	for (NSDictionary *worker in minerdata.workers) {
+		hashcount = hashcount + [[worker objectForKey:@"hashrate"] doubleValue];
+	}
+	NSNumberFormatter *hashFormatter = [[NSNumberFormatter alloc] init];
+    hashFormatter.numberStyle = NSNumberFormatterDecimalStyle;
+    hashFormatter.hasThousandSeparators = YES;
+   	[hashOutput setStringValue:[hashFormatter stringFromNumber:[NSNumber numberWithDouble:hashcount]]];
+    
+    [hashFormatter release];
 }
 
 @end

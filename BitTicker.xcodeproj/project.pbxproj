@@ -17,6 +17,8 @@
 		837DF12D139B2E97009987F3 /* SettingsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 837DF12C139B2E97009987F3 /* SettingsWindow.xib */; };
 		837DF131139B319F009987F3 /* SettingsWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 837DF130139B319F009987F3 /* SettingsWindow.m */; };
 		837DF135139B8E19009987F3 /* SettingsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 837DF134139B8E18009987F3 /* SettingsWindowController.m */; };
+		AA0140D2139FF9050084A3A6 /* BitcoinCZ.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0140D1139FF9050084A3A6 /* BitcoinCZ.m */; };
+		AA0140D6139FFA7D0084A3A6 /* Miner.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0140D5139FFA7D0084A3A6 /* Miner.m */; };
 		AA239F511379E67300150707 /* StatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA239F4E1379E67300150707 /* StatusItemView.m */; };
 		AA239F761379F17200150707 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA239F731379F17200150707 /* CoreServices.framework */; };
 		AA239F771379F17200150707 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA239F741379F17200150707 /* libz.dylib */; };
@@ -67,6 +69,10 @@
 		837DF130139B319F009987F3 /* SettingsWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsWindow.m; sourceTree = "<group>"; };
 		837DF133139B8E18009987F3 /* SettingsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsWindowController.h; sourceTree = "<group>"; };
 		837DF134139B8E18009987F3 /* SettingsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsWindowController.m; sourceTree = "<group>"; };
+		AA0140D0139FF9050084A3A6 /* BitcoinCZ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BitcoinCZ.h; path = "../../../SourceCache/BitTicker-Mac/BitTicker/BitcoinCZ.h"; sourceTree = "<group>"; };
+		AA0140D1139FF9050084A3A6 /* BitcoinCZ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BitcoinCZ.m; path = "../../../SourceCache/BitTicker-Mac/BitTicker/BitcoinCZ.m"; sourceTree = "<group>"; };
+		AA0140D4139FFA7C0084A3A6 /* Miner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Miner.h; path = "../../../SourceCache/BitTicker-Mac/BitTicker/Miner.h"; sourceTree = "<group>"; };
+		AA0140D5139FFA7D0084A3A6 /* Miner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Miner.m; path = "../../../SourceCache/BitTicker-Mac/BitTicker/Miner.m"; sourceTree = "<group>"; };
 		AA239F4D1379E67300150707 /* StatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusItemView.h; sourceTree = "<group>"; };
 		AA239F4E1379E67300150707 /* StatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusItemView.m; sourceTree = "<group>"; };
 		AA239F731379F17200150707 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
@@ -193,6 +199,10 @@
 				83405B36137F6DDF0060CAD4 /* BitcoinMarket.m */,
 				83405B37137F6DDF0060CAD4 /* MtGoxMarket.h */,
 				83405B38137F6DDF0060CAD4 /* MtGoxMarket.m */,
+				AA0140D0139FF9050084A3A6 /* BitcoinCZ.h */,
+				AA0140D1139FF9050084A3A6 /* BitcoinCZ.m */,
+				AA0140D4139FFA7C0084A3A6 /* Miner.h */,
+				AA0140D5139FFA7D0084A3A6 /* Miner.m */,
 				AAB399B1139B0D8500B9438F /* Wallet.h */,
 				AAB399B2139B0D8500B9438F /* Wallet.m */,
 				AAD172621399BA1D00B505B0 /* EMKeychainItem.h */,
@@ -385,6 +395,8 @@
 				AAB399B3139B0D8500B9438F /* Wallet.m in Sources */,
 				837DF131139B319F009987F3 /* SettingsWindow.m in Sources */,
 				837DF135139B8E19009987F3 /* SettingsWindowController.m in Sources */,
+				AA0140D2139FF9050084A3A6 /* BitcoinCZ.m in Sources */,
+				AA0140D6139FFA7D0084A3A6 /* Miner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

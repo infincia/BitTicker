@@ -16,6 +16,7 @@
     IBOutlet NSTextField *marketLabel;
     IBOutlet NSTextField *usernameField;
     IBOutlet NSSecureTextField *passwordField;
+	IBOutlet NSTextField *apiKeyField;
     
 @private
     
@@ -27,5 +28,6 @@
 @property (nonatomic,retain) NSTextField *marketLabel;
 @property (nonatomic,retain) NSTextField *usernameField;
 @property (nonatomic,retain) NSSecureTextField *passwordField;
+@property (nonatomic,retain) NSTextField *apiKeyField;
 
 @end

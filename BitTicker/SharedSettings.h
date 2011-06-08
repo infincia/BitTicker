@@ -23,6 +23,9 @@
 -(NSString*)passwordForMarket:(NSInteger)market;
 -(void)setPassword:(NSString*)password forMarket:(NSInteger)market;
 
+-(NSString*)apiKeyForMarket:(NSInteger)market;
+-(void)setAPIKey:(NSString*)newAPIKey forMarket:(NSInteger)market;
+
 -(NSString*)stringForMarket:(NSInteger)market;
 
 

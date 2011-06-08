@@ -25,16 +25,20 @@
 @class SettingsWindow;
 
 @class MtGoxMarket;
+@class BitcoinCZ;
+@class Miner;
 
 #import "BitcoinMarketDelegate.h"
 
 @interface BitTickerAppDelegate : NSObject <NSApplicationDelegate, BitcoinMarketDelegate> {
 	SharedSettings *sharedSettingManager;
     MtGoxMarket *market;
+	BitcoinCZ *miner;
     
     NSTimer *tickerTimer;
 	NSTimer *walletTimer;
-    
+    NSTimer *minerTimer;
+	
     NSMutableArray *stats;
 	StatusItemView *statusItemView;
 	NSStatusItem *_statusItem;
@@ -53,11 +57,22 @@
 	NSTextField *USDValue;
     NSTextField *walletUSDValue;	
 
+	//miner stuff
+	NSTextField *confirmedReward;
+	NSTextField *unconfirmedReward;
+	NSTextField *estimatedReward;
+    NSTextField *username;
+	NSTextField *workers;
+	NSTextField *hashOutput;
+	
 	NSView *statsView;
 	NSMenuItem *statsItem;
 
     NSView *walletView;
     NSMenuItem *walletItem;
+	
+	NSView *minerView;
+    NSMenuItem *minerItem;
 		
 	// below the line
 	NSMenuItem *quitItem;

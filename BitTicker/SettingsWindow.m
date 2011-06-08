@@ -17,5 +17,6 @@
 @synthesize marketLabel;
 @synthesize usernameField;
 @synthesize passwordField;
+@synthesize apiKeyField;
 
 @end

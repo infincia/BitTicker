@@ -78,6 +78,16 @@ static SharedSettings *sharedSettingManager = nil;
 	[[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+-(NSString*)apiKeyForMarket:(NSInteger)market {
+    NSString *apiKey = [NSString stringWithFormat:@"%@-apiKey",[self stringForMarket:market]];
+    return [[NSUserDefaults standardUserDefaults] stringForKey:apiKey];
+}
+-(void)setAPIKey:(NSString*)newAPIKey forMarket:(NSInteger)market {
+    NSString *apiKey = [NSString stringWithFormat:@"%@-apiKey",[self stringForMarket:market]];
+    [[NSUserDefaults standardUserDefaults] setObject:newAPIKey forKey:apiKey];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 -(NSString*)passwordForMarket:(NSInteger)market {
     EMGenericKeychainItem *keychainItem = [self keychainItemForService:market];
     return keychainItem.password;
@@ -91,6 +101,9 @@ static SharedSettings *sharedSettingManager = nil;
     switch (market) {
         case eMarketMtGox:
             return @"MtGox";
+            break;
+        case eMarketBitcoinCZ:
+            return @"BitcoinCZ";
             break;
         default:
             return @"Unknown";
@@ -135,4 +148,3 @@ static SharedSettings *sharedSettingManager = nil;
 }
 
 @end
-

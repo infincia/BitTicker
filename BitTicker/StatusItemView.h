@@ -26,6 +26,7 @@
     NSDate *lastUpdated;
     NSTimer *colorTimer;
     NSColor *flashColor;
+	NSColor *currentColor;
     BOOL isMenuVisible;
     BOOL isAnimating;
     BOOL firstTick;

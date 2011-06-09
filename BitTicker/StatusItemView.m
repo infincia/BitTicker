@@ -37,7 +37,7 @@
     
     NSPoint point = NSMakePoint(1, 1);
     NSMutableDictionary *fontAttributes = [[NSMutableDictionary alloc] init];
-    NSFont *font = [NSFont fontWithName:@"LucidaGrande" size:16];
+    NSFont *font = [NSFont fontWithName:@"LucidaGrande-Bold" size:16];
     
     
     NSColor *white = [NSColor whiteColor];
@@ -69,9 +69,9 @@
                 colorAlpha = 1.0 - (duration / ColorFadeDuration);
             }
             
-            foreground_color = [[NSColor blackColor] blendedColorWithFraction:colorAlpha ofColor:flashColor];
+            foreground_color = [currentColor blendedColorWithFraction:colorAlpha ofColor:flashColor];
         }
-        else foreground_color = [NSColor blackColor];
+        else foreground_color = currentColor;
         
         [fontAttributes setObject:foreground_color forKey:NSForegroundColorAttributeName];
         [tickerPretty drawAtPoint:point withAttributes:fontAttributes];
@@ -89,6 +89,7 @@
         self.previousTickerValue = [NSNumber numberWithInt:0];
         self.tickerValue = [NSNumber numberWithInt:0];
         flashColor = [[NSColor blackColor] retain];
+		currentColor = [[NSColor blackColor] retain];
         lastUpdated = [[NSDate date] retain];
         statusItem = nil;
         isMenuVisible = NO;
@@ -156,9 +157,16 @@
     } else if(current > previous){
         [flashColor release];
         flashColor = [[NSColor greenColor] retain];
+        [currentColor release];
+        currentColor = [[NSColor colorWithDeviceRed:0 green:0.55 blue:0 alpha:1.0] retain];
+		NSLog(@"Going green...");
     } else if(current < previous){
         [flashColor release];
         flashColor = [[NSColor redColor] retain];
+		[currentColor release];
+		currentColor = [[NSColor colorWithDeviceRed:0.55 green:0 blue:0 alpha:1.0] retain];
+		NSLog(@"Going red...");
+
     } else {
         animate_color = NO;
     }

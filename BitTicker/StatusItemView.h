@@ -22,11 +22,19 @@
 @interface StatusItemView : NSView <NSMenuDelegate> {
     NSStatusItem *statusItem;
     NSNumber *tickerValue;
+    NSNumber *previousTickerValue;
+    NSDate *lastUpdated;
+    NSTimer *colorTimer;
+    NSColor *flashColor;
     BOOL isMenuVisible;
+    BOOL isAnimating;
+    BOOL firstTick;
 }
 
 @property (retain, nonatomic) NSStatusItem *statusItem;
 @property (retain, nonatomic) NSNumber *tickerValue;
+@property (retain, nonatomic) NSNumber *previousTickerValue;
+@property (retain, nonatomic) NSTimer *colorTimer;
 
 - (void)setTickerValue:(NSNumber *)value;
 

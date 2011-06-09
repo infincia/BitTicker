@@ -23,10 +23,12 @@
 #define StatusItemViewPaddingWidth  6
 #define StatusItemViewPaddingHeight 3
 #define StatusItemWidth 50
+#define ColorFadeFramerate 30.0
+#define ColorFadeDuration 1.0
 
 @implementation StatusItemView
 
-@synthesize statusItem;
+@synthesize statusItem, previousTickerValue, colorTimer;
 
 - (void)drawRect:(NSRect)rect {
     // Draw status bar background, highlighted if menu is showing
@@ -37,7 +39,7 @@
     NSMutableDictionary *fontAttributes = [[NSMutableDictionary alloc] init];
     NSFont *font = [NSFont fontWithName:@"LucidaGrande" size:16];
     
-    NSColor *black = [NSColor blackColor];
+    
     NSColor *white = [NSColor whiteColor];
     [fontAttributes setObject:font forKey:NSFontAttributeName];
     
@@ -54,7 +56,24 @@
         [tickerPretty drawAtPoint:point withAttributes:fontAttributes];
     }
     else {
-        [fontAttributes setObject:black forKey:NSForegroundColorAttributeName];
+        NSColor *foreground_color;
+        if(isAnimating){
+            NSTimeInterval duration = -1.0 * [lastUpdated timeIntervalSinceNow];
+            double colorAlpha;
+            
+            if(duration >= ColorFadeDuration){
+                [self.colorTimer invalidate];
+                isAnimating = NO;
+                colorAlpha = 0.0;
+            } else {
+                colorAlpha = 1.0 - (duration / ColorFadeDuration);
+            }
+            
+            foreground_color = [[NSColor blackColor] blendedColorWithFraction:colorAlpha ofColor:flashColor];
+        }
+        else foreground_color = [NSColor blackColor];
+        
+        [fontAttributes setObject:foreground_color forKey:NSForegroundColorAttributeName];
         [tickerPretty drawAtPoint:point withAttributes:fontAttributes];
     }   
     
@@ -66,9 +85,14 @@
 	CGRect newFrame = CGRectMake(0,0,StatusItemWidth,[[NSStatusBar systemStatusBar] thickness]);
     self = [super initWithFrame:newFrame];
     if (self) {
+        firstTick = YES;
+        self.previousTickerValue = [NSNumber numberWithInt:0];
         self.tickerValue = [NSNumber numberWithInt:0];
+        flashColor = [[NSColor blackColor] retain];
+        lastUpdated = [[NSDate date] retain];
         statusItem = nil;
         isMenuVisible = NO;
+        isAnimating = NO;
         [statusItem setLength:StatusItemWidth];
     }
     return self;
@@ -111,11 +135,51 @@
     }    
 }
 
-- (void)setTickerValue:(NSNumber *)value {
-    [value retain];
-    [tickerValue release];
-    tickerValue = value;
+- (void)updateFade {
     [self setNeedsDisplay:YES];
+}
+
+- (void)setTickerValue:(NSNumber *)value {
+    
+    [previousTickerValue release];
+    previousTickerValue = tickerValue;
+    
+    [value retain];
+    tickerValue = value;
+    
+    double current = [tickerValue doubleValue];
+    double previous = [previousTickerValue doubleValue];
+    BOOL animate_color = YES;
+    if(firstTick){
+        firstTick = NO;
+        animate_color = NO;
+    } else if(current > previous){
+        [flashColor release];
+        flashColor = [[NSColor greenColor] retain];
+    } else if(current < previous){
+        [flashColor release];
+        flashColor = [[NSColor redColor] retain];
+    } else {
+        animate_color = NO;
+    }
+    
+    if(animate_color){
+        
+        self.colorTimer = [[NSTimer scheduledTimerWithTimeInterval:(1.0/ColorFadeFramerate)
+                                                       target:self
+                                                     selector:@selector(updateFade)
+                                                     userInfo:nil
+                                                      repeats:YES] retain];
+        
+        [lastUpdated release];
+        lastUpdated = [[NSDate date] retain];
+        isAnimating = YES;
+    }
+
+    
+    [self setNeedsDisplay:YES];
+    
+
 }
 
 - (NSNumber *)tickerValue {

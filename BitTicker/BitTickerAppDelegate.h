@@ -26,6 +26,7 @@
 
 @class MtGoxMarket;
 @class BitcoinCZ;
+@class BtcGuild;
 @class Miner;
 
 #import "BitcoinMarketDelegate.h"

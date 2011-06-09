@@ -105,6 +105,9 @@ static SharedSettings *sharedSettingManager = nil;
         case eMarketBitcoinCZ:
             return @"BitcoinCZ";
             break;
+		case eMarketBtcGuild:
+			return @"BtcGuild";
+			break;
         default:
             return @"Unknown";
             break;

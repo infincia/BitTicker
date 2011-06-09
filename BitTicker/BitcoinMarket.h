@@ -15,8 +15,9 @@
 enum kBitcoinMarkets {
     eMarketMtGox = 0,
 	eMarketBitcoinCZ = 1,
+	eMarketBtcGuild = 2,
     // Used for market enumeration. Keep this as the last value.
-    eNumberOfMarkets = 2 
+    eNumberOfMarkets = 3 
 };
 
 @class RequestHandler;

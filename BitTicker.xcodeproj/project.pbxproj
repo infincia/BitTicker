@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BA6690E13A132E700CE9B8F /* BtcGuild.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6690D13A132E700CE9B8F /* BtcGuild.m */; };
 		83405B28137F68610060CAD4 /* TaggedNSURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 83405B22137F68610060CAD4 /* TaggedNSURLConnection.m */; };
 		83405B29137F68610060CAD4 /* NSMutableDictionary+IntegerKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 83405B24137F68610060CAD4 /* NSMutableDictionary+IntegerKeys.m */; };
 		83405B2A137F68610060CAD4 /* RequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 83405B27137F68610060CAD4 /* RequestHandler.m */; };
@@ -48,6 +49,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3BA6690C13A132E700CE9B8F /* BtcGuild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BtcGuild.h; sourceTree = "<group>"; };
+		3BA6690D13A132E700CE9B8F /* BtcGuild.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BtcGuild.m; sourceTree = "<group>"; };
 		83405B21137F68610060CAD4 /* TaggedNSURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaggedNSURLConnection.h; sourceTree = "<group>"; };
 		83405B22137F68610060CAD4 /* TaggedNSURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaggedNSURLConnection.m; sourceTree = "<group>"; };
 		83405B23137F68610060CAD4 /* NSMutableDictionary+IntegerKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+IntegerKeys.h"; sourceTree = "<group>"; };
@@ -69,10 +72,10 @@
 		837DF130139B319F009987F3 /* SettingsWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsWindow.m; sourceTree = "<group>"; };
 		837DF133139B8E18009987F3 /* SettingsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsWindowController.h; sourceTree = "<group>"; };
 		837DF134139B8E18009987F3 /* SettingsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsWindowController.m; sourceTree = "<group>"; };
-		AA0140D0139FF9050084A3A6 /* BitcoinCZ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BitcoinCZ.h; path = "BitcoinCZ.h"; sourceTree = "<group>"; };
-		AA0140D1139FF9050084A3A6 /* BitcoinCZ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BitcoinCZ.m; path = "BitcoinCZ.m"; sourceTree = "<group>"; };
-		AA0140D4139FFA7C0084A3A6 /* Miner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Miner.h; path = "Miner.h"; sourceTree = "<group>"; };
-		AA0140D5139FFA7D0084A3A6 /* Miner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Miner.m; path = "Miner.m"; sourceTree = "<group>"; };
+		AA0140D0139FF9050084A3A6 /* BitcoinCZ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitcoinCZ.h; sourceTree = "<group>"; };
+		AA0140D1139FF9050084A3A6 /* BitcoinCZ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitcoinCZ.m; sourceTree = "<group>"; };
+		AA0140D4139FFA7C0084A3A6 /* Miner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Miner.h; sourceTree = "<group>"; };
+		AA0140D5139FFA7D0084A3A6 /* Miner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Miner.m; sourceTree = "<group>"; };
 		AA239F4D1379E67300150707 /* StatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusItemView.h; sourceTree = "<group>"; };
 		AA239F4E1379E67300150707 /* StatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusItemView.m; sourceTree = "<group>"; };
 		AA239F731379F17200150707 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
@@ -196,6 +199,8 @@
 				83405B33137F6DDF0060CAD4 /* Ticker.m */,
 				83405B34137F6DDF0060CAD4 /* BitcoinMarketDelegate.h */,
 				83405B35137F6DDF0060CAD4 /* BitcoinMarket.h */,
+				3BA6690C13A132E700CE9B8F /* BtcGuild.h */,
+				3BA6690D13A132E700CE9B8F /* BtcGuild.m */,
 				83405B36137F6DDF0060CAD4 /* BitcoinMarket.m */,
 				83405B37137F6DDF0060CAD4 /* MtGoxMarket.h */,
 				83405B38137F6DDF0060CAD4 /* MtGoxMarket.m */,
@@ -397,6 +402,7 @@
 				837DF135139B8E19009987F3 /* SettingsWindowController.m in Sources */,
 				AA0140D2139FF9050084A3A6 /* BitcoinCZ.m in Sources */,
 				AA0140D6139FFA7D0084A3A6 /* Miner.m in Sources */,
+				3BA6690E13A132E700CE9B8F /* BtcGuild.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

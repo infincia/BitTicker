@@ -391,6 +391,19 @@
     
 }
 
+-(void)settingsWindowClosed {
+    
+}
+
+#pragma mark Actions
+
+- (IBAction)quitProgram:(id)sender {
+	[NSApp terminate:self];
+}
+- (IBAction)refreshTicker:(id)sender {
+    [market fetchTicker];
+}
+
 - (IBAction)showAbout:(id)sender {
 	[NSApp orderFrontStandardAboutPanel:nil];
 	[NSApp activateIgnoringOtherApps:YES];
@@ -399,17 +412,6 @@
 - (IBAction)showSettings:(id)sender {
     [settingsWindowController.window makeKeyAndOrderFront:nil];
 	[NSApp activateIgnoringOtherApps:YES];
-}
-
--(void)settingsWindowClosed {
-    
-}
-#pragma mark Actions
-- (void)quitProgram:(id)sender {
-	[NSApp terminate:self];
-}
-- (void)refreshTicker:(id)sender {
-    [market fetchTicker];
 }
 
 #pragma mark Bitcoin market delegate

@@ -19,7 +19,6 @@
 @synthesize tradeURL = _tradeURL;
 @synthesize walletURL = _walletURL;
 @synthesize depthURL = _depthURL;
-@synthesize minerURL = _minerURL;
 
 -(id)initWithDelegate:(id<BitcoinMarketDelegate>)delegate {
     if (!(self = [super init])) return self;
@@ -133,7 +132,5 @@
 -(void)fetchWallet {
     [NSException raise:@"MethodNotOverwrittenException" format:@"%s must be overwritten by BitcoinMarket subclasses",__func__];
 }
--(void)fetchMiner {
-    [NSException raise:@"MethodNotOverwrittenException" format:@"%s must be overwritten by BitcoinMarket subclasses",__func__];
-}
+
 @end

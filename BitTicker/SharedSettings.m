@@ -102,9 +102,6 @@ static SharedSettings *sharedSettingManager = nil;
         case eMarketMtGox:
             return @"MtGox";
             break;
-        case eMarketBitcoinCZ:
-            return @"BitcoinCZ";
-            break;
         default:
             return @"Unknown";
             break;

@@ -14,9 +14,8 @@
 
 enum kBitcoinMarkets {
     eMarketMtGox = 0,
-	eMarketBitcoinCZ = 1,
     // Used for market enumeration. Keep this as the last value.
-    eNumberOfMarkets = 2 
+    eNumberOfMarkets = 1 
 };
 
 @class RequestHandler;
@@ -32,7 +31,7 @@ enum kBitcoinMarkets {
 	NSString *_tickerURL;
 	NSString *_depthURL;
 	NSString *_walletURL;
-	NSString *_minerURL;
+
 }
 -(id)initWithDelegate:(id<BitcoinMarketDelegate>)delegate;
 
@@ -47,7 +46,6 @@ enum kBitcoinMarkets {
 -(void)fetchTicker;
 -(void)fetchMarketDepth;
 -(void)fetchWallet;
--(void)fetchMiner;
 
 @property (nonatomic, assign) id<BitcoinMarketDelegate> delegate;
 
@@ -55,6 +53,5 @@ enum kBitcoinMarkets {
 @property (readonly,nonatomic,retain) NSString *tickerURL;
 @property (readonly,nonatomic,retain) NSString *depthURL;
 @property (readonly,nonatomic,retain) NSString *walletURL;
-@property (readonly,nonatomic,retain) NSString *minerURL;
 
 @end

@@ -23,6 +23,8 @@
 		AA239F781379F17200150707 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA239F751379F17200150707 /* SystemConfiguration.framework */; };
 		AA239F7B1379F1B200150707 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA239F791379F1B200150707 /* Quartz.framework */; };
 		AA239F7C1379F1B200150707 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA239F7A1379F1B200150707 /* QuartzCore.framework */; };
+		AA435C0E13A2CB550050F307 /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA435C0D13A2CB550050F307 /* MenuController.m */; };
+		AA435C1213A2CCAA0050F307 /* CustomMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA435C1113A2CCA90050F307 /* CustomMenuView.m */; };
 		AA4BBA2D1379E31B005CE351 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4BBA2C1379E31B005CE351 /* Cocoa.framework */; };
 		AA4BBA371379E31C005CE351 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA4BBA351379E31C005CE351 /* InfoPlist.strings */; };
 		AA4BBA3A1379E31C005CE351 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4BBA391379E31C005CE351 /* main.m */; };
@@ -74,6 +76,10 @@
 		AA239F751379F17200150707 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AA239F791379F1B200150707 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		AA239F7A1379F1B200150707 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AA435C0C13A2CB550050F307 /* MenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuController.h; path = "../../../SourceCache/BitTicker-Mac/BitTicker/MenuController.h"; sourceTree = "<group>"; };
+		AA435C0D13A2CB550050F307 /* MenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuController.m; path = "../../../SourceCache/BitTicker-Mac/BitTicker/MenuController.m"; sourceTree = "<group>"; };
+		AA435C1013A2CCA90050F307 /* CustomMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomMenuView.h; path = "../../../SourceCache/BitTicker-Mac/BitTicker/CustomMenuView.h"; sourceTree = "<group>"; };
+		AA435C1113A2CCA90050F307 /* CustomMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomMenuView.m; path = "../../../SourceCache/BitTicker-Mac/BitTicker/CustomMenuView.m"; sourceTree = "<group>"; };
 		AA4BBA281379E31B005CE351 /* BitTicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitTicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA4BBA2C1379E31B005CE351 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		AA4BBA2F1379E31B005CE351 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -275,6 +281,10 @@
 				837DF132139B3B8A009987F3 /* Settings */,
 				AA239F4D1379E67300150707 /* StatusItemView.h */,
 				AA239F4E1379E67300150707 /* StatusItemView.m */,
+				AA435C0C13A2CB550050F307 /* MenuController.h */,
+				AA435C0D13A2CB550050F307 /* MenuController.m */,
+				AA435C1013A2CCA90050F307 /* CustomMenuView.h */,
+				AA435C1113A2CCA90050F307 /* CustomMenuView.m */,
 				AA4BBA3E1379E31C005CE351 /* BitTickerAppDelegate.h */,
 				AA4BBA3F1379E31C005CE351 /* BitTickerAppDelegate.m */,
 				837DF12E139B2EC8009987F3 /* Nibs */,
@@ -385,6 +395,8 @@
 				AAB399B3139B0D8500B9438F /* Wallet.m in Sources */,
 				837DF131139B319F009987F3 /* SettingsWindow.m in Sources */,
 				837DF135139B8E19009987F3 /* SettingsWindowController.m in Sources */,
+				AA435C0E13A2CB550050F307 /* MenuController.m in Sources */,
+				AA435C1213A2CCAA0050F307 /* CustomMenuView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

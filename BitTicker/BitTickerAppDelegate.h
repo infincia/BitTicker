@@ -19,16 +19,13 @@
 
 #import <Cocoa/Cocoa.h>
 #import "SharedSettings.h"
-@class Ticker;
-@class StatusItemView;
+#import "MenuController.h"
 @class RequestHandler;
 @class SettingsWindow;
-
 @class MtGoxMarket;
 
-#import "BitcoinMarketDelegate.h"
-
-@interface BitTickerAppDelegate : NSObject <NSApplicationDelegate, BitcoinMarketDelegate> {
+@interface BitTickerAppDelegate : NSObject <NSApplicationDelegate> {
+	MenuController *menuController;
 	SharedSettings *sharedSettingManager;
     MtGoxMarket *market;
     
@@ -36,39 +33,6 @@
 	NSTimer *walletTimer;
 	
     NSMutableArray *stats;
-	StatusItemView *statusItemView;
-	NSStatusItem *_statusItem;
-
-	//fields for each stat
-	NSTextField *highValue;
-	NSTextField *lowValue;
-	NSTextField *volValue;
-	NSTextField *buyValue;
-	NSTextField *sellValue;
-	NSTextField *lastValue;
-	
-	//wallet stuff
-	NSTextField *BTCValue;
-	NSTextField *BTCxUSDValue;
-	NSTextField *USDValue;
-    NSTextField *walletUSDValue;	
-	
-	NSView *statsView;
-	NSMenuItem *statsItem;
-
-    NSView *walletView;
-    NSMenuItem *walletItem;
-		
-	// below the line
-	NSMenuItem *quitItem;
-    NSMenuItem *aboutItem;
-	NSMenuItem *settingsItem;
-    NSMenuItem *refreshItem;
-	NSMenuItem *preferenceItem;
-	
-	NSMenu *trayMenu;
-    
-    NSNumberFormatter *currencyFormatter;
 	
     NSWindowController *settingsWindowController;
 }
@@ -77,7 +41,7 @@
 - (IBAction)refreshTicker:(id)sender;
 - (IBAction)showSettings:(id)sender;
 - (IBAction)showAbout:(id)sender;
-@property (retain, nonatomic) NSNumber *tickerValue;
+
 @property (retain) NSMutableArray *stats;
 @property (nonatomic) NSInteger cancelThread;
 

@@ -89,7 +89,7 @@
 }
 
 - (void) quitProgram:(id)sender;
-- (void)refreshTicker:(id)sender;
+- (IBAction)refreshTicker:(id)sender;
 - (IBAction)showSettings:(id)sender;
 - (IBAction)showAbout:(id)sender;
 @property (retain, nonatomic) NSNumber *tickerValue;

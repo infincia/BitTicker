@@ -3,12 +3,12 @@
 	<data>
 		<int key="IBDocument.SystemTarget">1060</int>
 		<string key="IBDocument.SystemVersion">10J869</string>
-		<string key="IBDocument.InterfaceBuilderVersion">1305</string>
+		<string key="IBDocument.InterfaceBuilderVersion">1306</string>
 		<string key="IBDocument.AppKitVersion">1038.35</string>
 		<string key="IBDocument.HIToolboxVersion">461.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">1305</string>
+			<string key="NS.object.0">1306</string>
 		</object>
 		<object class="NSArray" key="IBDocument.IntegratedClassDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -68,10 +68,29 @@
 							<string key="NSTitle">BitTicker</string>
 							<object class="NSMutableArray" key="NSMenuItems">
 								<bool key="EncodedWithXMLCoder">YES</bool>
+								<object class="NSMenuItem" id="745999231">
+									<reference key="NSMenu" ref="784083883"/>
+									<string key="NSTitle">Refresh</string>
+									<string key="NSKeyEquiv">r</string>
+									<int key="NSKeyEquivModMask">1048576</int>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="264336375"/>
+									<reference key="NSMixedImage" ref="1027929723"/>
+								</object>
 								<object class="NSMenuItem" id="827613464">
 									<reference key="NSMenu" ref="784083883"/>
 									<string key="NSTitle">About BitTicker</string>
-									<string key="NSKeyEquiv"/>
+									<string key="NSKeyEquiv">a</string>
+									<int key="NSKeyEquivModMask">1048576</int>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="264336375"/>
+									<reference key="NSMixedImage" ref="1027929723"/>
+								</object>
+								<object class="NSMenuItem" id="197022171">
+									<reference key="NSMenu" ref="784083883"/>
+									<string key="NSTitle">Settings</string>
+									<string key="NSKeyEquiv">s</string>
+									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="264336375"/>
 									<reference key="NSMixedImage" ref="1027929723"/>
@@ -137,6 +156,22 @@
 					</object>
 					<int key="connectionID">686</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">refreshTicker:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="745999231"/>
+					</object>
+					<int key="connectionID">743</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">showSettings:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="197022171"/>
+					</object>
+					<int key="connectionID">744</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -201,6 +236,8 @@
 							<reference ref="1055100225"/>
 							<reference ref="125075689"/>
 							<reference ref="827613464"/>
+							<reference ref="745999231"/>
+							<reference ref="197022171"/>
 						</object>
 						<reference key="parent" ref="822410077"/>
 					</object>
@@ -230,6 +267,18 @@
 						<int key="objectID">719</int>
 						<reference key="object" ref="454057756"/>
 						<reference key="parent" ref="0"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">740</int>
+						<reference key="object" ref="197022171"/>
+						<reference key="parent" ref="784083883"/>
+						<string key="objectName">Menu Item - Settings</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">742</int>
+						<reference key="object" ref="745999231"/>
+						<reference key="parent" ref="784083883"/>
+						<string key="objectName">Menu Item - Refresh</string>
 					</object>
 				</object>
 			</object>
@@ -261,6 +310,8 @@
 					<string>564.ImportedFromIB2</string>
 					<string>705.IBPluginDependency</string>
 					<string>719.IBPluginDependency</string>
+					<string>740.IBPluginDependency</string>
+					<string>742.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -288,6 +339,8 @@
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="unlocalizedProperties">
@@ -302,7 +355,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">739</int>
+			<int key="maxID">744</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -314,11 +367,13 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>refreshTicker:</string>
 							<string>showAbout:</string>
 							<string>showSettings:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 						</object>
@@ -327,11 +382,16 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>refreshTicker:</string>
 							<string>showAbout:</string>
 							<string>showSettings:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBActionInfo">
+								<string key="name">refreshTicker:</string>
+								<string key="candidateClassName">id</string>
+							</object>
 							<object class="IBActionInfo">
 								<string key="name">showAbout:</string>
 								<string key="candidateClassName">id</string>

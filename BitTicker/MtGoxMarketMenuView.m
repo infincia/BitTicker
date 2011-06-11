@@ -6,7 +6,7 @@
 //  Copyright 2011 none. All rights reserved.
 //
 
-#import "MtGoxMenuView.h"
+#import "MtGoxMarketMenuView.h"
 #define menuFont @"LucidaGrande"
 #define menuFontSize 12
 #define headerFont @"LucidaGrande-Bold"
@@ -20,7 +20,7 @@
 #define labelOffset 20
 #define valueOffset 110
 
-@implementation MtGoxMenuView
+@implementation MtGoxMarketMenuView
 
 - (id)initWithFrame:(NSRect)frame {
 	CGRect newFrame = frame;

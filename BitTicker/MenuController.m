@@ -59,13 +59,11 @@
 -(void)createMenuForMarket:(BitcoinMarket*)market {
 	NSMenuItem *menuItem  = [[NSMenuItem alloc] init];
 	NSString *marketClass = NSStringFromClass([market class]);
-	CustomMenuView *menuView;
-	if ([marketClass isEqualToString:@"MtGoxMarket"]) {
-		menuView = [[MtGoxMenuView alloc] initWithFrame:CGRectMake(0,self.currentMenuStop,MENU_VIEW_WIDTH,MENU_VIEW_HEIGHT)];
-	} 
-	else {
-		menuView = [[CustomMenuView alloc] initWithFrame:CGRectMake(0,self.currentMenuStop,MENU_VIEW_WIDTH,MENU_VIEW_HEIGHT)];
-	}
+	
+	// NOTE: The next line creates an instance of a CustomMenuView 
+	// subclass by looking at the name of the market passed in to 
+	// this method. 
+	CustomMenuView *menuView = [[NSClassFromString([NSString stringWithFormat:@"%@MenuView",marketClass]) alloc] initWithFrame:CGRectMake(0,self.currentMenuStop,MENU_VIEW_WIDTH,MENU_VIEW_HEIGHT)];
 	[menuItem setView:menuView];
 	[trayMenu addItem:menuItem];
 	[trayMenu addItem:[NSMenuItem separatorItem]];

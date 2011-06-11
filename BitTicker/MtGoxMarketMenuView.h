@@ -1,5 +1,5 @@
 //
-//  MtGoxMenuView.h
+//  MtGoxMarketMenuView.h
 //  BitTicker
 //
 //  Created by steve on 6/10/11.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CustomMenuView.h"
 
-@interface MtGoxMenuView : CustomMenuView {
+@interface MtGoxMarketMenuView : CustomMenuView {
 
 	NSTextField *highValue;
 	NSTextField *lowValue;

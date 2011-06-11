@@ -23,11 +23,13 @@
 @class RequestHandler;
 @class SettingsWindow;
 @class MtGoxMarket;
+@class TradeHillMarket;
 
 @interface BitTickerAppDelegate : NSObject <NSApplicationDelegate> {
 	MenuController *menuController;
 	SharedSettings *sharedSettingManager;
     MtGoxMarket *market;
+	TradeHillMarket *tradehill;
     
     NSTimer *tickerTimer;
 	NSTimer *walletTimer;

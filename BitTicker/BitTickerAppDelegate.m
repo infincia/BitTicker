@@ -19,6 +19,7 @@
 
 #import "BitTickerAppDelegate.h"
 #import "MtGoxMarket.h"
+#import "TradeHillMarket.h"
 #import "SharedSettings.h"
 
 #import "SettingsWindowController.h"
@@ -38,13 +39,15 @@
 
     MSLog(@"Starting");
     market = [[MtGoxMarket alloc] initWithDelegate:menuController];
-    
     tickerTimer = [[NSTimer scheduledTimerWithTimeInterval:30 target:market selector:@selector(fetchTicker) userInfo:nil repeats:YES] retain];
     walletTimer = [[NSTimer scheduledTimerWithTimeInterval:60 target:market selector:@selector(fetchWallet) userInfo:nil repeats:YES] retain];
-    
     [market fetchTicker];
 	[market fetchWallet];
 	[menuController createMenuForMarket:market];
+	
+    //tradehill = [[TradeHillMarket alloc] initWithDelegate:menuController];
+	//[menuController createMenuForMarket:tradehill];	
+	
 	[menuController addSelectorItems];
 }
 

@@ -43,6 +43,7 @@
 		AA6E6C4D1399DC3E003A4224 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = AA6E6C4C1399DC3E003A4224 /* Credits.html */; };
 		AA6E6C831399F2EB003A4224 /* SharedSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6E6C821399F2EB003A4224 /* SharedSettings.m */; };
 		AA83B79C13A2FF1C000F71A6 /* TradeHillMarket.m in Sources */ = {isa = PBXBuildFile; fileRef = AA83B79B13A2FF1C000F71A6 /* TradeHillMarket.m */; };
+		AA83B7AC13A30583000F71A6 /* TradeHillMarketMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA83B7AB13A30582000F71A6 /* TradeHillMarketMenuView.m */; };
 		AAB399B3139B0D8500B9438F /* Wallet.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB399B2139B0D8500B9438F /* Wallet.m */; };
 		AAD172641399BA1E00B505B0 /* EMKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD172631399BA1D00B505B0 /* EMKeychainItem.m */; };
 		AAD1726D1399BD3500B505B0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD1726C1399BD3500B505B0 /* Security.framework */; };
@@ -118,8 +119,10 @@
 		AA6E6C4C1399DC3E003A4224 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		AA6E6C811399F2EB003A4224 /* SharedSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedSettings.h; sourceTree = "<group>"; };
 		AA6E6C821399F2EB003A4224 /* SharedSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedSettings.m; sourceTree = "<group>"; };
-		AA83B79A13A2FF1C000F71A6 /* TradeHillMarket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TradeHillMarket.h; path = "TradeHillMarket.h"; sourceTree = "<group>"; };
-		AA83B79B13A2FF1C000F71A6 /* TradeHillMarket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TradeHillMarket.m; path = "TradeHillMarket.m"; sourceTree = "<group>"; };
+		AA83B79A13A2FF1C000F71A6 /* TradeHillMarket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TradeHillMarket.h; sourceTree = "<group>"; };
+		AA83B79B13A2FF1C000F71A6 /* TradeHillMarket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TradeHillMarket.m; sourceTree = "<group>"; };
+		AA83B7AA13A30582000F71A6 /* TradeHillMarketMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TradeHillMarketMenuView.h; path = "TradeHillMarketMenuView.h"; sourceTree = "<group>"; };
+		AA83B7AB13A30582000F71A6 /* TradeHillMarketMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TradeHillMarketMenuView.m; path = "TradeHillMarketMenuView.m"; sourceTree = "<group>"; };
 		AAB399B1139B0D8500B9438F /* Wallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wallet.h; sourceTree = "<group>"; };
 		AAB399B2139B0D8500B9438F /* Wallet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wallet.m; sourceTree = "<group>"; };
 		AAD172621399BA1D00B505B0 /* EMKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychainItem.h; sourceTree = "<group>"; };
@@ -217,6 +220,8 @@
 				AA435C1113A2CCA90050F307 /* CustomMenuView.m */,
 				AA435C2C13A2E0850050F307 /* MtGoxMarketMenuView.h */,
 				AA435C2D13A2E0860050F307 /* MtGoxMarketMenuView.m */,
+				AA83B7AA13A30582000F71A6 /* TradeHillMarketMenuView.h */,
+				AA83B7AB13A30582000F71A6 /* TradeHillMarketMenuView.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -409,6 +414,7 @@
 				AA435C1213A2CCAA0050F307 /* CustomMenuView.m in Sources */,
 				AA435C2E13A2E0860050F307 /* MtGoxMarketMenuView.m in Sources */,
 				AA83B79C13A2FF1C000F71A6 /* TradeHillMarket.m in Sources */,
+				AA83B7AC13A30583000F71A6 /* TradeHillMarketMenuView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

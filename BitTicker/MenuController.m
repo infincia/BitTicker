@@ -13,7 +13,7 @@
 #import "CustomMenuView.h"
 #import "SharedSettings.h"
 
-#import "MtGoxMenuView.h"
+#import "MtGoxMarketMenuView.h"
 
 #define MENU_VIEW_HEIGHT 105
 #define MENU_VIEW_WIDTH 180

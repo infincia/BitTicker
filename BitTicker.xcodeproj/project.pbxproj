@@ -42,6 +42,7 @@
 		AA6C46D7137E10B2000A1DCB /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6C46CE137E10B2000A1DCB /* SBJsonWriter.m */; };
 		AA6E6C4D1399DC3E003A4224 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = AA6E6C4C1399DC3E003A4224 /* Credits.html */; };
 		AA6E6C831399F2EB003A4224 /* SharedSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6E6C821399F2EB003A4224 /* SharedSettings.m */; };
+		AA83B79C13A2FF1C000F71A6 /* TradeHillMarket.m in Sources */ = {isa = PBXBuildFile; fileRef = AA83B79B13A2FF1C000F71A6 /* TradeHillMarket.m */; };
 		AAB399B3139B0D8500B9438F /* Wallet.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB399B2139B0D8500B9438F /* Wallet.m */; };
 		AAD172641399BA1E00B505B0 /* EMKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD172631399BA1D00B505B0 /* EMKeychainItem.m */; };
 		AAD1726D1399BD3500B505B0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD1726C1399BD3500B505B0 /* Security.framework */; };
@@ -81,7 +82,7 @@
 		AA435C0D13A2CB550050F307 /* MenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuController.m; sourceTree = "<group>"; };
 		AA435C1013A2CCA90050F307 /* CustomMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMenuView.h; sourceTree = "<group>"; };
 		AA435C1113A2CCA90050F307 /* CustomMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMenuView.m; sourceTree = "<group>"; };
-		AA435C2C13A2E0850050F307 /* MtGoxMarketMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; path = MtGoxMarketMenuView.h; sourceTree = "<group>"; };
+		AA435C2C13A2E0850050F307 /* MtGoxMarketMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MtGoxMarketMenuView.h; sourceTree = "<group>"; };
 		AA435C2D13A2E0860050F307 /* MtGoxMarketMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MtGoxMarketMenuView.m; sourceTree = "<group>"; };
 		AA4BBA281379E31B005CE351 /* BitTicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitTicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA4BBA2C1379E31B005CE351 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -117,6 +118,8 @@
 		AA6E6C4C1399DC3E003A4224 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		AA6E6C811399F2EB003A4224 /* SharedSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedSettings.h; sourceTree = "<group>"; };
 		AA6E6C821399F2EB003A4224 /* SharedSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedSettings.m; sourceTree = "<group>"; };
+		AA83B79A13A2FF1C000F71A6 /* TradeHillMarket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TradeHillMarket.h; path = "TradeHillMarket.h"; sourceTree = "<group>"; };
+		AA83B79B13A2FF1C000F71A6 /* TradeHillMarket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TradeHillMarket.m; path = "TradeHillMarket.m"; sourceTree = "<group>"; };
 		AAB399B1139B0D8500B9438F /* Wallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wallet.h; sourceTree = "<group>"; };
 		AAB399B2139B0D8500B9438F /* Wallet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wallet.m; sourceTree = "<group>"; };
 		AAD172621399BA1D00B505B0 /* EMKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychainItem.h; sourceTree = "<group>"; };
@@ -202,6 +205,8 @@
 				83405B36137F6DDF0060CAD4 /* BitcoinMarket.m */,
 				83405B37137F6DDF0060CAD4 /* MtGoxMarket.h */,
 				83405B38137F6DDF0060CAD4 /* MtGoxMarket.m */,
+				AA83B79A13A2FF1C000F71A6 /* TradeHillMarket.h */,
+				AA83B79B13A2FF1C000F71A6 /* TradeHillMarket.m */,
 				AAB399B1139B0D8500B9438F /* Wallet.h */,
 				AAB399B2139B0D8500B9438F /* Wallet.m */,
 				AAD172621399BA1D00B505B0 /* EMKeychainItem.h */,
@@ -403,6 +408,7 @@
 				AA435C0E13A2CB550050F307 /* MenuController.m in Sources */,
 				AA435C1213A2CCAA0050F307 /* CustomMenuView.m in Sources */,
 				AA435C2E13A2E0860050F307 /* MtGoxMarketMenuView.m in Sources */,
+				AA83B79C13A2FF1C000F71A6 /* TradeHillMarket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

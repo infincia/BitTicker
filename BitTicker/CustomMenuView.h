@@ -10,8 +10,10 @@
 
 
 @interface CustomMenuView : NSView {
-@private
+
     
 }
+
+- (id)initWithFrame:(NSRect)frame;
 
 @end

@@ -11,13 +11,12 @@
 
 @implementation CustomMenuView
 
-- (id)initWithFrame:(NSRect)frame
-{
+- (id)initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code here.
     }
-    
+	
     return self;
 }
 

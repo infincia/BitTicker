@@ -25,6 +25,7 @@
 		AA239F7C1379F1B200150707 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA239F7A1379F1B200150707 /* QuartzCore.framework */; };
 		AA435C0E13A2CB550050F307 /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA435C0D13A2CB550050F307 /* MenuController.m */; };
 		AA435C1213A2CCAA0050F307 /* CustomMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA435C1113A2CCA90050F307 /* CustomMenuView.m */; };
+		AA435C2E13A2E0860050F307 /* MtGoxMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA435C2D13A2E0860050F307 /* MtGoxMenuView.m */; };
 		AA4BBA2D1379E31B005CE351 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4BBA2C1379E31B005CE351 /* Cocoa.framework */; };
 		AA4BBA371379E31C005CE351 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA4BBA351379E31C005CE351 /* InfoPlist.strings */; };
 		AA4BBA3A1379E31C005CE351 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4BBA391379E31C005CE351 /* main.m */; };
@@ -76,10 +77,12 @@
 		AA239F751379F17200150707 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AA239F791379F1B200150707 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		AA239F7A1379F1B200150707 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		AA435C0C13A2CB550050F307 /* MenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuController.h; path = "MenuController.h"; sourceTree = "<group>"; };
-		AA435C0D13A2CB550050F307 /* MenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuController.m; path = "MenuController.m"; sourceTree = "<group>"; };
-		AA435C1013A2CCA90050F307 /* CustomMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomMenuView.h; path = "CustomMenuView.h"; sourceTree = "<group>"; };
-		AA435C1113A2CCA90050F307 /* CustomMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomMenuView.m; path = "CustomMenuView.m"; sourceTree = "<group>"; };
+		AA435C0C13A2CB550050F307 /* MenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuController.h; sourceTree = "<group>"; };
+		AA435C0D13A2CB550050F307 /* MenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuController.m; sourceTree = "<group>"; };
+		AA435C1013A2CCA90050F307 /* CustomMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMenuView.h; sourceTree = "<group>"; };
+		AA435C1113A2CCA90050F307 /* CustomMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMenuView.m; sourceTree = "<group>"; };
+		AA435C2C13A2E0850050F307 /* MtGoxMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MtGoxMenuView.h; path = "MtGoxMenuView.h"; sourceTree = "<group>"; };
+		AA435C2D13A2E0860050F307 /* MtGoxMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MtGoxMenuView.m; path = "MtGoxMenuView.m"; sourceTree = "<group>"; };
 		AA4BBA281379E31B005CE351 /* BitTicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitTicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA4BBA2C1379E31B005CE351 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		AA4BBA2F1379E31B005CE351 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -203,6 +206,12 @@
 				AAB399B2139B0D8500B9438F /* Wallet.m */,
 				AAD172621399BA1D00B505B0 /* EMKeychainItem.h */,
 				AAD172631399BA1D00B505B0 /* EMKeychainItem.m */,
+				AA239F4D1379E67300150707 /* StatusItemView.h */,
+				AA239F4E1379E67300150707 /* StatusItemView.m */,
+				AA435C1013A2CCA90050F307 /* CustomMenuView.h */,
+				AA435C1113A2CCA90050F307 /* CustomMenuView.m */,
+				AA435C2C13A2E0850050F307 /* MtGoxMenuView.h */,
+				AA435C2D13A2E0860050F307 /* MtGoxMenuView.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -279,12 +288,8 @@
 				83405B20137F684E0060CAD4 /* Networking */,
 				83405B0D137F5D8A0060CAD4 /* JSON */,
 				837DF132139B3B8A009987F3 /* Settings */,
-				AA239F4D1379E67300150707 /* StatusItemView.h */,
-				AA239F4E1379E67300150707 /* StatusItemView.m */,
 				AA435C0C13A2CB550050F307 /* MenuController.h */,
 				AA435C0D13A2CB550050F307 /* MenuController.m */,
-				AA435C1013A2CCA90050F307 /* CustomMenuView.h */,
-				AA435C1113A2CCA90050F307 /* CustomMenuView.m */,
 				AA4BBA3E1379E31C005CE351 /* BitTickerAppDelegate.h */,
 				AA4BBA3F1379E31C005CE351 /* BitTickerAppDelegate.m */,
 				837DF12E139B2EC8009987F3 /* Nibs */,
@@ -397,6 +402,7 @@
 				837DF135139B8E19009987F3 /* SettingsWindowController.m in Sources */,
 				AA435C0E13A2CB550050F307 /* MenuController.m in Sources */,
 				AA435C1213A2CCAA0050F307 /* CustomMenuView.m in Sources */,
+				AA435C2E13A2E0860050F307 /* MtGoxMenuView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

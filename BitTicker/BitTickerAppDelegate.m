@@ -35,7 +35,7 @@
     settingsWindowController = [[SettingsWindowController alloc] init];
 
 	menuController = [[MenuController alloc] init];
-	[menuController createMenus];
+
     MSLog(@"Starting");
     market = [[MtGoxMarket alloc] initWithDelegate:menuController];
     
@@ -44,6 +44,8 @@
     
     [market fetchTicker];
 	[market fetchWallet];
+	[menuController createMenuForMarket:market];
+	[menuController addSelectorItems];
 }
 
 #pragma mark Application delegate

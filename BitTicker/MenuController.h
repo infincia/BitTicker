@@ -8,49 +8,37 @@
 
 #import <Foundation/Foundation.h>
 #import "BitcoinMarketDelegate.h"
+#import "SharedSettings.h"
 @class StatusItemView;
 @class Ticker;
 @class BitcoinMarket;
 
 @interface MenuController : NSObject <BitcoinMarketDelegate> {
-
-
-	NSTextField *highValue;
-	NSTextField *lowValue;
-	NSTextField *volValue;
-	NSTextField *buyValue;
-	NSTextField *sellValue;
-	NSTextField *lastValue;
+	SharedSettings *sharedSettingManager;
+	NSMenu *trayMenu;
+	NSMutableDictionary *_viewDict;
+	StatusItemView *statusItemView;
+	NSStatusItem *_statusItem;
 	
-	NSTextField *BTCValue;
-	NSTextField *BTCxUSDValue;
-	NSTextField *USDValue;
-    NSTextField *walletUSDValue;	
+	NSNumberFormatter *currencyFormatter;
 	
-	NSView *statsView;
-	NSMenuItem *statsItem;
-
-    NSView *walletView;
-    NSMenuItem *walletItem;
-		
+	NSNumber *_tickerValue;
+	
 	NSMenuItem *quitItem;
     NSMenuItem *aboutItem;
 	NSMenuItem *settingsItem;
     NSMenuItem *refreshItem;
 	NSMenuItem *preferenceItem;
 	
-	NSMenu *trayMenu;
-	
-	StatusItemView *statusItemView;
-	NSStatusItem *_statusItem;
-	NSNumberFormatter *currencyFormatter;
-	
-	NSNumber *_tickerValue;
+	NSInteger _currentMenuStop;
     
 }
 
--(void)createMenus;
+-(void)createMenuForMarket:(BitcoinMarket*)market;
+
+-(void)addSelectorItems;
 
 @property (retain, nonatomic) NSNumber *tickerValue;
-
+@property () NSInteger currentMenuStop;
+@property (retain) NSMutableDictionary *viewDict;
 @end

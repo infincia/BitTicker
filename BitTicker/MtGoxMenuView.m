@@ -22,18 +22,6 @@
 
 @implementation MtGoxMenuView
 
-@dynamic high;
-@dynamic low;
-@dynamic vol;
-@dynamic buy;
-@dynamic sell;
-@dynamic last;
-	
-@dynamic btc;
-@dynamic btcusd;
-@dynamic usd;
-@dynamic wallet;
-
 - (id)initWithFrame:(NSRect)frame {
 	CGRect newFrame = frame;
 	newFrame.size.height = frame.size.height + 60;

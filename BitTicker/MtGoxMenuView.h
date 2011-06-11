@@ -25,16 +25,4 @@
     
 }
 
-@property (retain) NSString *high;
-@property (retain) NSString *low;
-@property (retain) NSString *vol;
-@property (retain) NSString *buy;
-@property (retain) NSString *sell;
-@property (retain) NSString *last;
-	
-@property (retain) NSString *btc;
-@property (retain) NSString *btcusd;
-@property (retain) NSString *usd;
-@property (retain) NSString *wallet;
-
 @end

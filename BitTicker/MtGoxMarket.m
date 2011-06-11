@@ -52,10 +52,10 @@
     MSLog(@"Fetching wallet...");
 	NSString *username = [sharedSettingManager usernameForMarket:eMarketMtGox];
 	NSString *password = [sharedSettingManager passwordForMarket:eMarketMtGox];
-	if ([username isEqualToString:@"ChangeMe"] || username == nil) {
+	if ([username isEqualToString:@""] || username == nil) {
 		return;
 	}
-	if ([password isEqualToString:@"ChangeMe"] || password == nil) {
+	if ([password isEqualToString:@""] || password == nil) {
 		return;
 	}
 	NSDictionary *post = [NSDictionary dictionaryWithObjectsAndKeys:username,@"name",password,@"pass",nil];

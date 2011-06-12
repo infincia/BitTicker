@@ -37,10 +37,12 @@
     NSMutableArray *stats;
 	
     NSWindowController *settingsWindowController;
+	NSWindowController *mainWindowController;
 }
 
 - (void) quitProgram:(id)sender;
 - (IBAction)refreshTicker:(id)sender;
+- (IBAction)showMainWindow:(id)sender;
 - (IBAction)showSettings:(id)sender;
 - (IBAction)showAbout:(id)sender;
 

@@ -25,6 +25,8 @@
 #import "SettingsWindowController.h"
 #import "SettingsWindow.h"
 
+#import "MainWindowController.h"
+
 @implementation BitTickerAppDelegate
 
 @synthesize stats;
@@ -35,6 +37,8 @@
 	
     settingsWindowController = [[SettingsWindowController alloc] init];
 
+	mainWindowController = [[MainWindowController alloc] init];
+	
 	menuController = [[MenuController alloc] init];
 
     MSLog(@"Starting");
@@ -81,6 +85,11 @@
 
 - (IBAction)showSettings:(id)sender {
     [settingsWindowController.window makeKeyAndOrderFront:nil];
+	[NSApp activateIgnoringOtherApps:YES];
+}
+
+- (IBAction)showMainWindow:(id)sender {
+    [mainWindowController.window makeKeyAndOrderFront:nil];
 	[NSApp activateIgnoringOtherApps:YES];
 }
 

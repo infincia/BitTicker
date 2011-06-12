@@ -75,14 +75,15 @@
 	refreshItem = [trayMenu addItemWithTitle:@"Refresh" 
                                       action:@selector(refreshTicker:) 
                                keyEquivalent:@"r"];
-	aboutItem = [trayMenu addItemWithTitle: @"About"  
-                                    action: @selector (showAbout:)  
-                             keyEquivalent: @"a"];
 	settingsItem = [trayMenu addItemWithTitle: @"Settings"  
                                     action: @selector (showSettings:)  
                              keyEquivalent: @"s"];
-
-
+	mainWindowItem = [trayMenu addItemWithTitle: @"Main Window"  
+                                    action: @selector (showMainWindow:)  
+                             keyEquivalent: @"m"];							 
+	aboutItem = [trayMenu addItemWithTitle: @"About"  
+                                    action: @selector (showAbout:)  
+                             keyEquivalent: @"a"];
 	quitItem = [trayMenu addItemWithTitle: @"Quit"  
 								   action: @selector (quitProgram:)  
 							keyEquivalent: @"q"];

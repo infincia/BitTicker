@@ -27,6 +27,7 @@
 	NSMenuItem *quitItem;
     NSMenuItem *aboutItem;
 	NSMenuItem *settingsItem;
+	NSMenuItem *mainWindowItem;
     NSMenuItem *refreshItem;
 	NSMenuItem *preferenceItem;
 	

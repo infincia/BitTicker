@@ -168,7 +168,7 @@
 																		</object>
 																		<object class="NSColor" key="NSTextColor">
 																			<int key="NSColorSpace">1</int>
-																			<bytes key="NSRGB">MC4zMjI2NDYxMDM5IDAuNDA0Nzg0MjUxNSAwLjUzNTcxNDI4NTcAA</bytes>
+																			<bytes key="NSRGB">MCAwIDAAA</bytes>
 																		</object>
 																	</object>
 																	<int key="NSResizingMask">3</int>
@@ -531,14 +531,16 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>_mtGoxView</string>
-							<string>_tradeHillView</string>
+							<string>_mainPanel</string>
+							<string>_mtGoxPanel</string>
+							<string>_tradeHillPanel</string>
 							<string>mainView</string>
 							<string>marketListTable</string>
 							<string>panelController</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>NSView</string>
 							<string>NSView</string>
 							<string>NSView</string>
 							<string>NSView</string>
@@ -550,8 +552,9 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>_mtGoxView</string>
-							<string>_tradeHillView</string>
+							<string>_mainPanel</string>
+							<string>_mtGoxPanel</string>
+							<string>_tradeHillPanel</string>
 							<string>mainView</string>
 							<string>marketListTable</string>
 							<string>panelController</string>
@@ -559,11 +562,15 @@
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBToOneOutletInfo">
-								<string key="name">_mtGoxView</string>
+								<string key="name">_mainPanel</string>
 								<string key="candidateClassName">NSView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
-								<string key="name">_tradeHillView</string>
+								<string key="name">_mtGoxPanel</string>
+								<string key="candidateClassName">NSView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_tradeHillPanel</string>
 								<string key="candidateClassName">NSView</string>
 							</object>
 							<object class="IBToOneOutletInfo">

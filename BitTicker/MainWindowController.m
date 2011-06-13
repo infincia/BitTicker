@@ -106,8 +106,9 @@
 
 #pragma mark - Actions
 
-- (void)dealloc
-{
+- (void)dealloc {
+	[[NSNotificationCenter defaultCenter] removeObserver:_mtGoxPanel];
+	[[NSNotificationCenter defaultCenter] removeObserver:_tradeHillPanel];
     [super dealloc];
 }
 

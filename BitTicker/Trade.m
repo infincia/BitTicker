@@ -7,7 +7,7 @@
 //
 
 #import "Trade.h"
-
+#import "BitcoinMarket.h"
 
 @implementation Trade
 
@@ -15,5 +15,7 @@
 @synthesize date=_date;
 @synthesize price=_price;
 @synthesize amount=_amount;
+
+@synthesize market=_market;
 
 @end

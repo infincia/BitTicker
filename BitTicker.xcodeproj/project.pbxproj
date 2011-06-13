@@ -19,6 +19,7 @@
 		837DF135139B8E19009987F3 /* SettingsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 837DF134139B8E18009987F3 /* SettingsWindowController.m */; };
 		AA1F92A013A526D600D5643C /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1F929F13A526D600D5643C /* MainWindow.xib */; };
 		AA1F92A413A52D7D00D5643C /* ToolbarTicker.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1F92A313A52D7D00D5643C /* ToolbarTicker.m */; };
+		AA201E7B13A59C4D0063066E /* WindowPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA201E7A13A59C4D0063066E /* WindowPanel.m */; };
 		AA239F511379E67300150707 /* StatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA239F4E1379E67300150707 /* StatusItemView.m */; };
 		AA239F761379F17200150707 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA239F731379F17200150707 /* CoreServices.framework */; };
 		AA239F771379F17200150707 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA239F741379F17200150707 /* libz.dylib */; };
@@ -81,6 +82,8 @@
 		AA1F929F13A526D600D5643C /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		AA1F92A213A52D7D00D5643C /* ToolbarTicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolbarTicker.h; sourceTree = "<group>"; };
 		AA1F92A313A52D7D00D5643C /* ToolbarTicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolbarTicker.m; sourceTree = "<group>"; };
+		AA201E7913A59C4D0063066E /* WindowPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WindowPanel.h; path = "WindowPanel.h"; sourceTree = "<group>"; };
+		AA201E7A13A59C4D0063066E /* WindowPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WindowPanel.m; path = "WindowPanel.m"; sourceTree = "<group>"; };
 		AA239F4D1379E67300150707 /* StatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusItemView.h; sourceTree = "<group>"; };
 		AA239F4E1379E67300150707 /* StatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusItemView.m; sourceTree = "<group>"; };
 		AA239F731379F17200150707 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
@@ -132,11 +135,11 @@
 		AA83B79B13A2FF1C000F71A6 /* TradeHillMarket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TradeHillMarket.m; sourceTree = "<group>"; };
 		AA83B7AA13A30582000F71A6 /* TradeHillMarketMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TradeHillMarketMenuView.h; sourceTree = "<group>"; };
 		AA83B7AB13A30582000F71A6 /* TradeHillMarketMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TradeHillMarketMenuView.m; sourceTree = "<group>"; };
-		AA86BF0C13A536250089B39E /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainWindowController.h; path = "MainWindowController.h"; sourceTree = "<group>"; };
-		AA86BF0D13A536250089B39E /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainWindowController.m; path = "MainWindowController.m"; sourceTree = "<group>"; };
-		AA86BF2013A55C0F0089B39E /* MtGoxPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MtGoxPanel.xib; path = "MtGoxPanel.xib"; sourceTree = "<group>"; };
-		AA86BF2213A55C870089B39E /* TradeHillPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TradeHillPanel.xib; path = "TradeHillPanel.xib"; sourceTree = "<group>"; };
-		AA86BF2413A56A470089B39E /* MainPanelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainPanelView.xib; path = "MainPanelView.xib"; sourceTree = "<group>"; };
+		AA86BF0C13A536250089B39E /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
+		AA86BF0D13A536250089B39E /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
+		AA86BF2013A55C0F0089B39E /* MtGoxPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MtGoxPanel.xib; sourceTree = "<group>"; };
+		AA86BF2213A55C870089B39E /* TradeHillPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TradeHillPanel.xib; sourceTree = "<group>"; };
+		AA86BF2413A56A470089B39E /* MainPanelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainPanelView.xib; sourceTree = "<group>"; };
 		AAB399B1139B0D8500B9438F /* Wallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wallet.h; sourceTree = "<group>"; };
 		AAB399B2139B0D8500B9438F /* Wallet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wallet.m; sourceTree = "<group>"; };
 		AAD172621399BA1D00B505B0 /* EMKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychainItem.h; sourceTree = "<group>"; };
@@ -273,6 +276,8 @@
 			children = (
 				AA86BF0C13A536250089B39E /* MainWindowController.h */,
 				AA86BF0D13A536250089B39E /* MainWindowController.m */,
+				AA201E7913A59C4D0063066E /* WindowPanel.h */,
+				AA201E7A13A59C4D0063066E /* WindowPanel.m */,
 			);
 			name = MainWindow;
 			sourceTree = "<group>";
@@ -451,6 +456,7 @@
 				AA83B7AC13A30583000F71A6 /* TradeHillMarketMenuView.m in Sources */,
 				AA1F92A413A52D7D00D5643C /* ToolbarTicker.m in Sources */,
 				AA86BF0F13A536250089B39E /* MainWindowController.m in Sources */,
+				AA201E7B13A59C4D0063066E /* WindowPanel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

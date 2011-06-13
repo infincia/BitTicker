@@ -7,12 +7,14 @@
 //
 
 #import "Wallet.h"
-
+#import "BitcoinMarket.h"
 
 @implementation Wallet
 
 @synthesize mid = _mid;
 @synthesize btc = _btc;
 @synthesize usd = _usd;
+
+@synthesize market=_market;
 
 @end

@@ -10,10 +10,12 @@
 
 #import "BitcoinMarket.h"
 
-@interface TradeHillMarket : BitcoinMarket {
+#import "BitcoinMarket.h"
+
+@interface TradeHillMarket : BitcoinMarket <BitcoinMarketDelegate> {
     
 }
 
--(id)initWithDelegate:(id<BitcoinMarketDelegate>)delegate;
+-(id)init;
 
 @end

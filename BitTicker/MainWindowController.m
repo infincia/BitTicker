@@ -31,7 +31,11 @@
 	self.viewDict = [NSMutableDictionary dictionaryWithCapacity:10];
 	[self.viewDict setObject:_mtGoxPanel forKey:[sharedSettings stringForMarket:0]];
 	[self.viewDict setObject:_tradeHillPanel forKey:[sharedSettings stringForMarket:1]];
-	NSLog(@"%@",self.viewDict);
+	
+	
+	[[NSNotificationCenter defaultCenter] addObserver:_mtGoxPanel selector:@selector(didReceiveTicker:) name:@"MtGox-Ticker" object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:_mtGoxPanel selector:@selector(didReceiveWallet:) name:@"MtGox-Wallet" object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:_tradeHillPanel selector:@selector(didReceiveTicker:) name:@"TradeHill-Ticker" object:nil];
     return self;
 }
 

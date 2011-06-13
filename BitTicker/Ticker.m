@@ -7,7 +7,7 @@
 //
 
 #import "Ticker.h"
-
+#import "BitcoinMarket.h"
 
 @implementation Ticker
 @synthesize high=_high;
@@ -16,6 +16,7 @@
 @synthesize buy=_buy;
 @synthesize sell=_sell;
 @synthesize last=_last;
+@synthesize market=_market;
 
 -(NSString*)description {
     return [NSString stringWithFormat:@"<Ticker: last=%@, high=%@, low=%@, volume=%@>",_last, _high, _low, _volume];

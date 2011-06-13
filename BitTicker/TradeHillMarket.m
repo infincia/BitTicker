@@ -20,8 +20,8 @@
 
 @implementation TradeHillMarket
 
--(id)initWithDelegate:(id<BitcoinMarketDelegate>)delegate {
-    if (!(self = [super initWithDelegate:delegate])) return self;
+-(id)init {
+    if (!(self = [super initWithDelegate:self])) return self;
     _tickerURL = TRADEHILL_TICKER_URL;
 	_tradeURL = TRADEHILL_TRADES_URL;
 	_depthURL = TRADEHILL_MARKETDEPTH_URL;
@@ -82,8 +82,8 @@
     while ((object = [reverseEnumerator nextObject])) {
         [orderedTrades addObject:object];
     }
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"TradeHill-Trades" object:tradeData];
     
-    [_delegate bitcoinMarket:self didReceiveRecentTradesData:orderedTrades];
 }
 
 -(void)didFetchTickerData:(NSDictionary*)tickerData {
@@ -97,8 +97,9 @@
     ticker.low = [tickerDict objectForKey:@"low"];
     ticker.last = [tickerDict objectForKey:@"last"];
     ticker.volume = [tickerDict objectForKey:@"vol"];
-    
-    [_delegate bitcoinMarket:self didReceiveTicker:ticker];
+    ticker.market = self;
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"TradeHill-Ticker" object:ticker];
+	
     [ticker release];
 }
 
@@ -112,7 +113,8 @@
 	// these might need to be changed once their API is available
 	newwallet.btc = [dictwallet objectForKey:@"btcs"];
 	newwallet.usd = [dictwallet objectForKey:@"usds"];
-	[_delegate bitcoinMarket:self didReceiveWallet:newwallet];
+	newwallet.market = self;
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"TradeHill-Wallet" object:newwallet];
 }
 
 

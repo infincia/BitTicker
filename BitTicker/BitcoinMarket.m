@@ -25,7 +25,6 @@
     
     requestHandler = [[RequestHandler alloc] initWithDelegate:self];
     self.delegate = delegate;
-    
     _selectorMap = [[NSMutableDictionary alloc] init];
     sharedSettingManager = [SharedSettings sharedSettingManager];
     return self;

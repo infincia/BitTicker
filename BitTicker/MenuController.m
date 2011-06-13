@@ -51,6 +51,8 @@
 		trayMenu = [[NSMenu alloc] initWithTitle:@"Ticker"];
 		[statusItemView setMenu:trayMenu];
 		self.currentMenuStop = 0;
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveTicker:) name:@"MtGox-Ticker" object:nil];
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveWallet:) name:@"MtGox-Wallet" object:nil];
     }
 	
     return self;
@@ -99,16 +101,19 @@
 
 #pragma mark Bitcoin market delegate
 // A request failed for some reason, for example the API being down
--(void)bitcoinMarket:(BitcoinMarket*)market requestFailedWithError:(NSError*)error {
+-(void)requestFailedWithError:(NSNotification *)notification {
+	NSError *error = [notification object];
     MSLog(@"Error: %@",error);
 }
 
 // Request wasn't formatted as expected
--(void)bitcoinMarket:(BitcoinMarket*)market didReceiveInvalidResponse:(NSData*)data {
+-(void)didReceiveInvalidResponse:(NSNotification *)notification {
+	NSData *data = [notification object];
     MSLog(@"Invalid response: %@",data);
 }
 
--(void)bitcoinMarket:(BitcoinMarket*)market didReceiveTicker:(Ticker*)ticker {
+-(void)didReceiveTicker:(NSNotification *)notification {
+	Ticker *ticker = [notification object];
     [statusItemView setTickerValue:ticker.last];
 	self.tickerValue = ticker.last;
     MSLog(@"Got mah ticker: %@",ticker);
@@ -116,7 +121,7 @@
     NSNumberFormatter *volumeFormatter = [[NSNumberFormatter alloc] init];
     volumeFormatter.numberStyle = NSNumberFormatterDecimalStyle;
     volumeFormatter.hasThousandSeparators = YES;
-	CustomMenuView *view = [self.viewDict objectForKey:NSStringFromClass( [market class] ) ] ;
+	CustomMenuView *view = [self.viewDict objectForKey:NSStringFromClass( [ticker.market class] ) ] ;
 	
 	
 	[view setHigh:[currencyFormatter stringFromNumber:ticker.high]];
@@ -129,12 +134,14 @@
     [volumeFormatter release];
 }
 
--(void)bitcoinMarket:(BitcoinMarket*)market didReceiveRecentTradesData:(NSArray*)trades {
+-(void)didReceiveRecentTradesData:(NSNotification *)notification {
+	NSArray *trades = [notification object];
     
 }
 
--(void)bitcoinMarket:(BitcoinMarket*)market didReceiveWallet:(Wallet*)wallet {
-	id view = [self.viewDict objectForKey:NSStringFromClass( [market class] ) ] ;
+-(void)didReceiveWallet:(NSNotification *)notification {
+	Wallet *wallet = [notification object];
+	id view = [self.viewDict objectForKey:NSStringFromClass( [wallet.market class] ) ] ;
     double btc = [wallet.btc doubleValue];
     double usd = [wallet.usd doubleValue];
 	double last = [self.tickerValue doubleValue];

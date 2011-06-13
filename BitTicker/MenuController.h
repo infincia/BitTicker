@@ -7,13 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BitcoinMarketDelegate.h"
 #import "SharedSettings.h"
 @class StatusItemView;
 @class Ticker;
 @class BitcoinMarket;
 
-@interface MenuController : NSObject <BitcoinMarketDelegate> {
+@interface MenuController : NSObject {
 	SharedSettings *sharedSettingManager;
 	NSMenu *trayMenu;
 	NSMutableDictionary *_viewDict;

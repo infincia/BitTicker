@@ -42,14 +42,14 @@
 	menuController = [[MenuController alloc] init];
 
     MSLog(@"Starting");
-    market = [[MtGoxMarket alloc] initWithDelegate:menuController];
+    market = [[MtGoxMarket alloc] init];
     tickerTimer = [[NSTimer scheduledTimerWithTimeInterval:30 target:market selector:@selector(fetchTicker) userInfo:nil repeats:YES] retain];
     walletTimer = [[NSTimer scheduledTimerWithTimeInterval:60 target:market selector:@selector(fetchWallet) userInfo:nil repeats:YES] retain];
     [market fetchTicker];
 	[market fetchWallet];
 	[menuController createMenuForMarket:market];
 	
-    //tradehill = [[TradeHillMarket alloc] initWithDelegate:menuController];
+    //tradehill = [[TradeHillMarket alloc] init];
 	//[menuController createMenuForMarket:tradehill];	
 	
 	[menuController addSelectorItems];

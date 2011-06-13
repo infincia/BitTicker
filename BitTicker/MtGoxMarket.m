@@ -24,8 +24,8 @@
 
 @implementation MtGoxMarket
 
--(id)initWithDelegate:(id<BitcoinMarketDelegate>)delegate {
-    if (!(self = [super initWithDelegate:delegate])) return self;
+-(id)init {
+    if (!(self = [super initWithDelegate:self])) return self;
     _tickerURL = MTGOX_TICKER_URL;
 	_tradeURL = MTGOX_TRADES_URL;
 	_depthURL = MTGOX_MARKETDEPTH_URL;
@@ -87,7 +87,7 @@
         [orderedTrades addObject:object];
     }
     
-    [_delegate bitcoinMarket:self didReceiveRecentTradesData:orderedTrades];
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"MtGox-Trades" object:orderedTrades];
 }
 
 -(void)didFetchTickerData:(NSDictionary*)tickerData {
@@ -100,20 +100,22 @@
     ticker.low = [tickerDict objectForKey:@"low"];
     ticker.last = [tickerDict objectForKey:@"last"];
     ticker.volume = [tickerDict objectForKey:@"vol"];
-    
-    [_delegate bitcoinMarket:self didReceiveTicker:ticker];
+    ticker.market = self;
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"MtGox-Ticker" object:ticker];
     [ticker release];
 }
 
 -(void)didFetchMarketDepth:(NSDictionary*)marketDepth {
     MSLog(@"Got %i asks and %i bids",[[marketDepth objectForKey:@"asks"] count],[[marketDepth objectForKey:@"bids"] count]);
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"MtGox-Depth" object:marketDepth];
 }
 
 -(void)didFetchWallet:(NSDictionary *)dictwallet {
 	Wallet *newwallet = [[Wallet alloc] init];
 	newwallet.btc = [dictwallet objectForKey:@"btcs"];
 	newwallet.usd = [dictwallet objectForKey:@"usds"];
-	[_delegate bitcoinMarket:self didReceiveWallet:newwallet];
+	newwallet.market = self;
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"MtGox-Wallet" object:newwallet];
 }
 
 @end

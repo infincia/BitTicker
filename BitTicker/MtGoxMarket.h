@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "BitcoinMarketDelegate.h"
 #import "BitcoinMarket.h"
 
-@interface MtGoxMarket : BitcoinMarket {
+@interface MtGoxMarket : BitcoinMarket <BitcoinMarketDelegate>{
 
 }
 
--(id)initWithDelegate:(id<BitcoinMarketDelegate>)delegate;
+-(id)init;
 
 @end

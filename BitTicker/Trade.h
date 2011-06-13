@@ -7,14 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class BitcoinMarket;
 
 @interface Trade : NSObject {
     NSInteger   _tid;       // Trade ID
     NSNumber    *_price;    // Price in USD
     NSNumber    *_amount;   // Amount bought/sold in BTC
     NSDate      *_date;     // Time/date that trade was fulfilled
+	BitcoinMarket *_market;
 }
+
+@property (retain) BitcoinMarket *market;
 
 @property (nonatomic) NSInteger tid;
 @property (nonatomic, retain) NSNumber *price;

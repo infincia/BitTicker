@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@class BitcoinMarket;
 
 
 @interface Ticker : NSObject {
@@ -16,7 +17,9 @@
     NSNumber *_buy;
     NSNumber *_sell;
     NSNumber *_last;
+	BitcoinMarket *_market;
 }
+@property (retain) BitcoinMarket *market;
 @property (nonatomic, retain)  NSNumber *high;
 @property (nonatomic, retain)  NSNumber *low;
 @property (nonatomic, retain)  NSNumber *volume;

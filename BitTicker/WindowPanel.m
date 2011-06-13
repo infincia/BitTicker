@@ -58,8 +58,8 @@
 	NSArray *trades = [notification object];
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
     [super dealloc];
 }
 

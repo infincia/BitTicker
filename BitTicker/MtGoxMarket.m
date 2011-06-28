@@ -71,7 +71,7 @@
         newTrade.price = [tradeDict objectForKey:@"price"];
         newTrade.tid = [[tradeDict objectForKey:@"tid"] intValue];
         
-        newTrade.date = [NSDate dateWithTimeIntervalSince1970:[[tradeDict objectForKey:@"amount"] doubleValue]];
+        newTrade.date = [NSDate dateWithTimeIntervalSince1970:[[tradeDict objectForKey:@"date"] doubleValue]];
         
         [trades addObject:newTrade];
         [newTrade release];

@@ -1,37 +1,10 @@
 /*
- BitTicker is Copyright 2011 Stephen Oliver
- http://github.com/mrsteveman1
- 
- This program is free software; you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation; either version 2 of the License, or
- (at your option) any later version.
- 
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
- 
- You should have received a copy of the GNU General Public License
- along with this program; if not, write to the Free Software
- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA 
+ BitTicker is Copyright 2012 Stephen Oliver
+ http://github.com/infincia
+
+
  */
 
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
 #endif
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
-// Debug
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#define DEBUG_ON  // Toggle to DEBUG_OFF or comment out to hide all debug code 
-
-#ifdef DEBUG_ON
-#define MSLog(format, ...) CFShow([[NSString stringWithFormat:@"<%@:%d> ",[[NSString stringWithUTF8String:__FILE__] lastPathComponent],__LINE__] stringByAppendingFormat:format, ## __VA_ARGS__])
-#else
-#define MSlog(format, ...) 
-#endif
-
-#define MSLogRect(rect) MSLog(@"%s x:%.4f, y:%.4f, w:%.4f, h%.4f", #rect, rect.origin.x, rect.origin.y, rect.size.width, rect.size.height)
-#define MSLogSize(size) MSLog(@"%s w:%.4f, h:%.4f", #size, size.width, size.height)
-#define MSLogPoint(point) MSLog(@"%s x:%.4f, y:%.4f", #point, point.x, point.y)

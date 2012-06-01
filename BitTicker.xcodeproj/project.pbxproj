@@ -7,85 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		83405B28137F68610060CAD4 /* TaggedNSURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 83405B22137F68610060CAD4 /* TaggedNSURLConnection.m */; };
-		83405B29137F68610060CAD4 /* NSMutableDictionary+IntegerKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 83405B24137F68610060CAD4 /* NSMutableDictionary+IntegerKeys.m */; };
-		83405B2A137F68610060CAD4 /* RequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 83405B27137F68610060CAD4 /* RequestHandler.m */; };
-		83405B39137F6DDF0060CAD4 /* Trade.m in Sources */ = {isa = PBXBuildFile; fileRef = 83405B31137F6DDF0060CAD4 /* Trade.m */; };
-		83405B3A137F6DDF0060CAD4 /* Ticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 83405B33137F6DDF0060CAD4 /* Ticker.m */; };
-		83405B3B137F6DDF0060CAD4 /* BitcoinMarket.m in Sources */ = {isa = PBXBuildFile; fileRef = 83405B36137F6DDF0060CAD4 /* BitcoinMarket.m */; };
-		83405B3C137F6DDF0060CAD4 /* MtGoxMarket.m in Sources */ = {isa = PBXBuildFile; fileRef = 83405B38137F6DDF0060CAD4 /* MtGoxMarket.m */; };
-		837DF12D139B2E97009987F3 /* SettingsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 837DF12C139B2E97009987F3 /* SettingsWindow.xib */; };
-		837DF131139B319F009987F3 /* SettingsWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 837DF130139B319F009987F3 /* SettingsWindow.m */; };
-		837DF135139B8E19009987F3 /* SettingsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 837DF134139B8E18009987F3 /* SettingsWindowController.m */; };
-		AA1F92A013A526D600D5643C /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1F929F13A526D600D5643C /* MainWindow.xib */; };
-		AA1F92A413A52D7D00D5643C /* ToolbarTicker.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1F92A313A52D7D00D5643C /* ToolbarTicker.m */; };
-		AA201E7B13A59C4D0063066E /* WindowPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA201E7A13A59C4D0063066E /* WindowPanel.m */; };
+		83405B3C137F6DDF0060CAD4 /* MtGox.m in Sources */ = {isa = PBXBuildFile; fileRef = 83405B38137F6DDF0060CAD4 /* MtGox.m */; };
 		AA239F511379E67300150707 /* StatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA239F4E1379E67300150707 /* StatusItemView.m */; };
 		AA239F761379F17200150707 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA239F731379F17200150707 /* CoreServices.framework */; };
 		AA239F771379F17200150707 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA239F741379F17200150707 /* libz.dylib */; };
 		AA239F781379F17200150707 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA239F751379F17200150707 /* SystemConfiguration.framework */; };
 		AA239F7B1379F1B200150707 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA239F791379F1B200150707 /* Quartz.framework */; };
 		AA239F7C1379F1B200150707 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA239F7A1379F1B200150707 /* QuartzCore.framework */; };
-		AA435C0E13A2CB550050F307 /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA435C0D13A2CB550050F307 /* MenuController.m */; };
-		AA435C1213A2CCAA0050F307 /* CustomMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA435C1113A2CCA90050F307 /* CustomMenuView.m */; };
-		AA435C2E13A2E0860050F307 /* MtGoxMarketMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA435C2D13A2E0860050F307 /* MtGoxMarketMenuView.m */; };
+		AA435C0E13A2CB550050F307 /* Dropdown.m in Sources */ = {isa = PBXBuildFile; fileRef = AA435C0D13A2CB550050F307 /* Dropdown.m */; };
 		AA4BBA2D1379E31B005CE351 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4BBA2C1379E31B005CE351 /* Cocoa.framework */; };
 		AA4BBA371379E31C005CE351 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA4BBA351379E31C005CE351 /* InfoPlist.strings */; };
 		AA4BBA3A1379E31C005CE351 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4BBA391379E31C005CE351 /* main.m */; };
 		AA4BBA401379E31C005CE351 /* BitTickerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4BBA3F1379E31C005CE351 /* BitTickerAppDelegate.m */; };
 		AA4BBA431379E31C005CE351 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA4BBA411379E31C005CE351 /* MainMenu.xib */; };
-		AA6C46CF137E10B2000A1DCB /* NSObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6C46BE137E10B2000A1DCB /* NSObject+JSON.m */; };
-		AA6C46D0137E10B2000A1DCB /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6C46C0137E10B2000A1DCB /* SBJsonParser.m */; };
-		AA6C46D1137E10B2000A1DCB /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6C46C2137E10B2000A1DCB /* SBJsonStreamParser.m */; };
-		AA6C46D2137E10B2000A1DCB /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6C46C4137E10B2000A1DCB /* SBJsonStreamParserAdapter.m */; };
-		AA6C46D3137E10B2000A1DCB /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6C46C6137E10B2000A1DCB /* SBJsonStreamParserState.m */; };
-		AA6C46D4137E10B2000A1DCB /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6C46C8137E10B2000A1DCB /* SBJsonStreamWriter.m */; };
-		AA6C46D5137E10B2000A1DCB /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6C46CA137E10B2000A1DCB /* SBJsonStreamWriterState.m */; };
-		AA6C46D6137E10B2000A1DCB /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6C46CC137E10B2000A1DCB /* SBJsonTokeniser.m */; };
-		AA6C46D7137E10B2000A1DCB /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6C46CE137E10B2000A1DCB /* SBJsonWriter.m */; };
 		AA6E6C4D1399DC3E003A4224 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = AA6E6C4C1399DC3E003A4224 /* Credits.html */; };
-		AA6E6C831399F2EB003A4224 /* SharedSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6E6C821399F2EB003A4224 /* SharedSettings.m */; };
-		AA83B79C13A2FF1C000F71A6 /* TradeHillMarket.m in Sources */ = {isa = PBXBuildFile; fileRef = AA83B79B13A2FF1C000F71A6 /* TradeHillMarket.m */; };
-		AA83B7AC13A30583000F71A6 /* TradeHillMarketMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA83B7AB13A30582000F71A6 /* TradeHillMarketMenuView.m */; };
-		AA86BF0F13A536250089B39E /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86BF0D13A536250089B39E /* MainWindowController.m */; };
-		AA86BF2113A55C100089B39E /* MtGoxPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA86BF2013A55C0F0089B39E /* MtGoxPanel.xib */; };
-		AA86BF2313A55C880089B39E /* TradeHillPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA86BF2213A55C870089B39E /* TradeHillPanel.xib */; };
-		AA86BF2513A56A470089B39E /* MainPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA86BF2413A56A470089B39E /* MainPanelView.xib */; };
-		AAAB154213A67E3D006C76FC /* MtGoxPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAB154113A67E3D006C76FC /* MtGoxPanel.m */; };
-		AAAB154513A67E4C006C76FC /* TradeHillPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAB154413A67E4C006C76FC /* TradeHillPanel.m */; };
-		AAB399B3139B0D8500B9438F /* Wallet.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB399B2139B0D8500B9438F /* Wallet.m */; };
-		AAD172641399BA1E00B505B0 /* EMKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD172631399BA1D00B505B0 /* EMKeychainItem.m */; };
+		AA79F0A9152ADB0C002C3EEB /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA79F0A7152AD215002C3EEB /* GraphView.m */; };
+		AAA1992715295E9500025EA2 /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAA1992615295E9500025EA2 /* CorePlot.framework */; };
+		AAA1992C1529608E00025EA2 /* CorePlot.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AAA1992615295E9500025EA2 /* CorePlot.framework */; };
+		AAA19944152969E000025EA2 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA1992F152969E000025EA2 /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AAA19945152969E000025EA2 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA19931152969E000025EA2 /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AAA19946152969E000025EA2 /* AFImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA19933152969E000025EA2 /* AFImageCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AAA19947152969E000025EA2 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA19935152969E000025EA2 /* AFImageRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AAA19948152969E000025EA2 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA19937152969E000025EA2 /* AFJSONRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AAA19949152969E000025EA2 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA1993A152969E000025EA2 /* AFNetworkActivityIndicatorManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AAA1994A152969E000025EA2 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA1993D152969E000025EA2 /* AFPropertyListRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AAA1994B152969E000025EA2 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA1993F152969E000025EA2 /* AFURLConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AAA1994C152969E000025EA2 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA19941152969E000025EA2 /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AAD1726D1399BD3500B505B0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD1726C1399BD3500B505B0 /* Security.framework */; };
 		AAD64420137B680E00589EAC /* Logo.icns in Resources */ = {isa = PBXBuildFile; fileRef = AAD6441F137B680E00589EAC /* Logo.icns */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		AAAB15C113A96DF1006C76FC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AAA1992C1529608E00025EA2 /* CorePlot.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		83405B21137F68610060CAD4 /* TaggedNSURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaggedNSURLConnection.h; sourceTree = "<group>"; };
-		83405B22137F68610060CAD4 /* TaggedNSURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaggedNSURLConnection.m; sourceTree = "<group>"; };
-		83405B23137F68610060CAD4 /* NSMutableDictionary+IntegerKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+IntegerKeys.h"; sourceTree = "<group>"; };
-		83405B24137F68610060CAD4 /* NSMutableDictionary+IntegerKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+IntegerKeys.m"; sourceTree = "<group>"; };
-		83405B25137F68610060CAD4 /* RequestHandlerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestHandlerDelegate.h; sourceTree = "<group>"; };
-		83405B26137F68610060CAD4 /* RequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestHandler.h; sourceTree = "<group>"; };
-		83405B27137F68610060CAD4 /* RequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestHandler.m; sourceTree = "<group>"; };
-		83405B30137F6DDF0060CAD4 /* Trade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trade.h; sourceTree = "<group>"; };
-		83405B31137F6DDF0060CAD4 /* Trade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trade.m; sourceTree = "<group>"; };
-		83405B32137F6DDF0060CAD4 /* Ticker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ticker.h; sourceTree = "<group>"; };
-		83405B33137F6DDF0060CAD4 /* Ticker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ticker.m; sourceTree = "<group>"; };
-		83405B34137F6DDF0060CAD4 /* BitcoinMarketDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitcoinMarketDelegate.h; sourceTree = "<group>"; };
-		83405B35137F6DDF0060CAD4 /* BitcoinMarket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitcoinMarket.h; sourceTree = "<group>"; };
-		83405B36137F6DDF0060CAD4 /* BitcoinMarket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitcoinMarket.m; sourceTree = "<group>"; };
-		83405B37137F6DDF0060CAD4 /* MtGoxMarket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MtGoxMarket.h; sourceTree = "<group>"; };
-		83405B38137F6DDF0060CAD4 /* MtGoxMarket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MtGoxMarket.m; sourceTree = "<group>"; };
-		837DF12C139B2E97009987F3 /* SettingsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsWindow.xib; sourceTree = "<group>"; };
-		837DF12F139B319E009987F3 /* SettingsWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsWindow.h; sourceTree = "<group>"; };
-		837DF130139B319F009987F3 /* SettingsWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsWindow.m; sourceTree = "<group>"; };
-		837DF133139B8E18009987F3 /* SettingsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsWindowController.h; sourceTree = "<group>"; };
-		837DF134139B8E18009987F3 /* SettingsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsWindowController.m; sourceTree = "<group>"; };
-		AA1F929F13A526D600D5643C /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		AA1F92A213A52D7D00D5643C /* ToolbarTicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolbarTicker.h; sourceTree = "<group>"; };
-		AA1F92A313A52D7D00D5643C /* ToolbarTicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolbarTicker.m; sourceTree = "<group>"; };
-		AA201E7913A59C4D0063066E /* WindowPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowPanel.h; sourceTree = "<group>"; };
-		AA201E7A13A59C4D0063066E /* WindowPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowPanel.m; sourceTree = "<group>"; };
+		83405B37137F6DDF0060CAD4 /* MtGox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MtGox.h; sourceTree = "<group>"; };
+		83405B38137F6DDF0060CAD4 /* MtGox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MtGox.m; sourceTree = "<group>"; };
 		AA239F4D1379E67300150707 /* StatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusItemView.h; sourceTree = "<group>"; };
 		AA239F4E1379E67300150707 /* StatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusItemView.m; sourceTree = "<group>"; };
 		AA239F731379F17200150707 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
@@ -93,12 +60,8 @@
 		AA239F751379F17200150707 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AA239F791379F1B200150707 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		AA239F7A1379F1B200150707 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		AA435C0C13A2CB550050F307 /* MenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuController.h; sourceTree = "<group>"; };
-		AA435C0D13A2CB550050F307 /* MenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuController.m; sourceTree = "<group>"; };
-		AA435C1013A2CCA90050F307 /* CustomMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMenuView.h; sourceTree = "<group>"; };
-		AA435C1113A2CCA90050F307 /* CustomMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMenuView.m; sourceTree = "<group>"; };
-		AA435C2C13A2E0850050F307 /* MtGoxMarketMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MtGoxMarketMenuView.h; sourceTree = "<group>"; };
-		AA435C2D13A2E0860050F307 /* MtGoxMarketMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MtGoxMarketMenuView.m; sourceTree = "<group>"; };
+		AA435C0C13A2CB550050F307 /* Dropdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dropdown.h; sourceTree = "<group>"; };
+		AA435C0D13A2CB550050F307 /* Dropdown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dropdown.m; sourceTree = "<group>"; };
 		AA4BBA281379E31B005CE351 /* BitTicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitTicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA4BBA2C1379E31B005CE351 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		AA4BBA2F1379E31B005CE351 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -111,45 +74,31 @@
 		AA4BBA3E1379E31C005CE351 /* BitTickerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitTickerAppDelegate.h; sourceTree = "<group>"; };
 		AA4BBA3F1379E31C005CE351 /* BitTickerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BitTickerAppDelegate.m; sourceTree = "<group>"; };
 		AA4BBA421379E31C005CE351 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		AA6C46BC137E10B2000A1DCB /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
-		AA6C46BD137E10B2000A1DCB /* NSObject+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSON.h"; sourceTree = "<group>"; };
-		AA6C46BE137E10B2000A1DCB /* NSObject+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JSON.m"; sourceTree = "<group>"; };
-		AA6C46BF137E10B2000A1DCB /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
-		AA6C46C0137E10B2000A1DCB /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
-		AA6C46C1137E10B2000A1DCB /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
-		AA6C46C2137E10B2000A1DCB /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParser.m; sourceTree = "<group>"; };
-		AA6C46C3137E10B2000A1DCB /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
-		AA6C46C4137E10B2000A1DCB /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
-		AA6C46C5137E10B2000A1DCB /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserState.h; sourceTree = "<group>"; };
-		AA6C46C6137E10B2000A1DCB /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
-		AA6C46C7137E10B2000A1DCB /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
-		AA6C46C8137E10B2000A1DCB /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriter.m; sourceTree = "<group>"; };
-		AA6C46C9137E10B2000A1DCB /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterState.h; sourceTree = "<group>"; };
-		AA6C46CA137E10B2000A1DCB /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterState.m; sourceTree = "<group>"; };
-		AA6C46CB137E10B2000A1DCB /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonTokeniser.h; sourceTree = "<group>"; };
-		AA6C46CC137E10B2000A1DCB /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
-		AA6C46CD137E10B2000A1DCB /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
-		AA6C46CE137E10B2000A1DCB /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		AA6E6C4C1399DC3E003A4224 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
-		AA6E6C811399F2EB003A4224 /* SharedSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedSettings.h; sourceTree = "<group>"; };
-		AA6E6C821399F2EB003A4224 /* SharedSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedSettings.m; sourceTree = "<group>"; };
-		AA83B79A13A2FF1C000F71A6 /* TradeHillMarket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TradeHillMarket.h; sourceTree = "<group>"; };
-		AA83B79B13A2FF1C000F71A6 /* TradeHillMarket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TradeHillMarket.m; sourceTree = "<group>"; };
-		AA83B7AA13A30582000F71A6 /* TradeHillMarketMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TradeHillMarketMenuView.h; sourceTree = "<group>"; };
-		AA83B7AB13A30582000F71A6 /* TradeHillMarketMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TradeHillMarketMenuView.m; sourceTree = "<group>"; };
-		AA86BF0C13A536250089B39E /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
-		AA86BF0D13A536250089B39E /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
-		AA86BF2013A55C0F0089B39E /* MtGoxPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MtGoxPanel.xib; sourceTree = "<group>"; };
-		AA86BF2213A55C870089B39E /* TradeHillPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TradeHillPanel.xib; sourceTree = "<group>"; };
-		AA86BF2413A56A470089B39E /* MainPanelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainPanelView.xib; sourceTree = "<group>"; };
-		AAAB154013A67E3D006C76FC /* MtGoxPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MtGoxPanel.h; path = "MtGoxPanel.h"; sourceTree = "<group>"; };
-		AAAB154113A67E3D006C76FC /* MtGoxPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MtGoxPanel.m; path = "MtGoxPanel.m"; sourceTree = "<group>"; };
-		AAAB154313A67E4C006C76FC /* TradeHillPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TradeHillPanel.h; path = "TradeHillPanel.h"; sourceTree = "<group>"; };
-		AAAB154413A67E4C006C76FC /* TradeHillPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TradeHillPanel.m; path = "TradeHillPanel.m"; sourceTree = "<group>"; };
-		AAB399B1139B0D8500B9438F /* Wallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wallet.h; sourceTree = "<group>"; };
-		AAB399B2139B0D8500B9438F /* Wallet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wallet.m; sourceTree = "<group>"; };
-		AAD172621399BA1D00B505B0 /* EMKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychainItem.h; sourceTree = "<group>"; };
-		AAD172631399BA1D00B505B0 /* EMKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychainItem.m; sourceTree = "<group>"; };
+		AA79F0A6152AD215002C3EEB /* GraphView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
+		AA79F0A7152AD215002C3EEB /* GraphView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
+		AA79F0A8152AD664002C3EEB /* BitTicker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BitTicker.entitlements; sourceTree = "<group>"; };
+		AAA1992615295E9500025EA2 /* CorePlot.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CorePlot.framework; path = ../../Libraries/CorePlot_1.0/Binaries/MacOS/CorePlot.framework; sourceTree = "<group>"; };
+		AAA1992E152969E000025EA2 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
+		AAA1992F152969E000025EA2 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
+		AAA19930152969E000025EA2 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		AAA19931152969E000025EA2 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		AAA19932152969E000025EA2 /* AFImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageCache.h; sourceTree = "<group>"; };
+		AAA19933152969E000025EA2 /* AFImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageCache.m; sourceTree = "<group>"; };
+		AAA19934152969E000025EA2 /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
+		AAA19935152969E000025EA2 /* AFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageRequestOperation.m; sourceTree = "<group>"; };
+		AAA19936152969E000025EA2 /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
+		AAA19937152969E000025EA2 /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONRequestOperation.m; sourceTree = "<group>"; };
+		AAA19938152969E000025EA2 /* AFJSONUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONUtilities.h; sourceTree = "<group>"; };
+		AAA19939152969E000025EA2 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		AAA1993A152969E000025EA2 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
+		AAA1993B152969E000025EA2 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		AAA1993C152969E000025EA2 /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
+		AAA1993D152969E000025EA2 /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
+		AAA1993E152969E000025EA2 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		AAA1993F152969E000025EA2 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		AAA19940152969E000025EA2 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
+		AAA19941152969E000025EA2 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		AAD1726C1399BD3500B505B0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		AAD6441F137B680E00589EAC /* Logo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Logo.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,115 +115,19 @@
 				AA239F771379F17200150707 /* libz.dylib in Frameworks */,
 				AA239F781379F17200150707 /* SystemConfiguration.framework in Frameworks */,
 				AA4BBA2D1379E31B005CE351 /* Cocoa.framework in Frameworks */,
+				AAA1992715295E9500025EA2 /* CorePlot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		83405B0D137F5D8A0060CAD4 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				AA6C46BC137E10B2000A1DCB /* JSON.h */,
-				AA6C46BD137E10B2000A1DCB /* NSObject+JSON.h */,
-				AA6C46BE137E10B2000A1DCB /* NSObject+JSON.m */,
-				AA6C46BF137E10B2000A1DCB /* SBJsonParser.h */,
-				AA6C46C0137E10B2000A1DCB /* SBJsonParser.m */,
-				AA6C46C1137E10B2000A1DCB /* SBJsonStreamParser.h */,
-				AA6C46C2137E10B2000A1DCB /* SBJsonStreamParser.m */,
-				AA6C46C3137E10B2000A1DCB /* SBJsonStreamParserAdapter.h */,
-				AA6C46C4137E10B2000A1DCB /* SBJsonStreamParserAdapter.m */,
-				AA6C46C5137E10B2000A1DCB /* SBJsonStreamParserState.h */,
-				AA6C46C6137E10B2000A1DCB /* SBJsonStreamParserState.m */,
-				AA6C46C7137E10B2000A1DCB /* SBJsonStreamWriter.h */,
-				AA6C46C8137E10B2000A1DCB /* SBJsonStreamWriter.m */,
-				AA6C46C9137E10B2000A1DCB /* SBJsonStreamWriterState.h */,
-				AA6C46CA137E10B2000A1DCB /* SBJsonStreamWriterState.m */,
-				AA6C46CB137E10B2000A1DCB /* SBJsonTokeniser.h */,
-				AA6C46CC137E10B2000A1DCB /* SBJsonTokeniser.m */,
-				AA6C46CD137E10B2000A1DCB /* SBJsonWriter.h */,
-				AA6C46CE137E10B2000A1DCB /* SBJsonWriter.m */,
-			);
-			name = JSON;
-			sourceTree = "<group>";
-		};
-		83405B20137F684E0060CAD4 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				83405B25137F68610060CAD4 /* RequestHandlerDelegate.h */,
-				83405B26137F68610060CAD4 /* RequestHandler.h */,
-				83405B27137F68610060CAD4 /* RequestHandler.m */,
-			);
-			name = Networking;
-			sourceTree = "<group>";
-		};
-		83405B2B137F68870060CAD4 /* Additions */ = {
-			isa = PBXGroup;
-			children = (
-				83405B21137F68610060CAD4 /* TaggedNSURLConnection.h */,
-				83405B22137F68610060CAD4 /* TaggedNSURLConnection.m */,
-				83405B23137F68610060CAD4 /* NSMutableDictionary+IntegerKeys.h */,
-				83405B24137F68610060CAD4 /* NSMutableDictionary+IntegerKeys.m */,
-			);
-			name = Additions;
-			sourceTree = "<group>";
-		};
-		83405B2F137F6CFE0060CAD4 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				83405B30137F6DDF0060CAD4 /* Trade.h */,
-				83405B31137F6DDF0060CAD4 /* Trade.m */,
-				83405B32137F6DDF0060CAD4 /* Ticker.h */,
-				83405B33137F6DDF0060CAD4 /* Ticker.m */,
-				AAB399B1139B0D8500B9438F /* Wallet.h */,
-				AAB399B2139B0D8500B9438F /* Wallet.m */,
-				AAD172621399BA1D00B505B0 /* EMKeychainItem.h */,
-				AAD172631399BA1D00B505B0 /* EMKeychainItem.m */,
-				AA1F92A213A52D7D00D5643C /* ToolbarTicker.h */,
-				AA1F92A313A52D7D00D5643C /* ToolbarTicker.m */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
 		837DF12E139B2EC8009987F3 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
 				AA4BBA411379E31C005CE351 /* MainMenu.xib */,
-				837DF12C139B2E97009987F3 /* SettingsWindow.xib */,
-				AA1F929F13A526D600D5643C /* MainWindow.xib */,
-				AA86BF2013A55C0F0089B39E /* MtGoxPanel.xib */,
-				AA86BF2213A55C870089B39E /* TradeHillPanel.xib */,
-				AA86BF2413A56A470089B39E /* MainPanelView.xib */,
 			);
 			name = Nibs;
-			sourceTree = "<group>";
-		};
-		837DF132139B3B8A009987F3 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				AA6E6C811399F2EB003A4224 /* SharedSettings.h */,
-				AA6E6C821399F2EB003A4224 /* SharedSettings.m */,
-				837DF12F139B319E009987F3 /* SettingsWindow.h */,
-				837DF130139B319F009987F3 /* SettingsWindow.m */,
-				837DF133139B8E18009987F3 /* SettingsWindowController.h */,
-				837DF134139B8E18009987F3 /* SettingsWindowController.m */,
-			);
-			name = Settings;
-			sourceTree = "<group>";
-		};
-		AA1F92AB13A5331200D5643C /* MainWindow */ = {
-			isa = PBXGroup;
-			children = (
-				AA86BF0C13A536250089B39E /* MainWindowController.h */,
-				AA86BF0D13A536250089B39E /* MainWindowController.m */,
-				AA201E7913A59C4D0063066E /* WindowPanel.h */,
-				AA201E7A13A59C4D0063066E /* WindowPanel.m */,
-				AAAB154013A67E3D006C76FC /* MtGoxPanel.h */,
-				AAAB154113A67E3D006C76FC /* MtGoxPanel.m */,
-				AAAB154313A67E4C006C76FC /* TradeHillPanel.h */,
-				AAAB154413A67E4C006C76FC /* TradeHillPanel.m */,
-			);
-			name = MainWindow;
 			sourceTree = "<group>";
 		};
 		AA4BBA1D1379E31B005CE351 = {
@@ -297,6 +150,8 @@
 		AA4BBA2B1379E31B005CE351 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AAA1992D152969E000025EA2 /* AFNetworking */,
+				AAA1992615295E9500025EA2 /* CorePlot.framework */,
 				AAD1726C1399BD3500B505B0 /* Security.framework */,
 				AA4BBA2C1379E31B005CE351 /* Cocoa.framework */,
 				AA4BBA2E1379E31B005CE351 /* Other Frameworks */,
@@ -322,18 +177,15 @@
 		AA4BBA321379E31B005CE351 /* BitTicker */ = {
 			isa = PBXGroup;
 			children = (
-				AAAB153F13A67DDB006C76FC /* MenuViews */,
-				AAAB153C13A67DA0006C76FC /* Markets */,
-				83405B2F137F6CFE0060CAD4 /* Models */,
-				83405B2B137F68870060CAD4 /* Additions */,
-				83405B20137F684E0060CAD4 /* Networking */,
-				83405B0D137F5D8A0060CAD4 /* JSON */,
-				837DF132139B3B8A009987F3 /* Settings */,
-				AA1F92AB13A5331200D5643C /* MainWindow */,
+				AA79F0A8152AD664002C3EEB /* BitTicker.entitlements */,
+				83405B37137F6DDF0060CAD4 /* MtGox.h */,
+				83405B38137F6DDF0060CAD4 /* MtGox.m */,
 				AA239F4D1379E67300150707 /* StatusItemView.h */,
 				AA239F4E1379E67300150707 /* StatusItemView.m */,
-				AA435C0C13A2CB550050F307 /* MenuController.h */,
-				AA435C0D13A2CB550050F307 /* MenuController.m */,
+				AA435C0C13A2CB550050F307 /* Dropdown.h */,
+				AA435C0D13A2CB550050F307 /* Dropdown.m */,
+				AA79F0A6152AD215002C3EEB /* GraphView.h */,
+				AA79F0A7152AD215002C3EEB /* GraphView.m */,
 				AA4BBA3E1379E31C005CE351 /* BitTickerAppDelegate.h */,
 				AA4BBA3F1379E31C005CE351 /* BitTickerAppDelegate.m */,
 				837DF12E139B2EC8009987F3 /* Nibs */,
@@ -355,31 +207,32 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		AAAB153C13A67DA0006C76FC /* Markets */ = {
+		AAA1992D152969E000025EA2 /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				83405B34137F6DDF0060CAD4 /* BitcoinMarketDelegate.h */,
-				83405B35137F6DDF0060CAD4 /* BitcoinMarket.h */,
-				83405B36137F6DDF0060CAD4 /* BitcoinMarket.m */,
-				83405B37137F6DDF0060CAD4 /* MtGoxMarket.h */,
-				83405B38137F6DDF0060CAD4 /* MtGoxMarket.m */,
-				AA83B79A13A2FF1C000F71A6 /* TradeHillMarket.h */,
-				AA83B79B13A2FF1C000F71A6 /* TradeHillMarket.m */,
+				AAA1992E152969E000025EA2 /* AFHTTPClient.h */,
+				AAA1992F152969E000025EA2 /* AFHTTPClient.m */,
+				AAA19930152969E000025EA2 /* AFHTTPRequestOperation.h */,
+				AAA19931152969E000025EA2 /* AFHTTPRequestOperation.m */,
+				AAA19932152969E000025EA2 /* AFImageCache.h */,
+				AAA19933152969E000025EA2 /* AFImageCache.m */,
+				AAA19934152969E000025EA2 /* AFImageRequestOperation.h */,
+				AAA19935152969E000025EA2 /* AFImageRequestOperation.m */,
+				AAA19936152969E000025EA2 /* AFJSONRequestOperation.h */,
+				AAA19937152969E000025EA2 /* AFJSONRequestOperation.m */,
+				AAA19938152969E000025EA2 /* AFJSONUtilities.h */,
+				AAA19939152969E000025EA2 /* AFNetworkActivityIndicatorManager.h */,
+				AAA1993A152969E000025EA2 /* AFNetworkActivityIndicatorManager.m */,
+				AAA1993B152969E000025EA2 /* AFNetworking.h */,
+				AAA1993C152969E000025EA2 /* AFPropertyListRequestOperation.h */,
+				AAA1993D152969E000025EA2 /* AFPropertyListRequestOperation.m */,
+				AAA1993E152969E000025EA2 /* AFURLConnectionOperation.h */,
+				AAA1993F152969E000025EA2 /* AFURLConnectionOperation.m */,
+				AAA19940152969E000025EA2 /* AFXMLRequestOperation.h */,
+				AAA19941152969E000025EA2 /* AFXMLRequestOperation.m */,
 			);
-			name = Markets;
-			sourceTree = "<group>";
-		};
-		AAAB153F13A67DDB006C76FC /* MenuViews */ = {
-			isa = PBXGroup;
-			children = (
-				AA435C1013A2CCA90050F307 /* CustomMenuView.h */,
-				AA435C1113A2CCA90050F307 /* CustomMenuView.m */,
-				AA435C2C13A2E0850050F307 /* MtGoxMarketMenuView.h */,
-				AA435C2D13A2E0860050F307 /* MtGoxMarketMenuView.m */,
-				AA83B7AA13A30582000F71A6 /* TradeHillMarketMenuView.h */,
-				AA83B7AB13A30582000F71A6 /* TradeHillMarketMenuView.m */,
-			);
-			name = MenuViews;
+			name = AFNetworking;
+			path = ../../Libraries/AFNetworking/AFNetworking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,6 +245,7 @@
 				AA4BBA241379E31B005CE351 /* Sources */,
 				AA4BBA251379E31B005CE351 /* Frameworks */,
 				AA4BBA261379E31B005CE351 /* Resources */,
+				AAAB15C113A96DF1006C76FC /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -408,6 +262,7 @@
 		AA4BBA1F1379E31B005CE351 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = none;
 			};
 			buildConfigurationList = AA4BBA221379E31B005CE351 /* Build configuration list for PBXProject "BitTicker" */;
@@ -436,11 +291,6 @@
 				AA4BBA431379E31C005CE351 /* MainMenu.xib in Resources */,
 				AAD64420137B680E00589EAC /* Logo.icns in Resources */,
 				AA6E6C4D1399DC3E003A4224 /* Credits.html in Resources */,
-				837DF12D139B2E97009987F3 /* SettingsWindow.xib in Resources */,
-				AA1F92A013A526D600D5643C /* MainWindow.xib in Resources */,
-				AA86BF2113A55C100089B39E /* MtGoxPanel.xib in Resources */,
-				AA86BF2313A55C880089B39E /* TradeHillPanel.xib in Resources */,
-				AA86BF2513A56A470089B39E /* MainPanelView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,40 +301,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA79F0A9152ADB0C002C3EEB /* GraphView.m in Sources */,
 				AA4BBA3A1379E31C005CE351 /* main.m in Sources */,
 				AA4BBA401379E31C005CE351 /* BitTickerAppDelegate.m in Sources */,
 				AA239F511379E67300150707 /* StatusItemView.m in Sources */,
-				AA6C46CF137E10B2000A1DCB /* NSObject+JSON.m in Sources */,
-				AA6C46D0137E10B2000A1DCB /* SBJsonParser.m in Sources */,
-				AA6C46D1137E10B2000A1DCB /* SBJsonStreamParser.m in Sources */,
-				AA6C46D2137E10B2000A1DCB /* SBJsonStreamParserAdapter.m in Sources */,
-				AA6C46D3137E10B2000A1DCB /* SBJsonStreamParserState.m in Sources */,
-				AA6C46D4137E10B2000A1DCB /* SBJsonStreamWriter.m in Sources */,
-				AA6C46D5137E10B2000A1DCB /* SBJsonStreamWriterState.m in Sources */,
-				AA6C46D6137E10B2000A1DCB /* SBJsonTokeniser.m in Sources */,
-				AA6C46D7137E10B2000A1DCB /* SBJsonWriter.m in Sources */,
-				83405B28137F68610060CAD4 /* TaggedNSURLConnection.m in Sources */,
-				83405B29137F68610060CAD4 /* NSMutableDictionary+IntegerKeys.m in Sources */,
-				83405B2A137F68610060CAD4 /* RequestHandler.m in Sources */,
-				83405B39137F6DDF0060CAD4 /* Trade.m in Sources */,
-				83405B3A137F6DDF0060CAD4 /* Ticker.m in Sources */,
-				83405B3B137F6DDF0060CAD4 /* BitcoinMarket.m in Sources */,
-				83405B3C137F6DDF0060CAD4 /* MtGoxMarket.m in Sources */,
-				AAD172641399BA1E00B505B0 /* EMKeychainItem.m in Sources */,
-				AA6E6C831399F2EB003A4224 /* SharedSettings.m in Sources */,
-				AAB399B3139B0D8500B9438F /* Wallet.m in Sources */,
-				837DF131139B319F009987F3 /* SettingsWindow.m in Sources */,
-				837DF135139B8E19009987F3 /* SettingsWindowController.m in Sources */,
-				AA435C0E13A2CB550050F307 /* MenuController.m in Sources */,
-				AA435C1213A2CCAA0050F307 /* CustomMenuView.m in Sources */,
-				AA435C2E13A2E0860050F307 /* MtGoxMarketMenuView.m in Sources */,
-				AA83B79C13A2FF1C000F71A6 /* TradeHillMarket.m in Sources */,
-				AA83B7AC13A30583000F71A6 /* TradeHillMarketMenuView.m in Sources */,
-				AA1F92A413A52D7D00D5643C /* ToolbarTicker.m in Sources */,
-				AA86BF0F13A536250089B39E /* MainWindowController.m in Sources */,
-				AA201E7B13A59C4D0063066E /* WindowPanel.m in Sources */,
-				AAAB154213A67E3D006C76FC /* MtGoxPanel.m in Sources */,
-				AAAB154513A67E4C006C76FC /* TradeHillPanel.m in Sources */,
+				83405B3C137F6DDF0060CAD4 /* MtGox.m in Sources */,
+				AA435C0E13A2CB550050F307 /* Dropdown.m in Sources */,
+				AAA19944152969E000025EA2 /* AFHTTPClient.m in Sources */,
+				AAA19945152969E000025EA2 /* AFHTTPRequestOperation.m in Sources */,
+				AAA19946152969E000025EA2 /* AFImageCache.m in Sources */,
+				AAA19947152969E000025EA2 /* AFImageRequestOperation.m in Sources */,
+				AAA19948152969E000025EA2 /* AFJSONRequestOperation.m in Sources */,
+				AAA19949152969E000025EA2 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				AAA1994A152969E000025EA2 /* AFPropertyListRequestOperation.m in Sources */,
+				AAA1994B152969E000025EA2 /* AFURLConnectionOperation.m in Sources */,
+				AAA1994C152969E000025EA2 /* AFXMLRequestOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,13 +377,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = BitTicker/BitTicker.entitlements;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../Libraries/CorePlot_1.0/Binaries/MacOS\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BitTicker/BitTicker-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../Libraries/CorePlot_1.0/Binaries/MacOS/CorePlot.framework/Headers/\"";
 				INFOPLIST_FILE = "BitTicker/BitTicker-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -561,13 +402,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = BitTicker/BitTicker.entitlements;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../Libraries/CorePlot_1.0/Binaries/MacOS\"",
+				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BitTicker/BitTicker-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../Libraries/CorePlot_1.0/Binaries/MacOS/CorePlot.framework/Headers/\"";
 				INFOPLIST_FILE = "BitTicker/BitTicker-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

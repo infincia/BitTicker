@@ -1,21 +1,8 @@
 /*
- BitTicker is Copyright 2011 Stephen Oliver
- http://github.com/mrsteveman1
+ BitTicker is Copyright 2012 Stephen Oliver
+ http://github.com/infincia
  
- This program is free software; you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation; either version 2 of the License, or
- (at your option) any later version.
- 
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
- 
- You should have received a copy of the GNU General Public License
- along with this program; if not, write to the Free Software
- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA 
- */
+*/
 
 #import "StatusItemView.h"
 #import <QuartzCore/QuartzCore.h>
@@ -43,7 +30,7 @@
     NSColor *white = [NSColor whiteColor];
     [fontAttributes setObject:font forKey:NSFontAttributeName];
     
-    NSString *tickerPretty = [NSString stringWithFormat:@"$%0.2f",[tickerValue floatValue]];
+    NSString *tickerPretty = [currencyFormatter stringFromNumber:tickerValue];
     CGSize expected = [tickerPretty sizeWithAttributes:fontAttributes];
     CGRect newFrame = self.frame;
     newFrame.size.width = expected.width + 5;
@@ -76,36 +63,39 @@
         [fontAttributes setObject:foreground_color forKey:NSForegroundColorAttributeName];
         [tickerPretty drawAtPoint:point withAttributes:fontAttributes];
     }   
-    
-    [fontAttributes release];
 }
 
 
 - (id)initWithFrame:(NSRect)frame {
 	CGRect newFrame = CGRectMake(0,0,StatusItemWidth,[[NSStatusBar systemStatusBar] thickness]);
     self = [super initWithFrame:newFrame];
-    if (self) {
-        firstTick = YES;
-        self.previousTickerValue = [NSNumber numberWithInt:0];
-        self.tickerValue = [NSNumber numberWithInt:0];
-        flashColor = [[NSColor blackColor] retain];
-		currentColor = [[NSColor blackColor] retain];
-        lastUpdated = [[NSDate date] retain];
-        statusItem = nil;
-        isMenuVisible = NO;
-        isAnimating = NO;
-        [statusItem setLength:StatusItemWidth];
-    }
+    
+	firstTick = YES;
+	self.previousTickerValue = [NSNumber numberWithInt:0];
+	self.tickerValue = [NSNumber numberWithInt:0];
+	flashColor = [NSColor blackColor];
+	currentColor = [NSColor blackColor];
+	lastUpdated = [NSDate date];
+	statusItem = nil;
+	isMenuVisible = NO;
+	isAnimating = NO;
+	[statusItem setLength:StatusItemWidth];
+	
+	currencyFormatter = [[NSNumberFormatter alloc] init];
+	currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+	currencyFormatter.currencyCode = @"USD"; // TODO: Base on market currency
+	currencyFormatter.thousandSeparator = @","; // TODO: Base on local seperator for currency
+	currencyFormatter.alwaysShowsDecimalSeparator = YES;
+	currencyFormatter.hasThousandSeparators = YES;
+	currencyFormatter.minimumFractionDigits = 2; // TODO: Configurable
+    
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveTicker:) name:@"MtGox-Ticker" object:nil];
+
     return self;
 }
 
-- (void)dealloc {
-    [statusItem release];
-    [tickerValue release];
-    [super dealloc];
-}
-
 - (void)mouseDown:(NSEvent *)event {
+	NSLog(@"Menu click");
     [[self menu] setDelegate:self];
     [statusItem popUpStatusItemMenu:[self menu]];
     [self setNeedsDisplay:YES];
@@ -141,30 +131,23 @@
 }
 
 - (void)setTickerValue:(NSNumber *)value {
-    
-    [previousTickerValue release];
     previousTickerValue = tickerValue;
-    
-    [value retain];
     tickerValue = value;
-    
-    double current = [tickerValue doubleValue];
-    double previous = [previousTickerValue doubleValue];
     BOOL animate_color = YES;
     if(firstTick){
         firstTick = NO;
         animate_color = NO;
-    } else if(current > previous){
-        [flashColor release];
-        flashColor = [[NSColor greenColor] retain];
-        [currentColor release];
-        currentColor = [[NSColor colorWithDeviceRed:0 green:0.55 blue:0 alpha:1.0] retain];
+    } else if(tickerValue > previousTickerValue){
+
+        flashColor = [NSColor greenColor];
+
+        currentColor = [NSColor colorWithDeviceRed:0 green:0.55 blue:0 alpha:1.0];
 		NSLog(@"Going green...");
-    } else if(current < previous){
-        [flashColor release];
-        flashColor = [[NSColor redColor] retain];
-		[currentColor release];
-		currentColor = [[NSColor colorWithDeviceRed:0.55 green:0 blue:0 alpha:1.0] retain];
+    } else if(tickerValue < previousTickerValue){
+
+        flashColor = [NSColor redColor];
+
+		currentColor = [NSColor colorWithDeviceRed:0.55 green:0 blue:0 alpha:1.0];
 		NSLog(@"Going red...");
 
     } else {
@@ -173,20 +156,28 @@
     
     if(animate_color){
         
-        self.colorTimer = [[NSTimer scheduledTimerWithTimeInterval:(1.0/ColorFadeFramerate)
+        self.colorTimer = [NSTimer scheduledTimerWithTimeInterval:(1.0/ColorFadeFramerate)
                                                        target:self
                                                      selector:@selector(updateFade)
                                                      userInfo:nil
-                                                      repeats:YES] retain];
+                                                      repeats:YES];
         
-        [lastUpdated release];
-        lastUpdated = [[NSDate date] retain];
+        lastUpdated = [NSDate date];
         isAnimating = YES;
     }
 
     
     [self setNeedsDisplay:YES];
     
+
+}
+
+-(void)didReceiveTicker:(NSNotification *)notification {
+	NSDictionary *ticker = [[notification object] objectForKey:@"ticker"];
+
+	dispatch_async(dispatch_get_main_queue(), ^{
+		[self setTickerValue:[ticker objectForKey:@"last"]];
+	});
 
 }
 

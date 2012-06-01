@@ -1,1 +1,0 @@
-### BitTicker is a Bitcoin stock ticker built to work with MtGox Bitcoin market. It is currently being overhauled but it should work fine.

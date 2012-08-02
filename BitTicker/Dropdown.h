@@ -27,13 +27,13 @@
 
 @property (copy) NSNumber *tickerValue;
 
-@property (retain) NSString *high;
-@property (retain) NSString *low;
-@property (retain) NSString *vol;
-@property (retain) NSString *buy;
-@property (retain) NSString *sell;
-@property (retain) NSString *last;
+@property (strong) NSString *high;
+@property (strong) NSString *low;
+@property (strong) NSString *vol;
+@property (strong) NSString *buy;
+@property (strong) NSString *sell;
+@property (strong) NSString *last;
 
-@property (assign) IBOutlet NSView *dropdownView;
+@property (strong) IBOutlet NSView *dropdownView;
 
 @end

@@ -31,8 +31,8 @@
 @property (nonatomic) NSInteger timeframe;
 
 
-@property (retain) NSArray *graphSource;
-@property (nonatomic, retain) CPTXYGraph *graph;
+@property (strong) NSArray *graphSource;
+@property (nonatomic, strong) CPTXYGraph *graph;
 
 
 @end

@@ -44,7 +44,7 @@ static NSString *mtgox_ticker_url = @"https://mtgox.com/code/data/ticker.php";
 				NSMutableDictionary *message = [NSMutableDictionary new];
 				NSDictionary *tickerDict = [JSON objectForKey:@"ticker"];
 				
-				// capped stack, new tickers pushed on top, store 1440 minutes of data
+				// capped stack, new tickers pushed on bottom, store 1440 minutes of data
 				if ([history count] >= 1440) {
 					[history removeLastObject];
 				}

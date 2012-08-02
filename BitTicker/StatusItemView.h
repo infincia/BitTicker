@@ -20,10 +20,10 @@
 	NSNumberFormatter *currencyFormatter;
 }
 
-@property (retain) NSStatusItem *statusItem;
-@property (retain) NSNumber *tickerValue;
-@property (retain) NSNumber *previousTickerValue;
-@property (retain) NSTimer *colorTimer;
+@property (strong) NSStatusItem *statusItem;
+@property (strong) NSNumber *tickerValue;
+@property (strong) NSNumber *previousTickerValue;
+@property (strong) NSTimer *colorTimer;
 
 - (void)setTickerValue:(NSNumber *)value;
 

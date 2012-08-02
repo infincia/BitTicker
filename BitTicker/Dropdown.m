@@ -47,7 +47,7 @@
     
 	statusItemView = [[StatusItemView alloc] init];
 	statusItemView.statusItem = _statusItem;
-	[statusItemView setToolTip:NSLocalizedString(@"BitTicker", @"Status Item Tooltip")];
+	[statusItemView setToolTip:@"BitTicker"];
 		
 	[_statusItem setView:statusItemView];
 		
@@ -64,21 +64,16 @@
 }
 
 -(void)didReceiveTicker:(NSNotification *)notification {
-	//NSAssert([NSThread currentThread] != [NSThread mainThread],@"Running on main thread!");	
+	NSAssert([NSThread currentThread] == [NSThread mainThread],@"Not unning on main thread!");
 	NSLog(@"Dropdown got ticker");
 	NSDictionary *ticker = [[notification object] objectForKey:@"ticker"];
-
-	//dispatch_async(dispatch_get_main_queue(), ^{
-
 		
-	[self setHigh:[currencyFormatter stringFromNumber:[ticker objectForKey:@"high"]]];
-	[self setLow:[currencyFormatter stringFromNumber:[ticker objectForKey:@"low"]]];
-	[self setBuy:[currencyFormatter stringFromNumber:[ticker objectForKey:@"buy"]]];
-	[self setSell:[currencyFormatter stringFromNumber:[ticker objectForKey:@"sell"]]];
-	[self setLast:[currencyFormatter stringFromNumber:[ticker objectForKey:@"last"]]];
-	[self setVol:[volumeFormatter stringFromNumber:[ticker objectForKey:@"vol"]]];	
-	//});
-    
+	self.high = [currencyFormatter stringFromNumber:[ticker objectForKey:@"high"]];
+	self.low = [currencyFormatter stringFromNumber:[ticker objectForKey:@"low"]];
+	self.buy = [currencyFormatter stringFromNumber:[ticker objectForKey:@"buy"]];
+	self.sell = [currencyFormatter stringFromNumber:[ticker objectForKey:@"sell"]];
+	self.last = [currencyFormatter stringFromNumber:[ticker objectForKey:@"last"]];
+	self.vol = [volumeFormatter stringFromNumber:[ticker objectForKey:@"vol"]];    
 
 }
 

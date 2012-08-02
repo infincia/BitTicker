@@ -32,6 +32,7 @@
 		AAA32C8615CA3D0500C45B89 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA32C7915CA3D0500C45B89 /* AFPropertyListRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AAA32C8715CA3D0500C45B89 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA32C7B15CA3D0500C45B89 /* AFURLConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AAA32C8815CA3D0500C45B89 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA32C7D15CA3D0500C45B89 /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AAA32C8A15CA410300C45B89 /* CorePlot.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AAA32C6815CA3CBB00C45B89 /* CorePlot.framework */; };
 		AAD1726D1399BD3500B505B0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD1726C1399BD3500B505B0 /* Security.framework */; };
 		AAD64420137B680E00589EAC /* Logo.icns in Resources */ = {isa = PBXBuildFile; fileRef = AAD6441F137B680E00589EAC /* Logo.icns */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				AAA32C8A15CA410300C45B89 /* CorePlot.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
